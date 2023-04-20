@@ -3,6 +3,9 @@
 The Wired Protocol is an open and extensible protocol for creating, hosting, and interacting with 3D virtual worlds.
 This repository contains JSON schemas for the protocol.
 
+The protocol is currently in an early stage of development, and is subject to change.
+We welcome any feedback and contributions.
+
 ## Motivation
 
 The primary motivation behind the Wired Protocol is to enable a decentralized and interoperable metaverse, where anyone can create, host, and share 3D virtual worlds.
