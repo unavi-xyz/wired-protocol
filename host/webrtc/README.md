@@ -17,6 +17,8 @@ Messages are sent as array buffers. The first byte is the player ID, followed by
 | 17     | 2    | int16 | Rotation Z  |
 | 19     | 2    | int16 | Rotation W  |
 
+Total length: 21 bytes
+
 ### Rounding Multipliers
 
 The position and rotation values are rounded using a multiplier, to reduce the size of the message. The following multipliers are used:
