@@ -25,6 +25,10 @@
           "type": "string",
           "format": "hostname",
           "description": "The domain of the host server that manages connections and interactions within the world"
+        },
+        "extras": {
+          "type": "object",
+          "description": "Any additional information about the world"
         }
       }
     },
