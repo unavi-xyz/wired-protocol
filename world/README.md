@@ -16,7 +16,7 @@ A world within the Wired is defined by a `world.json` file. Here is an example `
 
 ## Info
 
-The `info` object contains information about the world. It is not required to have an `info` object, but it is recommended.
+The `info` object contains information about the world. Worlds are not required to have an `info` object, but it is recommended.
 
 ### Extras
 
