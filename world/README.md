@@ -20,14 +20,14 @@ The `info` object contains information about the world. Worlds are not required 
 
 ### Extras
 
-An `extras` field can be added to the `info` object, which can contain any additional information about the world. This field is intended to make the protocol extensible, as anyone can add application-specific data to the json.
+An `extras` field can be added to the `info` object, which can contain any additional information related to the world. This field is intended to make the protocol extensible, as anyone can add application-specific data to the json.
 
 ```json
 {
   "info": {
     ...
     "extras": {
-      "myExtraField": "myExtraValue"
+      "myCustomField": "myCustomValue"
     }
   },
   "model": ...

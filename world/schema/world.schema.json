@@ -28,7 +28,7 @@
         },
         "extras": {
           "type": "object",
-          "description": "Any additional information about the world"
+          "description": "Any additional information related to the world"
         }
       }
     },
