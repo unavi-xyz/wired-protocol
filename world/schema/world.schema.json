@@ -18,7 +18,7 @@
         },
         "host": {
           "type": "string",
-          "format": "uri",
+          "format": "hostname",
           "description": "The domain of the host server that manages connections and interactions within the world"
         }
       }
