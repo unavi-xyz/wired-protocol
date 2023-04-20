@@ -4,7 +4,7 @@ WebRTC data channels are used to communicate location information between client
 
 ## Message Format
 
-Messages are sent array buffers. The first byte is the player ID, followed by the position and rotation values.
+Messages are sent as array buffers. The first byte is the player ID, followed by the position and rotation values.
 
 | Offset | Size | Type  | Description |
 | ------ | ---- | ----- | ----------- |
