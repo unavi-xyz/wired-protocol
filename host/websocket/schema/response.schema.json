@@ -156,7 +156,7 @@
           "description": "The URI the player's avatar"
         }
       },
-      "required": ["id", "name", "avatar"]
+      "required": ["id"]
     },
     "player_leave_data": {
       "type": "number",
@@ -191,15 +191,11 @@
           "type": "string",
           "description": "The ID of the producer"
         },
-        "kind": {
-          "type": "string",
-          "description": "The kind of the consumer"
-        },
         "rtpParameters": {
           "$ref": "./webrtc.rtpParameters.schema.json"
         }
       },
-      "required": ["id", "consumerId", "producerId", "kind", "rtpParameters"]
+      "required": ["id", "consumerId", "producerId", "rtpParameters"]
     },
     "webrtc_create_data_consumer_data": {
       "type": "object",
