@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Profile Schema",
+  "description": "A schema for representing a profile within The Wired",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the profile"
+    },
+    "bio": {
+      "type": "string",
+      "description": "A short description of the profile"
+    },
+    "image": {
+      "type": "string",
+      "description": "A URI of the profile's image"
+    },
+    "background": {
+      "type": "string",
+      "description": "A URI of the profile's background image"
+    },
+    "links": {
+      "type": "array",
+      "description": "A list of links associated with the profile",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the link"
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL of the link"
+          }
+        }
+      }
+    },
+    "extras": {
+      "type": "object",
+      "description": "Any additional information related to the user"
+    }
+  }
+}
