@@ -1,6 +1,6 @@
 # Profile
 
-Users can create a profile to share information about themselves. Here is an example of a profile:
+A profile within the Wired is defined by a `profile.json` file. Here is an example of a `profile.json`:
 
 ```json
 {
