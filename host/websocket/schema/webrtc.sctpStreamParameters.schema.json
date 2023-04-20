@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WebRTC SCTP Stream Parameters",
+  "description": "Schema for WebRTC SCTP stream parameters",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "ordered": {
+      "type": "boolean"
+    },
+    "maxPacketLifeTime": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "maxRetransmits": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "protocol": {
+      "type": "string"
+    }
+  },
+  "required": ["id"]
+}

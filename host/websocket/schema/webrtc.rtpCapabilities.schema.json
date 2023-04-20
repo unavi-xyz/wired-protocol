@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WebRTC RTP Capabilities",
+  "description": "Schema for WebRTC RTP capabilities",
+  "type": "object",
+  "properties": {
+    "codecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["audio", "video"]
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "clockRate": {
+            "type": "integer",
+            "minimum": 8000,
+            "maximum": 96000
+          },
+          "channels": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2
+          },
+          "rtcpFeedback": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "parameter": {
+                  "type": "string"
+                }
+              },
+              "required": ["type"]
+            }
+          },
+          "parameters": {
+            "type": "object"
+          }
+        },
+        "required": ["kind", "mimeType", "clockRate"]
+      }
+    },
+    "headerExtensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": ["audio", "video"]
+          },
+          "preferredId": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 255
+          },
+          "preferredEncrypt": {
+            "type": "boolean"
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["sendrecv", "sendonly", "recvonly", "inactive"]
+          }
+        },
+        "required": ["uri", "kind", "preferredId"]
+      }
+    }
+  },
+  "required": ["codecs", "headerExtensions"]
+}
