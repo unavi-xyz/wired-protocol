@@ -1,6 +1,6 @@
 # Profile
 
-A profile within the Wired is defined by a `profile.json` file. Here is an example of a `profile.json`:
+A user can store information about themselves within a `profile.json` file. Here is an example `profile.json`:
 
 ```json
 {
