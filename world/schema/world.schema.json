@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "World Metadata Schema",
-  "description": "A schema describing a world within the Wired Protocol",
+  "description": "A schema for representing a world within The Wired",
   "type": "object",
   "properties": {
     "info": {
