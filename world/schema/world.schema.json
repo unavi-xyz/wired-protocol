@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "World Metadata Schema",
+  "description": "A schema describing a world within the Wired Protocol",
+  "type": "object",
+  "properties": {
+    "info": {
+      "type": "object",
+      "description": "Information about the world",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the world"
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the world"
+        },
+        "host": {
+          "type": "string",
+          "format": "uri",
+          "description": "The domain of the host server that manages connections and interactions within the world"
+        }
+      }
+    },
+    "model": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URI of the glTF file representing the 3D world"
+    }
+  },
+  "required": ["model"]
+}
