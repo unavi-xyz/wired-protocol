@@ -16,7 +16,7 @@ The host server performs the following tasks:
 
 ## Interaction with Clients
 
-Clients connect to the host server using the provided domain name specified in the `world.json` file. If no host is provided, the client fall back to a default host server, set by the client.
+Clients connect to the host server using the provided domain name specified in the `world.json` file. If no host is provided, the client will fall back to a default host server, set by the client.
 
 The client provides the host server with the URI of the `world.json` it wishes to join. The host server uses this URI to connect clients together.
 
