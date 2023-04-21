@@ -171,6 +171,10 @@
           "type": "string",
           "description": "The name of the player"
         },
+        "address": {
+          "type": "string",
+          "description": "The address of the player"
+        },
         "avatar": {
           "type": "string",
           "description": "The URI the player's avatar"
