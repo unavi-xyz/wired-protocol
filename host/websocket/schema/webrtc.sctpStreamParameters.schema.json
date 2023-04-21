@@ -23,6 +23,5 @@
     "protocol": {
       "type": "string"
     }
-  },
-  "required": ["id"]
+  }
 }
