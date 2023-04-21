@@ -34,6 +34,12 @@
     },
     {
       "properties": {
+        "type": { "const": "set_address" },
+        "data": { "$ref": "#/definitions/set_address_data" }
+      }
+    },
+    {
+      "properties": {
         "type": { "const": "set_avatar" },
         "data": { "$ref": "#/definitions/set_avatar_data" }
       }
@@ -111,6 +117,10 @@
     "send_chat_message_data": {
       "type": "string",
       "description": "The message to send"
+    },
+    "set_address_data": {
+      "type": ["string", "null"],
+      "description": "The address of the user"
     },
     "set_avatar_data": {
       "type": ["string", "null"],

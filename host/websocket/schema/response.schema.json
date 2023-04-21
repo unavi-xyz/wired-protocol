@@ -28,6 +28,12 @@
     },
     {
       "properties": {
+        "type": { "const": "player_address" },
+        "data": { "$ref": "#/definitions/player_address_data" }
+      }
+    },
+    {
+      "properties": {
         "type": { "const": "player_avatar" },
         "data": { "$ref": "#/definitions/player_avatar_data" }
       }
@@ -111,6 +117,20 @@
         }
       },
       "required": ["id", "message"]
+    },
+    "player_address_data": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "number",
+          "description": "The ID of the player"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "The address of the player"
+        }
+      },
+      "required": ["id", "avatar"]
     },
     "player_avatar_data": {
       "type": "object",
