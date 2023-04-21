@@ -76,6 +76,5 @@
         "required": ["uri", "kind", "preferredId"]
       }
     }
-  },
-  "required": ["codecs", "headerExtensions"]
+  }
 }
