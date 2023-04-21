@@ -101,7 +101,7 @@
     "chat_message_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -115,7 +115,7 @@
     "player_avatar_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -129,7 +129,7 @@
     "player_grounded_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -143,7 +143,7 @@
     "player_join_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -165,7 +165,7 @@
     "player_name_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -179,7 +179,7 @@
     "webrtc_create_consumer_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
@@ -200,7 +200,7 @@
     "webrtc_create_data_consumer_data": {
       "type": "object",
       "properties": {
-        "id": {
+        "player_id": {
           "type": "number",
           "description": "The ID of the player"
         },
