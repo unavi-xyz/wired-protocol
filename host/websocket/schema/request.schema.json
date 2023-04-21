@@ -113,11 +113,11 @@
       "description": "The message to send"
     },
     "set_avatar_data": {
-      "type": "string",
+      "type": ["string", "null"],
       "description": "The URI of the user's avatar"
     },
     "set_name_data": {
-      "type": "string",
+      "type": ["string", "null"],
       "description": "The name of the user"
     },
     "set_grounded_data": {

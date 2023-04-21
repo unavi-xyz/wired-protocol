@@ -120,7 +120,7 @@
           "description": "The ID of the player"
         },
         "avatar": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "The URI the player's avatar"
         }
       },
@@ -170,7 +170,7 @@
           "description": "The ID of the player"
         },
         "name": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "The name of the player"
         }
       },
