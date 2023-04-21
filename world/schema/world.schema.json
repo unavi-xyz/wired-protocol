@@ -16,6 +16,10 @@
           "type": "string",
           "description": "A brief description of the world"
         },
+        "author": {
+          "type": "string",
+          "description": "The address of the author of the world"
+        },
         "image": {
           "type": "string",
           "format": "uri",
