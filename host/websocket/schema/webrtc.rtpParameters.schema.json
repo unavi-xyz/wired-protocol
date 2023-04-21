@@ -52,5 +52,5 @@
       }
     }
   },
-  "required": ["codecs", "headerExtensions"]
+  "required": ["codecs"]
 }
