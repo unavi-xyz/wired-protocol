@@ -295,20 +295,25 @@
               "type": "object",
               "properties": {
                 "port": {
-                  "type": "number",
-                  "description": "The SCTP port"
+                  "description": "The SCTP port",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
                 },
                 "OS": {
-                  "type": "number",
-                  "description": "The SCTP OS"
+                  "description": "The SCTP OS",
+                  "type": "integer",
+                  "minimum": 0
                 },
                 "MIS": {
-                  "type": "number",
-                  "description": "The SCTP MIS"
+                  "description": "The SCTP MIS",
+                  "type": "integer",
+                  "minimum": 0
                 },
                 "maxMessageSize": {
-                  "type": "number",
-                  "description": "The SCTP max message size"
+                  "description": "The SCTP max message size",
+                  "type": "integer",
+                  "minimum": 0
                 }
               },
               "required": ["port", "OS", "MIS", "maxMessageSize"]
