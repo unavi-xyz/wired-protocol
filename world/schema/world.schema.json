@@ -16,9 +16,23 @@
           "type": "string",
           "description": "A brief description of the world"
         },
-        "author": {
-          "type": "string",
-          "description": "The address of the author of the world"
+        "authors": {
+          "type": "array",
+          "description": "Information about the authors of the world",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the author"
+              },
+              "address": {
+                "type": "string",
+                "pattern": "^(0x)?[0-9a-fA-F]{40}$",
+                "description": "The Ethereum address of the author"
+              }
+            }
+          }
         },
         "image": {
           "type": "string",
