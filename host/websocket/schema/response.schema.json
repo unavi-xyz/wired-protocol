@@ -271,14 +271,9 @@
             "iceParameters": {
               "type": "object",
               "properties": {
-                "usernameFragment": {
-                  "type": "string",
-                  "description": "The ICE username fragment"
-                },
-                "password": {
-                  "type": "string",
-                  "description": "The ICE password"
-                }
+                "usernameFragment": { "type": "string" },
+                "password": { "type": "string" },
+                "iceLite": { "type": "boolean" }
               },
               "required": ["usernameFragment", "password"]
             },
