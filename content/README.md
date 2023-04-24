@@ -2,5 +2,6 @@
 
 ## Content Types
 
-- [Worlds](./world)
 - [Avatars](./avatar)
+- [Profiles](./profile)
+- [Worlds](./world)

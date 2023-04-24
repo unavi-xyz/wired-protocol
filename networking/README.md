@@ -7,3 +7,7 @@ The Wired uses URIs to reference content. For example, to connect to a world you
 ## World Hosting
 
 Worlds within The Wired are hosted by a dedicated [host server](./host). This server handles multiplayer functionality for the world, connecting clients together and acting as a relay for messages.
+
+## Home Server
+
+Each user has a [home server](./home) that they are registered on. This server is used to store user content and provide authentication for the user.
