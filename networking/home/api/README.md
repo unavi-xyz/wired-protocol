@@ -4,7 +4,7 @@ The home server provides a REST API for interacting with the server. This can be
 
 ## Endpoints
 
-### GET /wired/v1/users/:username
+### GET /.wired-protocol/v1/users/:username
 
 Fetches a user's [profile](/content/profile).
 
