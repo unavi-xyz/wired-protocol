@@ -1,6 +1,6 @@
 # Profile
 
-A user can store information about themselves within a `profile.json` file. Here is an example `profile.json`:
+A user can store information about themselves within a profile. Here is an example `profile.json`:
 
 ```json
 {

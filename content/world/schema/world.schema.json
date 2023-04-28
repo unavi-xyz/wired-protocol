@@ -21,7 +21,7 @@
           "description": "Lists the authors of the world",
           "items": {
             "type": "string",
-            "description": "The handle of an author"
+            "description": "The author's name, handle, or some other identifier"
           }
         },
         "image": {
