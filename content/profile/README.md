@@ -5,6 +5,7 @@ A user can store information about themselves within a profile. Here is an examp
 ```json
 {
   "name": "Kayh",
+  "handle": "kayh@unavi.xyz",
   "bio": "I love anime!",
   "image": "./profile-picture.png",
   "background": "./profile-background.png",
