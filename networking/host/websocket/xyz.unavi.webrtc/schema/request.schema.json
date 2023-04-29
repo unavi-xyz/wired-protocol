@@ -53,7 +53,6 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "The type of transport to connect",
           "enum": ["producer", "consumer"]
         },
         "dtlsParameters": { "$ref": "./webrtc.dtlsParameters.schema.json" }

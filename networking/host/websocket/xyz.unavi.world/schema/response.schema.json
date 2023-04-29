@@ -118,6 +118,7 @@
       "properties": {
         "playerId": { "type": "number" },
         "avatar": { "type": "string" },
+        "handle": { "type": "string" },
         "name": { "type": "string" }
       },
       "required": ["id"]

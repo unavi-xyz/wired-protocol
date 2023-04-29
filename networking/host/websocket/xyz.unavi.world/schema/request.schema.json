@@ -42,8 +42,8 @@
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.world.grounded" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.grounded" }
+        "id": { "const": "xyz.unavi.world.user.grounded" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.user.grounded" }
       }
     }
   ],
@@ -72,7 +72,7 @@
       "type": ["string", "null"],
       "description": "The user's name"
     },
-    "xyz.unavi.world.grounded": {
+    "xyz.unavi.world.user.grounded": {
       "type": "boolean",
       "description": "Whether the user is grounded"
     }
