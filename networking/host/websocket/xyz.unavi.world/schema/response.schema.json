@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "../../schema/message.schema.json",
+  "title": "Response WebSocket Message Schema",
+  "description": "A schema for WebSocket messages sent from the server to client",
+  "oneOf": [
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.joined" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.joined" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.chat.message" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.chat.message" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.avatar" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.avatar" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.handle" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.handle" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.name" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.name" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.grounded" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.grounded" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.join" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.join" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "xyz.unavi.world.player.leave" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.leave" }
+      }
+    }
+  ],
+  "definitions": {
+    "xyz.unavi.world.joined": {
+      "type": "number",
+      "description": "The ID of the user"
+    },
+    "xyz.unavi.world.chat.message": {
+      "type": "object",
+      "properties": {
+        "playerId": { "type": "number" },
+        "message": { "type": "string" }
+      },
+      "required": ["id", "message"]
+    },
+    "xyz.unavi.world.player.avatar": {
+      "type": "object",
+      "properties": {
+        "playerId": { "type": "number" },
+        "avatar": {
+          "type": ["string", "null"],
+          "description": "The URI the player's avatar"
+        }
+      },
+      "required": ["id", "avatar"]
+    },
+    "xyz.unavi.world.player.handle": {
+      "type": "object",
+      "properties": {
+        "playerId": { "type": "number" },
+        "handle": {
+          "type": ["string", "null"],
+          "description": "The URI the player's handle"
+        }
+      },
+      "required": ["id", "avatar"]
+    },
+    "xyz.unavi.world.player.name": {
+      "type": "object",
+      "properties": {
+        "playerId": { "type": "number" },
+        "name": {
+          "type": ["string", "null"],
+          "description": "The URI the player's name"
+        }
+      },
+      "required": ["id", "avatar"]
+    },
+    "xyz.unavi.world.player.grounded": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "number",
+          "description": "The ID of the player"
+        },
+        "grounded": {
+          "type": "boolean",
+          "description": "Whether the player is grounded"
+        }
+      },
+      "required": ["id", "grounded"]
+    },
+    "xyz.unavi.world.player.join": {
+      "type": "object",
+      "properties": {
+        "playerId": { "type": "number" },
+        "avatar": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id"]
+    },
+    "xyz.unavi.world.player.leave": {
+      "type": "number",
+      "description": "The ID of the player"
+    }
+  }
+}

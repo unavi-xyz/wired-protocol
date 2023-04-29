@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WebSocket Message",
+  "description": "A message sent over a WebSocket connection",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The id of the message"
+    },
+    "data": {
+      "description": "The data associated with the message"
+    }
+  },
+  "required": ["id", "data"]
+}
