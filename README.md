@@ -13,6 +13,6 @@ As we spend more and more time in virtual spaces, especially when in VR, it is i
 
 ## Design Goals
 
-- **Openness**: The protocol is designed to be open. Anyone can create their own client or server, and users can choose which client to use and which server to connect to.
+- **Openness**: The protocol is designed to be open. Anyone can create their own client or server, and users can choose which client to use and which servers to connect to.
 - **Extendability**: The protocol is designed to be easily extendable. Anyone can extend the protocol and add new features.
 - **Decentralization**: The protocol is designed to be decentralized. There is no central authority - it's like the web, but for 3D worlds.
