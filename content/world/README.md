@@ -41,7 +41,7 @@ The `model` field is a URI pointing to a glTF file for the world. The model can 
 
 ### Extensions
 
-The following glTF extensions are commonly supported within the Wired:
+The following glTF extensions are commonly supported within The Wired:
 
 - [KHR_audio](https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/KHR_audio)
 - [OMI_collider](https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_collider)
