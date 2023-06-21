@@ -9,8 +9,7 @@ The protocol is currently in an early stage of development, and is subject to ch
 
 Here is a basic overview of the protocol.
 
-![image](https://github.com/wired-protocol/spec/assets/92771507/6dca6a80-6289-4e34-8ed0-251af2617bed)
-
+![image](https://github.com/wired-protocol/spec/assets/92771507/e8192800-75bf-4e28-b488-b1871a66d680)
 
 ## 🤔 Motivation
 
