@@ -5,7 +5,7 @@ A world within the Wired is defined by a `world.json` file. Here is an example `
 ```json
 {
   "info": {
-    "name": "My World",
+    "title": "My World",
     "description": "A description of the world.",
     "authors": ["alice@unavi.xyz", "Bob Bobson"],
     "image": "./image.jpg",
