@@ -26,12 +26,12 @@ An `extras` field can be added to the `info` object, which can contain any addit
 ```json
 {
   "info": {
-    ...
+    // ...
     "extras": {
       "myCustomField": "myCustomValue"
     }
   },
-  "model": ...
+  "model": // ...
 }
 ```
 

@@ -27,7 +27,7 @@ An `extras` field can be added to the object, which can contain any additional i
 
 ```json
 {
-  ...
+  // ...
   "extras": {
     "favoriteFood": "pizza"
   }
