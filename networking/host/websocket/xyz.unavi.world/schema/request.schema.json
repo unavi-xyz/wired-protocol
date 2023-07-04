@@ -42,8 +42,8 @@
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.world.user.grounded" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.user.grounded" }
+        "id": { "const": "xyz.unavi.world.user.falling" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.user.falling" }
       }
     }
   ],
@@ -72,9 +72,9 @@
       "type": ["string", "null"],
       "description": "The user's name"
     },
-    "xyz.unavi.world.user.grounded": {
+    "xyz.unavi.world.user.falling": {
       "type": "boolean",
-      "description": "Whether the user is grounded"
+      "description": "Whether the user should have a falling animation"
     }
   }
 }
