@@ -36,8 +36,8 @@
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.grounded" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.grounded" }
+        "type": { "const": "xyz.unavi.world.player.falling" },
+        "data": { "$ref": "#/definitions/xyz.unavi.world.player.falling" }
       }
     },
     {
@@ -99,19 +99,19 @@
       },
       "required": ["id", "avatar"]
     },
-    "xyz.unavi.world.player.grounded": {
+    "xyz.unavi.world.player.falling": {
       "type": "object",
       "properties": {
         "playerId": {
           "type": "number",
           "description": "The ID of the player"
         },
-        "grounded": {
+        "falling": {
           "type": "boolean",
-          "description": "Whether the player is grounded"
+          "description": "Whether the player is falling"
         }
       },
-      "required": ["id", "grounded"]
+      "required": ["id", "falling"]
     },
     "xyz.unavi.world.player.join": {
       "type": "object",
