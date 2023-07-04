@@ -4,7 +4,7 @@ The home server is the server that a user is registered on. It is used to store 
 
 ## Handles
 
-A handle is a globally unique identifier for a user. It is used to identify a user across all servers. A handle is a string of the form `username@domain`. For example,`alice@unavi.xyz`.
+A handle is a globally unique identifier for a user. It is used to identify a user across all servers. A handle is a string of the form `@username:domain`. For example,`@alice:unavi.xyz`.
 
 ## Authentication
 
