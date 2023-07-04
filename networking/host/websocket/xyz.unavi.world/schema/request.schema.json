@@ -74,7 +74,7 @@
     },
     "xyz.unavi.world.user.falling": {
       "type": "boolean",
-      "description": "Whether the user should have a falling animation"
+      "description": "Whether the user is falling"
     }
   }
 }
