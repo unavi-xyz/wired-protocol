@@ -31,4 +31,4 @@ The `data` field is used to store the payload of the message. The type of data d
 A `target` field may optionally be included in a message. This is used to specify where the message should be sent. Valid targets are:
 
 - `server`: Send the message to the server only. (Default)
-- `clients`: Send the message to all clients in your world.
+- `client`: Send the message to all clients in your world.

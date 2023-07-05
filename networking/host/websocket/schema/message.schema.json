@@ -13,7 +13,8 @@
     },
     "target": {
       "type": "string",
-      "description": "Where the message is being sent to"
+      "description": "Where the message is being sent to",
+      "enum": ["server", "client"]
     }
   },
   "required": ["id", "data"]
