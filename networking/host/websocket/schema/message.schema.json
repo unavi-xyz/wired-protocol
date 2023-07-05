@@ -10,6 +10,10 @@
     },
     "data": {
       "description": "The data associated with the message"
+    },
+    "target": {
+      "type": "string",
+      "description": "Where the message is being sent to"
     }
   },
   "required": ["id", "data"]
