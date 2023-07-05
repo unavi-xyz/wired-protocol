@@ -10,4 +10,4 @@ Worlds within The Wired are hosted by a dedicated [host server](./host). This se
 
 ## Home Server
 
-Each user has a [home server](./home) that they are registered on. The home server allows for persistant user identity by giving each player a handle, in the `username@domain` format. The home server also handles authentication for the user, and stores data such as their profile and friends list.
+Each user has a [home server](./home) that they are registered on. The home server allows for persistant user identity by giving each player a handle, in the `@username:domain` format. The home server also handles authentication for the user, and stores data such as their profile and friends list.
