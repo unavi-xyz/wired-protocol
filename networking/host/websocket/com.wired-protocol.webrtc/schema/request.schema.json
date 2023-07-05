@@ -6,49 +6,55 @@
   "oneOf": [
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.audio.pause" },
+        "id": { "const": "com.wired-protocol.webrtc.audio.pause" },
         "data": { "type": "boolean" }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.transport.connect" },
-        "data": { "$ref": "#/definitions/xyz.unavi.webrtc.transport.connect" }
+        "id": { "const": "com.wired-protocol.webrtc.transport.connect" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.webrtc.transport.connect"
+        }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.transport.create" },
-        "data": { "$ref": "#/definitions/xyz.unavi.webrtc.transport.create" }
+        "id": { "const": "com.wired-protocol.webrtc.transport.create" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.webrtc.transport.create"
+        }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.router.rtpCapabilities.get" },
+        "id": {
+          "const": "com.wired-protocol.webrtc.router.rtpCapabilities.get"
+        },
         "data": { "type": "null" }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.rtpCapabilities.set" },
+        "id": { "const": "com.wired-protocol.webrtc.rtpCapabilities.set" },
         "data": { "$ref": "./webrtc.rtpCapabilities.schema.json" }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.produce" },
+        "id": { "const": "com.wired-protocol.webrtc.produce" },
         "data": { "$ref": "./webrtc.rtpParameters.schema.json" }
       }
     },
     {
       "properties": {
-        "id": { "const": "xyz.unavi.webrtc.produceData" },
+        "id": { "const": "com.wired-protocol.webrtc.produceData" },
         "data": { "$ref": "./webrtc.sctpStreamParameters.schema.json" }
       }
     }
   ],
   "definitions": {
-    "xyz.unavi.webrtc.transport.connect": {
+    "com.wired-protocol.webrtc.transport.connect": {
       "type": "object",
       "properties": {
         "type": {
@@ -59,7 +65,7 @@
       },
       "required": ["type", "dtlsParameters"]
     },
-    "xyz.unavi.webrtc.transport.create": {
+    "com.wired-protocol.webrtc.transport.create": {
       "type": "string",
       "description": "The type of transport to create",
       "enum": ["producer", "consumer"]

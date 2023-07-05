@@ -6,59 +6,69 @@
   "oneOf": [
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.joined" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.joined" }
+        "type": { "const": "com.wired-protocol.world.joined" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.joined" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.chat.message" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.chat.message" }
+        "type": { "const": "com.wired-protocol.world.chat.message" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.chat.message"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.avatar" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.avatar" }
+        "type": { "const": "com.wired-protocol.world.player.avatar" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.player.avatar"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.handle" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.handle" }
+        "type": { "const": "com.wired-protocol.world.player.handle" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.player.handle"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.name" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.name" }
+        "type": { "const": "com.wired-protocol.world.player.name" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.player.name" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.falling" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.falling" }
+        "type": { "const": "com.wired-protocol.world.player.falling" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.player.falling"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.join" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.join" }
+        "type": { "const": "com.wired-protocol.world.player.join" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.player.join" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.world.player.leave" },
-        "data": { "$ref": "#/definitions/xyz.unavi.world.player.leave" }
+        "type": { "const": "com.wired-protocol.world.player.leave" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.player.leave"
+        }
       }
     }
   ],
   "definitions": {
-    "xyz.unavi.world.joined": {
+    "com.wired-protocol.world.joined": {
       "type": "number",
       "description": "The ID of the user"
     },
-    "xyz.unavi.world.chat.message": {
+    "com.wired-protocol.world.chat.message": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
@@ -66,40 +76,40 @@
       },
       "required": ["id", "message"]
     },
-    "xyz.unavi.world.player.avatar": {
+    "com.wired-protocol.world.player.avatar": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
         "avatar": {
           "type": ["string", "null"],
-          "description": "The URI the player's avatar"
+          "description": "The URI of the player's avatar"
         }
       },
       "required": ["id", "avatar"]
     },
-    "xyz.unavi.world.player.handle": {
+    "com.wired-protocol.world.player.handle": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
         "handle": {
           "type": ["string", "null"],
-          "description": "The URI the player's handle"
+          "description": "The player's handle"
         }
       },
       "required": ["id", "avatar"]
     },
-    "xyz.unavi.world.player.name": {
+    "com.wired-protocol.world.player.name": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
         "name": {
           "type": ["string", "null"],
-          "description": "The URI the player's name"
+          "description": "The player's name"
         }
       },
       "required": ["id", "avatar"]
     },
-    "xyz.unavi.world.player.falling": {
+    "com.wired-protocol.world.player.falling": {
       "type": "object",
       "properties": {
         "playerId": {
@@ -113,7 +123,7 @@
       },
       "required": ["id", "falling"]
     },
-    "xyz.unavi.world.player.join": {
+    "com.wired-protocol.world.player.join": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
@@ -123,7 +133,7 @@
       },
       "required": ["id"]
     },
-    "xyz.unavi.world.player.leave": {
+    "com.wired-protocol.world.player.leave": {
       "type": "number",
       "description": "The ID of the player"
     }

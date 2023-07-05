@@ -6,43 +6,49 @@
   "oneOf": [
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.consumer.create" },
-        "data": { "$ref": "#/definitions/xyz.unavi.webrtc.consumer.create" }
+        "type": { "const": "com.wired-protocol.webrtc.consumer.create" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.webrtc.consumer.create"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.dataConsumer.create" },
-        "data": { "$ref": "#/definitions/xyz.unavi.webrtc.dataConsumer.create" }
+        "type": { "const": "com.wired-protocol.webrtc.dataConsumer.create" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.webrtc.dataConsumer.create"
+        }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.producer.id" },
+        "type": { "const": "com.wired-protocol.webrtc.producer.id" },
         "data": { "type": "string" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.dataProducer.id" },
+        "type": { "const": "com.wired-protocol.webrtc.dataProducer.id" },
         "data": { "type": "string" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.router.rtpCapabilities" },
+        "type": { "const": "com.wired-protocol.webrtc.router.rtpCapabilities" },
         "data": { "$ref": "./webrtc.rtpCapabilities.schema.json" }
       }
     },
     {
       "properties": {
-        "type": { "const": "xyz.unavi.webrtc.transport.created" },
-        "data": { "$ref": "#/definitions/xyz.unavi.webrtc.transport.created" }
+        "type": { "const": "com.wired-protocol.webrtc.transport.created" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.webrtc.transport.created"
+        }
       }
     }
   ],
   "definitions": {
-    "xyz.unavi.webrtc.consumer.create": {
+    "com.wired-protocol.webrtc.consumer.create": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
@@ -52,7 +58,7 @@
       },
       "required": ["id", "consumerId", "producerId", "rtpParameters"]
     },
-    "xyz.unavi.webrtc.dataConsumer.create": {
+    "com.wired-protocol.webrtc.dataConsumer.create": {
       "type": "object",
       "properties": {
         "playerId": { "type": "number" },
@@ -69,7 +75,7 @@
         "sctpStreamParameters"
       ]
     },
-    "xyz.unavi.webrtc.transport.created": {
+    "com.wired-protocol.webrtc.transport.created": {
       "type": "object",
       "properties": {
         "type": { "type": "string", "enum": ["producer", "consumer"] },

@@ -17,6 +17,6 @@ A message may look something like:
 
 ### Message IDs
 
-Message IDs follow defined schemas using [Reverse Domain Name Notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). For example, the `xyz.unavi.webrtc` namespace is used for WebRTC signaling.
+Message IDs follow defined schemas using [Reverse Domain Name Notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). For example, the `com.wired-protocol.webrtc` namespace is used for WebRTC signaling.
 
 Structuring messages in this way makes the protocol extensible, allowing anyone to define their own message schemas without needing to worry about conflicting message IDs.

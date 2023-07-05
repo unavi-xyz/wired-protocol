@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "../../schema/message.schema.json",
+  "title": "Request WebSocket Message Schema",
+  "description": "A schema for WebSocket messages sent from the client to server.",
+  "oneOf": [
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.join" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.join" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.leave" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.leave" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.chat.send" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.chat.send" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.user.avatar" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.user.avatar" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.user.handle" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.user.handle" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.user.name" },
+        "data": { "$ref": "#/definitions/com.wired-protocol.world.user.name" }
+      }
+    },
+    {
+      "properties": {
+        "id": { "const": "com.wired-protocol.world.user.falling" },
+        "data": {
+          "$ref": "#/definitions/com.wired-protocol.world.user.falling"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "com.wired-protocol.world.join": {
+      "type": "string",
+      "description": "The URI of the world to join"
+    },
+    "com.wired-protocol.world.leave": {
+      "type": "string",
+      "description": "The URI of the world to leave"
+    },
+    "com.wired-protocol.world.chat.send": {
+      "type": "string",
+      "description": "The message to send"
+    },
+    "com.wired-protocol.world.user.avatar": {
+      "type": ["string", "null"],
+      "description": "The URI of the user's avatar"
+    },
+    "com.wired-protocol.world.user.handle": {
+      "type": ["string", "null"],
+      "description": "The user's handle"
+    },
+    "com.wired-protocol.world.user.name": {
+      "type": ["string", "null"],
+      "description": "The user's name"
+    },
+    "com.wired-protocol.world.user.falling": {
+      "type": "boolean",
+      "description": "Whether the user is falling"
+    }
+  }
+}
