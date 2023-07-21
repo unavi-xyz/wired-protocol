@@ -12,7 +12,7 @@ A message may look something like:
 {
   "id": "com.example.foods.favorite",
   "data": "pizza",
-  "target": "clients"
+  "target": "client"
 }
 ```
 
