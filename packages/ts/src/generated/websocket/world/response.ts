@@ -38,6 +38,36 @@ export interface ChatMessage {
     message: string;
 }
 /**
+ * @generated from protobuf message com.wiredprotocol.websocket.world.response.PlayerJoined
+ */
+export interface PlayerJoined {
+    /**
+     * @generated from protobuf field: uint32 player_id = 1;
+     */
+    playerId: number;
+    /**
+     * @generated from protobuf field: string handle = 2;
+     */
+    handle: string;
+    /**
+     * @generated from protobuf field: string nickname = 3;
+     */
+    nickname: string;
+    /**
+     * @generated from protobuf field: string avatar = 4;
+     */
+    avatar: string;
+}
+/**
+ * @generated from protobuf message com.wiredprotocol.websocket.world.response.PlayerLeft
+ */
+export interface PlayerLeft {
+    /**
+     * @generated from protobuf field: uint32 player_id = 1;
+     */
+    playerId: number;
+}
+/**
  * @generated from protobuf message com.wiredprotocol.websocket.world.response.PlayerAvatar
  */
 export interface PlayerAvatar {
@@ -210,6 +240,121 @@ class ChatMessage$Type extends MessageType<ChatMessage> {
  * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.response.ChatMessage
  */
 export const ChatMessage = new ChatMessage$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PlayerJoined$Type extends MessageType<PlayerJoined> {
+    constructor() {
+        super("com.wiredprotocol.websocket.world.response.PlayerJoined", [
+            { no: 1, name: "player_id", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 2, name: "handle", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "nickname", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "avatar", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PlayerJoined>): PlayerJoined {
+        const message = { playerId: 0, handle: "", nickname: "", avatar: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<PlayerJoined>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerJoined): PlayerJoined {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint32 player_id */ 1:
+                    message.playerId = reader.uint32();
+                    break;
+                case /* string handle */ 2:
+                    message.handle = reader.string();
+                    break;
+                case /* string nickname */ 3:
+                    message.nickname = reader.string();
+                    break;
+                case /* string avatar */ 4:
+                    message.avatar = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PlayerJoined, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint32 player_id = 1; */
+        if (message.playerId !== 0)
+            writer.tag(1, WireType.Varint).uint32(message.playerId);
+        /* string handle = 2; */
+        if (message.handle !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.handle);
+        /* string nickname = 3; */
+        if (message.nickname !== "")
+            writer.tag(3, WireType.LengthDelimited).string(message.nickname);
+        /* string avatar = 4; */
+        if (message.avatar !== "")
+            writer.tag(4, WireType.LengthDelimited).string(message.avatar);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.response.PlayerJoined
+ */
+export const PlayerJoined = new PlayerJoined$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PlayerLeft$Type extends MessageType<PlayerLeft> {
+    constructor() {
+        super("com.wiredprotocol.websocket.world.response.PlayerLeft", [
+            { no: 1, name: "player_id", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<PlayerLeft>): PlayerLeft {
+        const message = { playerId: 0 };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<PlayerLeft>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerLeft): PlayerLeft {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint32 player_id */ 1:
+                    message.playerId = reader.uint32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PlayerLeft, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint32 player_id = 1; */
+        if (message.playerId !== 0)
+            writer.tag(1, WireType.Varint).uint32(message.playerId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.response.PlayerLeft
+ */
+export const PlayerLeft = new PlayerLeft$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PlayerAvatar$Type extends MessageType<PlayerAvatar> {
     constructor() {

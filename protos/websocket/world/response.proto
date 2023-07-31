@@ -12,6 +12,17 @@ message ChatMessage {
   string message = 2;
 }
 
+message PlayerJoined {
+  uint32 player_id = 1;
+  string handle = 2;
+  string nickname = 3;
+  string avatar = 4;
+}
+
+message PlayerLeft {
+  uint32 player_id = 1;
+}
+
 message PlayerAvatar {
   uint32 player_id = 1;
   string avatar = 2;
