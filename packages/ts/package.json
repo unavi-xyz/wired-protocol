@@ -6,16 +6,23 @@
     "type": "git",
     "url": "https://github.com/wired-protocol/spec/packages/ts.git"
   },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "license": "MIT",
-  "type": "module",
   "scripts": {
-    "generate": "pnpm clean && mkdir dist && protoc --ts_out dist --proto_path ../../protos ../../protos/*.proto ../../protos/**/**/*.proto",
-    "clean": "rm -rf dist"
+    "build": "pnpm generate && tsc",
+    "clean": "rm -rf dist/* && rm -rf src/generated/*",
+    "generate": "pnpm clean && protoc --ts_out src/generated --proto_path ../../protos ../../protos/*.proto ../../protos/**/*.proto ../../protos/**/**/*.proto"
   },
   "devDependencies": {
-    "@protobuf-ts/plugin": "^2.9.0"
+    "@protobuf-ts/plugin": "^2.9.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@protobuf-ts/runtime": "^2.9.0"
   }
 }

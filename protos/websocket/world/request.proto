@@ -10,22 +10,26 @@ message Leave {
   string world = 1;
 }
 
-message Chat {
+message SendChatMessage {
   string message = 1;
 }
 
-message Avatar {
+message SetAvatar {
   string avatar = 1;
 }
 
-message Handle {
+message SetHandle {
   string handle = 1;
 }
 
-message Nickname {
+message SetNickname {
   string nickname = 1;
 }
 
-message Falling {
+message SetFalling {
   bool falling = 1;
+}
+
+message SendEvent {
+  bytes data = 1;
 }
