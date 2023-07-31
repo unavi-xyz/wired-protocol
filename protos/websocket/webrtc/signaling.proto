@@ -39,7 +39,7 @@ message IceCandidate {
   }
 
   string foundation = 1;
-  int64 priority = 2;
+  int32 priority = 2;
   string ip = 3;
   int32 port = 4;
   Protocol protocol = 5;

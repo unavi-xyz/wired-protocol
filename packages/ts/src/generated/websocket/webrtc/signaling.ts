@@ -63,9 +63,9 @@ export interface IceCandidate {
      */
     foundation: string;
     /**
-     * @generated from protobuf field: int64 priority = 2;
+     * @generated from protobuf field: int32 priority = 2;
      */
-    priority: bigint;
+    priority: number;
     /**
      * @generated from protobuf field: string ip = 3;
      */
@@ -479,7 +479,7 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.IceCandidate", [
             { no: 1, name: "foundation", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "priority", kind: "scalar", T: 3 /*ScalarType.INT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 2, name: "priority", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 3, name: "ip", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "port", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 5, name: "protocol", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol", IceCandidate_Protocol] },
@@ -488,7 +488,7 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
         ]);
     }
     create(value?: PartialMessage<IceCandidate>): IceCandidate {
-        const message = { foundation: "", priority: 0n, ip: "", port: 0, protocol: 0, type: 0, tcpType: 0 };
+        const message = { foundation: "", priority: 0, ip: "", port: 0, protocol: 0, type: 0, tcpType: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<IceCandidate>(this, message, value);
@@ -502,8 +502,8 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
                 case /* string foundation */ 1:
                     message.foundation = reader.string();
                     break;
-                case /* int64 priority */ 2:
-                    message.priority = reader.int64().toBigInt();
+                case /* int32 priority */ 2:
+                    message.priority = reader.int32();
                     break;
                 case /* string ip */ 3:
                     message.ip = reader.string();
@@ -535,9 +535,9 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
         /* string foundation = 1; */
         if (message.foundation !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.foundation);
-        /* int64 priority = 2; */
-        if (message.priority !== 0n)
-            writer.tag(2, WireType.Varint).int64(message.priority);
+        /* int32 priority = 2; */
+        if (message.priority !== 0)
+            writer.tag(2, WireType.Varint).int32(message.priority);
         /* string ip = 3; */
         if (message.ip !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.ip);
