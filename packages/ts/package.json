@@ -1,10 +1,16 @@
 {
   "name": "@wired-protocol/types",
-  "version": "0.1.0",
-  "license": "MIT",
+  "version": "0.7.0",
+  "description": "Typescript definitions for The Wired Protocol",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wired-protocol/spec/packages/ts.git"
+  },
   "files": [
     "dist"
   ],
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "generate": "pnpm clean && mkdir dist && protoc --ts_out dist --proto_path ../../protos ../../protos/*.proto ../../protos/**/**/*.proto",
     "clean": "rm -rf dist"
