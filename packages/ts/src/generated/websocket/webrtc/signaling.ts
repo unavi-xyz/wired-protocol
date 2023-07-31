@@ -16,9 +16,9 @@ import { MessageType } from "@protobuf-ts/runtime";
  */
 export interface DtlsParameters {
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role = 1;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Role role = 1;
      */
-    role: DtlsParameters_DtlsRole;
+    role: DtlsParameters_Role;
     /**
      * @generated from protobuf field: repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints = 2;
      */
@@ -38,9 +38,9 @@ export interface DtlsParameters_Fingerprint {
     value: string;
 }
 /**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Role
  */
-export enum DtlsParameters_DtlsRole {
+export enum DtlsParameters_Role {
     /**
      * @generated from protobuf enum value: AUTO = 0;
      */
@@ -152,19 +152,6 @@ export interface RtpCapabilities {
     headerExtensions: RtpCapabilities_HeaderExtension[];
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback
- */
-export interface RtpCapabilities_RtcpFeedback {
-    /**
-     * @generated from protobuf field: string type = 1;
-     */
-    type: string;
-    /**
-     * @generated from protobuf field: optional string parameter = 2;
-     */
-    parameter?: string;
-}
-/**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec
  */
 export interface RtpCapabilities_Codec {
@@ -185,9 +172,22 @@ export interface RtpCapabilities_Codec {
      */
     channels?: number;
     /**
-     * @generated from protobuf field: repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback rtcp_feedback = 5;
+     * @generated from protobuf field: repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback rtcp_feedback = 5;
      */
-    rtcpFeedback: RtpCapabilities_RtcpFeedback[];
+    rtcpFeedback: RtpCapabilities_Codec_RtcpFeedback[];
+}
+/**
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback
+ */
+export interface RtpCapabilities_Codec_RtcpFeedback {
+    /**
+     * @generated from protobuf field: string type = 1;
+     */
+    type: string;
+    /**
+     * @generated from protobuf field: optional string parameter = 2;
+     */
+    parameter?: string;
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension
@@ -370,7 +370,7 @@ export interface SctpStreamParameters {
 class DtlsParameters$Type extends MessageType<DtlsParameters> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters", [
-            { no: 1, name: "role", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole", DtlsParameters_DtlsRole] },
+            { no: 1, name: "role", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Role", DtlsParameters_Role] },
             { no: 2, name: "fingerprints", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => DtlsParameters_Fingerprint }
         ]);
     }
@@ -386,7 +386,7 @@ class DtlsParameters$Type extends MessageType<DtlsParameters> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role */ 1:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Role role */ 1:
                     message.role = reader.int32();
                     break;
                 case /* repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints */ 2:
@@ -404,7 +404,7 @@ class DtlsParameters$Type extends MessageType<DtlsParameters> {
         return message;
     }
     internalBinaryWrite(message: DtlsParameters, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role = 1; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Role role = 1; */
         if (message.role !== 0)
             writer.tag(1, WireType.Varint).int32(message.role);
         /* repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints = 2; */
@@ -618,60 +618,6 @@ class RtpCapabilities$Type extends MessageType<RtpCapabilities> {
  */
 export const RtpCapabilities = new RtpCapabilities$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class RtpCapabilities_RtcpFeedback$Type extends MessageType<RtpCapabilities_RtcpFeedback> {
-    constructor() {
-        super("com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback", [
-            { no: 1, name: "type", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "parameter", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<RtpCapabilities_RtcpFeedback>): RtpCapabilities_RtcpFeedback {
-        const message = { type: "" };
-        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
-        if (value !== undefined)
-            reflectionMergePartial<RtpCapabilities_RtcpFeedback>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RtpCapabilities_RtcpFeedback): RtpCapabilities_RtcpFeedback {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string type */ 1:
-                    message.type = reader.string();
-                    break;
-                case /* optional string parameter */ 2:
-                    message.parameter = reader.string();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: RtpCapabilities_RtcpFeedback, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string type = 1; */
-        if (message.type !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.type);
-        /* optional string parameter = 2; */
-        if (message.parameter !== undefined)
-            writer.tag(2, WireType.LengthDelimited).string(message.parameter);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback
- */
-export const RtpCapabilities_RtcpFeedback = new RtpCapabilities_RtcpFeedback$Type();
-// @generated message type with reflection information, may provide speed optimized methods
 class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec", [
@@ -679,7 +625,7 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
             { no: 2, name: "mime_type", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "clock_rate", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "channels", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
-            { no: 5, name: "rtcp_feedback", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => RtpCapabilities_RtcpFeedback }
+            { no: 5, name: "rtcp_feedback", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => RtpCapabilities_Codec_RtcpFeedback }
         ]);
     }
     create(value?: PartialMessage<RtpCapabilities_Codec>): RtpCapabilities_Codec {
@@ -706,8 +652,8 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
                 case /* optional int32 channels */ 4:
                     message.channels = reader.int32();
                     break;
-                case /* repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback rtcp_feedback */ 5:
-                    message.rtcpFeedback.push(RtpCapabilities_RtcpFeedback.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback rtcp_feedback */ 5:
+                    message.rtcpFeedback.push(RtpCapabilities_Codec_RtcpFeedback.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -733,9 +679,9 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
         /* optional int32 channels = 4; */
         if (message.channels !== undefined)
             writer.tag(4, WireType.Varint).int32(message.channels);
-        /* repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.RtcpFeedback rtcp_feedback = 5; */
+        /* repeated com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback rtcp_feedback = 5; */
         for (let i = 0; i < message.rtcpFeedback.length; i++)
-            RtpCapabilities_RtcpFeedback.internalBinaryWrite(message.rtcpFeedback[i], writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+            RtpCapabilities_Codec_RtcpFeedback.internalBinaryWrite(message.rtcpFeedback[i], writer.tag(5, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -746,6 +692,60 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
  * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec
  */
 export const RtpCapabilities_Codec = new RtpCapabilities_Codec$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class RtpCapabilities_Codec_RtcpFeedback$Type extends MessageType<RtpCapabilities_Codec_RtcpFeedback> {
+    constructor() {
+        super("com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback", [
+            { no: 1, name: "type", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "parameter", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<RtpCapabilities_Codec_RtcpFeedback>): RtpCapabilities_Codec_RtcpFeedback {
+        const message = { type: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<RtpCapabilities_Codec_RtcpFeedback>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RtpCapabilities_Codec_RtcpFeedback): RtpCapabilities_Codec_RtcpFeedback {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string type */ 1:
+                    message.type = reader.string();
+                    break;
+                case /* optional string parameter */ 2:
+                    message.parameter = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: RtpCapabilities_Codec_RtcpFeedback, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string type = 1; */
+        if (message.type !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.type);
+        /* optional string parameter = 2; */
+        if (message.parameter !== undefined)
+            writer.tag(2, WireType.LengthDelimited).string(message.parameter);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec.RtcpFeedback
+ */
+export const RtpCapabilities_Codec_RtcpFeedback = new RtpCapabilities_Codec_RtcpFeedback$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_HeaderExtension> {
     constructor() {
