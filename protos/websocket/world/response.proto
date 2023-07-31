@@ -14,9 +14,7 @@ message ChatMessage {
 
 message PlayerJoined {
   uint32 player_id = 1;
-  string handle = 2;
-  string nickname = 3;
-  string avatar = 4;
+  map<string, string> data = 2;
 }
 
 message PlayerLeft {

@@ -46,17 +46,11 @@ export interface PlayerJoined {
      */
     playerId: number;
     /**
-     * @generated from protobuf field: string handle = 2;
+     * @generated from protobuf field: map<string, string> data = 2;
      */
-    handle: string;
-    /**
-     * @generated from protobuf field: string nickname = 3;
-     */
-    nickname: string;
-    /**
-     * @generated from protobuf field: string avatar = 4;
-     */
-    avatar: string;
+    data: {
+        [key: string]: string;
+    };
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.world.response.PlayerLeft
@@ -210,13 +204,11 @@ class PlayerJoined$Type extends MessageType<PlayerJoined> {
     constructor() {
         super("com.wiredprotocol.websocket.world.response.PlayerJoined", [
             { no: 1, name: "player_id", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
-            { no: 2, name: "handle", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "nickname", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "avatar", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 2, name: "data", kind: "map", K: 9 /*ScalarType.STRING*/, V: { kind: "scalar", T: 9 /*ScalarType.STRING*/ } }
         ]);
     }
     create(value?: PartialMessage<PlayerJoined>): PlayerJoined {
-        const message = { playerId: 0, handle: "", nickname: "", avatar: "" };
+        const message = { playerId: 0, data: {} };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<PlayerJoined>(this, message, value);
@@ -230,14 +222,8 @@ class PlayerJoined$Type extends MessageType<PlayerJoined> {
                 case /* uint32 player_id */ 1:
                     message.playerId = reader.uint32();
                     break;
-                case /* string handle */ 2:
-                    message.handle = reader.string();
-                    break;
-                case /* string nickname */ 3:
-                    message.nickname = reader.string();
-                    break;
-                case /* string avatar */ 4:
-                    message.avatar = reader.string();
+                case /* map<string, string> data */ 2:
+                    this.binaryReadMap2(message.data, reader, options);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -250,19 +236,29 @@ class PlayerJoined$Type extends MessageType<PlayerJoined> {
         }
         return message;
     }
+    private binaryReadMap2(map: PlayerJoined["data"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof PlayerJoined["data"] | undefined, val: PlayerJoined["data"][any] | undefined;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.string();
+                    break;
+                case 2:
+                    val = reader.string();
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for field com.wiredprotocol.websocket.world.response.PlayerJoined.data");
+            }
+        }
+        map[key ?? ""] = val ?? "";
+    }
     internalBinaryWrite(message: PlayerJoined, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* uint32 player_id = 1; */
         if (message.playerId !== 0)
             writer.tag(1, WireType.Varint).uint32(message.playerId);
-        /* string handle = 2; */
-        if (message.handle !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.handle);
-        /* string nickname = 3; */
-        if (message.nickname !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.nickname);
-        /* string avatar = 4; */
-        if (message.avatar !== "")
-            writer.tag(4, WireType.LengthDelimited).string(message.avatar);
+        /* map<string, string> data = 2; */
+        for (let k of Object.keys(message.data))
+            writer.tag(2, WireType.LengthDelimited).fork().tag(1, WireType.LengthDelimited).string(k).tag(2, WireType.LengthDelimited).string(message.data[k]).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
