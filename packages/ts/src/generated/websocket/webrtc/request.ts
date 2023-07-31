@@ -16,18 +16,18 @@ import { RtpParameters } from "./signaling";
 import { RtpCapabilities } from "./signaling";
 import { DtlsParameters } from "./signaling";
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.AudioPause
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.PauseAudio
  */
-export interface AudioPause {
+export interface PauseAudio {
     /**
-     * @generated from protobuf field: bool pause = 1;
+     * @generated from protobuf field: bool paused = 1;
      */
-    pause: boolean;
+    paused: boolean;
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.TransportConnect
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport
  */
-export interface TransportConnect {
+export interface ConnectTrannsport {
     /**
      * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.request.TransportType type = 1;
      */
@@ -38,9 +38,9 @@ export interface TransportConnect {
     dtlsParameters?: DtlsParameters;
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.TransportCreate
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.CreateTransport
  */
-export interface TransportCreate {
+export interface CreateTransport {
     /**
      * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.request.TransportType type = 1;
      */
@@ -92,26 +92,26 @@ export enum TransportType {
     PRODUCER = 1
 }
 // @generated message type with reflection information, may provide speed optimized methods
-class AudioPause$Type extends MessageType<AudioPause> {
+class PauseAudio$Type extends MessageType<PauseAudio> {
     constructor() {
-        super("com.wiredprotocol.websocket.webrtc.request.AudioPause", [
-            { no: 1, name: "pause", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        super("com.wiredprotocol.websocket.webrtc.request.PauseAudio", [
+            { no: 1, name: "paused", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
-    create(value?: PartialMessage<AudioPause>): AudioPause {
-        const message = { pause: false };
+    create(value?: PartialMessage<PauseAudio>): PauseAudio {
+        const message = { paused: false };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
-            reflectionMergePartial<AudioPause>(this, message, value);
+            reflectionMergePartial<PauseAudio>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: AudioPause): AudioPause {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PauseAudio): PauseAudio {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* bool pause */ 1:
-                    message.pause = reader.bool();
+                case /* bool paused */ 1:
+                    message.paused = reader.bool();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -124,10 +124,10 @@ class AudioPause$Type extends MessageType<AudioPause> {
         }
         return message;
     }
-    internalBinaryWrite(message: AudioPause, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* bool pause = 1; */
-        if (message.pause !== false)
-            writer.tag(1, WireType.Varint).bool(message.pause);
+    internalBinaryWrite(message: PauseAudio, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* bool paused = 1; */
+        if (message.paused !== false)
+            writer.tag(1, WireType.Varint).bool(message.paused);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -135,25 +135,25 @@ class AudioPause$Type extends MessageType<AudioPause> {
     }
 }
 /**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.AudioPause
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.PauseAudio
  */
-export const AudioPause = new AudioPause$Type();
+export const PauseAudio = new PauseAudio$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class TransportConnect$Type extends MessageType<TransportConnect> {
+class ConnectTrannsport$Type extends MessageType<ConnectTrannsport> {
     constructor() {
-        super("com.wiredprotocol.websocket.webrtc.request.TransportConnect", [
+        super("com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport", [
             { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.request.TransportType", TransportType] },
             { no: 2, name: "dtlsParameters", kind: "message", T: () => DtlsParameters }
         ]);
     }
-    create(value?: PartialMessage<TransportConnect>): TransportConnect {
+    create(value?: PartialMessage<ConnectTrannsport>): ConnectTrannsport {
         const message = { type: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
-            reflectionMergePartial<TransportConnect>(this, message, value);
+            reflectionMergePartial<ConnectTrannsport>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: TransportConnect): TransportConnect {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ConnectTrannsport): ConnectTrannsport {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -175,7 +175,7 @@ class TransportConnect$Type extends MessageType<TransportConnect> {
         }
         return message;
     }
-    internalBinaryWrite(message: TransportConnect, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: ConnectTrannsport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* com.wiredprotocol.websocket.webrtc.request.TransportType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
@@ -189,24 +189,24 @@ class TransportConnect$Type extends MessageType<TransportConnect> {
     }
 }
 /**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.TransportConnect
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport
  */
-export const TransportConnect = new TransportConnect$Type();
+export const ConnectTrannsport = new ConnectTrannsport$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class TransportCreate$Type extends MessageType<TransportCreate> {
+class CreateTransport$Type extends MessageType<CreateTransport> {
     constructor() {
-        super("com.wiredprotocol.websocket.webrtc.request.TransportCreate", [
+        super("com.wiredprotocol.websocket.webrtc.request.CreateTransport", [
             { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.request.TransportType", TransportType] }
         ]);
     }
-    create(value?: PartialMessage<TransportCreate>): TransportCreate {
+    create(value?: PartialMessage<CreateTransport>): CreateTransport {
         const message = { type: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
-            reflectionMergePartial<TransportCreate>(this, message, value);
+            reflectionMergePartial<CreateTransport>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: TransportCreate): TransportCreate {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CreateTransport): CreateTransport {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -225,7 +225,7 @@ class TransportCreate$Type extends MessageType<TransportCreate> {
         }
         return message;
     }
-    internalBinaryWrite(message: TransportCreate, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: CreateTransport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* com.wiredprotocol.websocket.webrtc.request.TransportType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
@@ -236,9 +236,9 @@ class TransportCreate$Type extends MessageType<TransportCreate> {
     }
 }
 /**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.TransportCreate
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.CreateTransport
  */
-export const TransportCreate = new TransportCreate$Type();
+export const CreateTransport = new CreateTransport$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class GetRouterRtpCapabilities$Type extends MessageType<GetRouterRtpCapabilities> {
     constructor() {

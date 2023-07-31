@@ -2,62 +2,51 @@ syntax = "proto3";
 
 package com.wiredprotocol.websocket.webrtc.signaling;
 
-enum DtlsRole {
-  AUTO = 0;
-  CLIENT = 1;
-  SERVER = 2;
-}
-
-message Fingerprint {
-  string algorithm = 1;
-  bytes value = 2;
-}
 
 message DtlsParameters {
+  enum DtlsRole {
+    AUTO = 0;
+    CLIENT = 1;
+    SERVER = 2;
+  }
+
+  message Fingerprint {
+    string algorithm = 1;
+    string value = 2;
+  }
+
   DtlsRole role = 1;
   repeated Fingerprint fingerprints = 2;
 }
 
-
-enum Protocol {
-  UDP = 0;
-  TCP = 1;
-}
-
-enum IceCandidateType {
-  HOST = 0;
-  SRFLX = 1;
-  PRFLX = 2;
-  RELAY = 3;
-}
-
-enum TcpType {
-  ACTIVE = 0;
-  PASSIVE = 1;
-  SO = 2;
-}
-
 message IceCandidate {
+  enum Protocol {
+    UDP = 0;
+    TCP = 1;
+  }
+
+  enum Type {
+    HOST = 0;
+    SRFLX = 1;
+    PRFLX = 2;
+    RELAY = 3;
+  }
+
+  enum TcpType {
+    ACTIVE = 0;
+    PASSIVE = 1;
+    SO = 2;
+  }
+
   string foundation = 1;
   int64 priority = 2;
   string ip = 3;
   int32 port = 4;
   Protocol protocol = 5;
-  IceCandidateType type = 6;
+  Type type = 6;
   TcpType tcp_type = 7;
 }
 
-enum CodecKind {
-  AUDIO = 0;
-  VIDEO = 1;
-}
-
-enum Direction {
-  SENDRECV = 0;
-  SENDONLY = 1;
-  RECVONLY = 2;
-  INACTIVE = 3;
-}
 
 message RtpCapabilities {
   message RtcpFeedback {
@@ -65,8 +54,13 @@ message RtpCapabilities {
     optional string parameter = 2;
   }
 
+  enum Kind {
+    AUDIO = 0;
+    VIDEO = 1;
+  }
+
   message Codec {
-    CodecKind kind = 1;
+    Kind kind = 1;
     string mime_type = 2;
     int32 clock_rate = 3;
     optional int32 channels = 4;
@@ -74,8 +68,15 @@ message RtpCapabilities {
   }
 
   message HeaderExtension {
+    enum Direction {
+      SENDRECV = 0;
+      SENDONLY = 1;
+      RECVONLY = 2;
+      INACTIVE = 3;
+    }
+
     string uri = 1;
-    CodecKind kind = 2;
+    Kind kind = 2;
     int32 preferred_id = 3;
     optional bool preferred_encrypt = 4;
     optional Direction direction = 5;

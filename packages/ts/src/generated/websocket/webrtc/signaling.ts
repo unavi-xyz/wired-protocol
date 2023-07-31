@@ -12,30 +12,47 @@ import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MESSAGE_TYPE } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.Fingerprint
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters
  */
-export interface Fingerprint {
+export interface DtlsParameters {
+    /**
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role = 1;
+     */
+    role: DtlsParameters_DtlsRole;
+    /**
+     * @generated from protobuf field: repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints = 2;
+     */
+    fingerprints: DtlsParameters_Fingerprint[];
+}
+/**
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint
+ */
+export interface DtlsParameters_Fingerprint {
     /**
      * @generated from protobuf field: string algorithm = 1;
      */
     algorithm: string;
     /**
-     * @generated from protobuf field: bytes value = 2;
+     * @generated from protobuf field: string value = 2;
      */
-    value: Uint8Array;
+    value: string;
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole
  */
-export interface DtlsParameters {
+export enum DtlsParameters_DtlsRole {
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.DtlsRole role = 1;
+     * @generated from protobuf enum value: AUTO = 0;
      */
-    role: DtlsRole;
+    AUTO = 0,
     /**
-     * @generated from protobuf field: repeated com.wiredprotocol.websocket.webrtc.signaling.Fingerprint fingerprints = 2;
+     * @generated from protobuf enum value: CLIENT = 1;
      */
-    fingerprints: Fingerprint[];
+    CLIENT = 1,
+    /**
+     * @generated from protobuf enum value: SERVER = 2;
+     */
+    SERVER = 2
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.IceCandidate
@@ -58,17 +75,68 @@ export interface IceCandidate {
      */
     port: number;
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.Protocol protocol = 5;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol protocol = 5;
      */
-    protocol: Protocol;
+    protocol: IceCandidate_Protocol;
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.IceCandidateType type = 6;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type type = 6;
      */
-    type: IceCandidateType;
+    type: IceCandidate_Type;
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.TcpType tcp_type = 7;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7;
      */
-    tcpType: TcpType;
+    tcpType: IceCandidate_TcpType;
+}
+/**
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol
+ */
+export enum IceCandidate_Protocol {
+    /**
+     * @generated from protobuf enum value: UDP = 0;
+     */
+    UDP = 0,
+    /**
+     * @generated from protobuf enum value: TCP = 1;
+     */
+    TCP = 1
+}
+/**
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type
+ */
+export enum IceCandidate_Type {
+    /**
+     * @generated from protobuf enum value: HOST = 0;
+     */
+    HOST = 0,
+    /**
+     * @generated from protobuf enum value: SRFLX = 1;
+     */
+    SRFLX = 1,
+    /**
+     * @generated from protobuf enum value: PRFLX = 2;
+     */
+    PRFLX = 2,
+    /**
+     * @generated from protobuf enum value: RELAY = 3;
+     */
+    RELAY = 3
+}
+/**
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType
+ */
+export enum IceCandidate_TcpType {
+    /**
+     * @generated from protobuf enum value: ACTIVE = 0;
+     */
+    ACTIVE = 0,
+    /**
+     * @generated from protobuf enum value: PASSIVE = 1;
+     */
+    PASSIVE = 1,
+    /**
+     * @generated from protobuf enum value: SO = 2;
+     */
+    SO = 2
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities
@@ -101,9 +169,9 @@ export interface RtpCapabilities_RtcpFeedback {
  */
 export interface RtpCapabilities_Codec {
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind = 1;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind = 1;
      */
-    kind: CodecKind;
+    kind: RtpCapabilities_Kind;
     /**
      * @generated from protobuf field: string mime_type = 2;
      */
@@ -130,9 +198,9 @@ export interface RtpCapabilities_HeaderExtension {
      */
     uri: string;
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind = 2;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind = 2;
      */
-    kind: CodecKind;
+    kind: RtpCapabilities_Kind;
     /**
      * @generated from protobuf field: int32 preferred_id = 3;
      */
@@ -142,9 +210,43 @@ export interface RtpCapabilities_HeaderExtension {
      */
     preferredEncrypt?: boolean;
     /**
-     * @generated from protobuf field: optional com.wiredprotocol.websocket.webrtc.signaling.Direction direction = 5;
+     * @generated from protobuf field: optional com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension.Direction direction = 5;
      */
-    direction?: Direction;
+    direction?: RtpCapabilities_HeaderExtension_Direction;
+}
+/**
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension.Direction
+ */
+export enum RtpCapabilities_HeaderExtension_Direction {
+    /**
+     * @generated from protobuf enum value: SENDRECV = 0;
+     */
+    SENDRECV = 0,
+    /**
+     * @generated from protobuf enum value: SENDONLY = 1;
+     */
+    SENDONLY = 1,
+    /**
+     * @generated from protobuf enum value: RECVONLY = 2;
+     */
+    RECVONLY = 2,
+    /**
+     * @generated from protobuf enum value: INACTIVE = 3;
+     */
+    INACTIVE = 3
+}
+/**
+ * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind
+ */
+export enum RtpCapabilities_Kind {
+    /**
+     * @generated from protobuf enum value: AUDIO = 0;
+     */
+    AUDIO = 0,
+    /**
+     * @generated from protobuf enum value: VIDEO = 1;
+     */
+    VIDEO = 1
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.signaling.RtpParameters
@@ -264,168 +366,12 @@ export interface SctpStreamParameters {
      */
     protocol?: string;
 }
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.DtlsRole
- */
-export enum DtlsRole {
-    /**
-     * @generated from protobuf enum value: AUTO = 0;
-     */
-    AUTO = 0,
-    /**
-     * @generated from protobuf enum value: CLIENT = 1;
-     */
-    CLIENT = 1,
-    /**
-     * @generated from protobuf enum value: SERVER = 2;
-     */
-    SERVER = 2
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.Protocol
- */
-export enum Protocol {
-    /**
-     * @generated from protobuf enum value: UDP = 0;
-     */
-    UDP = 0,
-    /**
-     * @generated from protobuf enum value: TCP = 1;
-     */
-    TCP = 1
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.IceCandidateType
- */
-export enum IceCandidateType {
-    /**
-     * @generated from protobuf enum value: HOST = 0;
-     */
-    HOST = 0,
-    /**
-     * @generated from protobuf enum value: SRFLX = 1;
-     */
-    SRFLX = 1,
-    /**
-     * @generated from protobuf enum value: PRFLX = 2;
-     */
-    PRFLX = 2,
-    /**
-     * @generated from protobuf enum value: RELAY = 3;
-     */
-    RELAY = 3
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.TcpType
- */
-export enum TcpType {
-    /**
-     * @generated from protobuf enum value: ACTIVE = 0;
-     */
-    ACTIVE = 0,
-    /**
-     * @generated from protobuf enum value: PASSIVE = 1;
-     */
-    PASSIVE = 1,
-    /**
-     * @generated from protobuf enum value: SO = 2;
-     */
-    SO = 2
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.CodecKind
- */
-export enum CodecKind {
-    /**
-     * @generated from protobuf enum value: AUDIO = 0;
-     */
-    AUDIO = 0,
-    /**
-     * @generated from protobuf enum value: VIDEO = 1;
-     */
-    VIDEO = 1
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.Direction
- */
-export enum Direction {
-    /**
-     * @generated from protobuf enum value: SENDRECV = 0;
-     */
-    SENDRECV = 0,
-    /**
-     * @generated from protobuf enum value: SENDONLY = 1;
-     */
-    SENDONLY = 1,
-    /**
-     * @generated from protobuf enum value: RECVONLY = 2;
-     */
-    RECVONLY = 2,
-    /**
-     * @generated from protobuf enum value: INACTIVE = 3;
-     */
-    INACTIVE = 3
-}
-// @generated message type with reflection information, may provide speed optimized methods
-class Fingerprint$Type extends MessageType<Fingerprint> {
-    constructor() {
-        super("com.wiredprotocol.websocket.webrtc.signaling.Fingerprint", [
-            { no: 1, name: "algorithm", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "value", kind: "scalar", T: 12 /*ScalarType.BYTES*/ }
-        ]);
-    }
-    create(value?: PartialMessage<Fingerprint>): Fingerprint {
-        const message = { algorithm: "", value: new Uint8Array(0) };
-        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
-        if (value !== undefined)
-            reflectionMergePartial<Fingerprint>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Fingerprint): Fingerprint {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string algorithm */ 1:
-                    message.algorithm = reader.string();
-                    break;
-                case /* bytes value */ 2:
-                    message.value = reader.bytes();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: Fingerprint, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string algorithm = 1; */
-        if (message.algorithm !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.algorithm);
-        /* bytes value = 2; */
-        if (message.value.length)
-            writer.tag(2, WireType.LengthDelimited).bytes(message.value);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.signaling.Fingerprint
- */
-export const Fingerprint = new Fingerprint$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class DtlsParameters$Type extends MessageType<DtlsParameters> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters", [
-            { no: 1, name: "role", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.DtlsRole", DtlsRole] },
-            { no: 2, name: "fingerprints", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => Fingerprint }
+            { no: 1, name: "role", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole", DtlsParameters_DtlsRole] },
+            { no: 2, name: "fingerprints", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => DtlsParameters_Fingerprint }
         ]);
     }
     create(value?: PartialMessage<DtlsParameters>): DtlsParameters {
@@ -440,11 +386,11 @@ class DtlsParameters$Type extends MessageType<DtlsParameters> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* com.wiredprotocol.websocket.webrtc.signaling.DtlsRole role */ 1:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role */ 1:
                     message.role = reader.int32();
                     break;
-                case /* repeated com.wiredprotocol.websocket.webrtc.signaling.Fingerprint fingerprints */ 2:
-                    message.fingerprints.push(Fingerprint.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints */ 2:
+                    message.fingerprints.push(DtlsParameters_Fingerprint.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -458,12 +404,12 @@ class DtlsParameters$Type extends MessageType<DtlsParameters> {
         return message;
     }
     internalBinaryWrite(message: DtlsParameters, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* com.wiredprotocol.websocket.webrtc.signaling.DtlsRole role = 1; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.DtlsRole role = 1; */
         if (message.role !== 0)
             writer.tag(1, WireType.Varint).int32(message.role);
-        /* repeated com.wiredprotocol.websocket.webrtc.signaling.Fingerprint fingerprints = 2; */
+        /* repeated com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint fingerprints = 2; */
         for (let i = 0; i < message.fingerprints.length; i++)
-            Fingerprint.internalBinaryWrite(message.fingerprints[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+            DtlsParameters_Fingerprint.internalBinaryWrite(message.fingerprints[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -475,6 +421,60 @@ class DtlsParameters$Type extends MessageType<DtlsParameters> {
  */
 export const DtlsParameters = new DtlsParameters$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class DtlsParameters_Fingerprint$Type extends MessageType<DtlsParameters_Fingerprint> {
+    constructor() {
+        super("com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint", [
+            { no: 1, name: "algorithm", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "value", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<DtlsParameters_Fingerprint>): DtlsParameters_Fingerprint {
+        const message = { algorithm: "", value: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<DtlsParameters_Fingerprint>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: DtlsParameters_Fingerprint): DtlsParameters_Fingerprint {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string algorithm */ 1:
+                    message.algorithm = reader.string();
+                    break;
+                case /* string value */ 2:
+                    message.value = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: DtlsParameters_Fingerprint, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string algorithm = 1; */
+        if (message.algorithm !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.algorithm);
+        /* string value = 2; */
+        if (message.value !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.value);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters.Fingerprint
+ */
+export const DtlsParameters_Fingerprint = new DtlsParameters_Fingerprint$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class IceCandidate$Type extends MessageType<IceCandidate> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.IceCandidate", [
@@ -482,9 +482,9 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
             { no: 2, name: "priority", kind: "scalar", T: 3 /*ScalarType.INT64*/, L: 0 /*LongType.BIGINT*/ },
             { no: 3, name: "ip", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "port", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
-            { no: 5, name: "protocol", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.Protocol", Protocol] },
-            { no: 6, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidateType", IceCandidateType] },
-            { no: 7, name: "tcp_type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.TcpType", TcpType] }
+            { no: 5, name: "protocol", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol", IceCandidate_Protocol] },
+            { no: 6, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type", IceCandidate_Type] },
+            { no: 7, name: "tcp_type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType", IceCandidate_TcpType] }
         ]);
     }
     create(value?: PartialMessage<IceCandidate>): IceCandidate {
@@ -511,13 +511,13 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
                 case /* int32 port */ 4:
                     message.port = reader.int32();
                     break;
-                case /* com.wiredprotocol.websocket.webrtc.signaling.Protocol protocol */ 5:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol protocol */ 5:
                     message.protocol = reader.int32();
                     break;
-                case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidateType type */ 6:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type type */ 6:
                     message.type = reader.int32();
                     break;
-                case /* com.wiredprotocol.websocket.webrtc.signaling.TcpType tcp_type */ 7:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type */ 7:
                     message.tcpType = reader.int32();
                     break;
                 default:
@@ -544,13 +544,13 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
         /* int32 port = 4; */
         if (message.port !== 0)
             writer.tag(4, WireType.Varint).int32(message.port);
-        /* com.wiredprotocol.websocket.webrtc.signaling.Protocol protocol = 5; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol protocol = 5; */
         if (message.protocol !== 0)
             writer.tag(5, WireType.Varint).int32(message.protocol);
-        /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidateType type = 6; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type type = 6; */
         if (message.type !== 0)
             writer.tag(6, WireType.Varint).int32(message.type);
-        /* com.wiredprotocol.websocket.webrtc.signaling.TcpType tcp_type = 7; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7; */
         if (message.tcpType !== 0)
             writer.tag(7, WireType.Varint).int32(message.tcpType);
         let u = options.writeUnknownFields;
@@ -675,7 +675,7 @@ export const RtpCapabilities_RtcpFeedback = new RtpCapabilities_RtcpFeedback$Typ
 class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Codec", [
-            { no: 1, name: "kind", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.CodecKind", CodecKind] },
+            { no: 1, name: "kind", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind", RtpCapabilities_Kind] },
             { no: 2, name: "mime_type", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "clock_rate", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "channels", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
@@ -694,7 +694,7 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind */ 1:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind */ 1:
                     message.kind = reader.int32();
                     break;
                 case /* string mime_type */ 2:
@@ -721,7 +721,7 @@ class RtpCapabilities_Codec$Type extends MessageType<RtpCapabilities_Codec> {
         return message;
     }
     internalBinaryWrite(message: RtpCapabilities_Codec, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind = 1; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind = 1; */
         if (message.kind !== 0)
             writer.tag(1, WireType.Varint).int32(message.kind);
         /* string mime_type = 2; */
@@ -751,10 +751,10 @@ class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_H
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension", [
             { no: 1, name: "uri", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "kind", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.CodecKind", CodecKind] },
+            { no: 2, name: "kind", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind", RtpCapabilities_Kind] },
             { no: 3, name: "preferred_id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 4, name: "preferred_encrypt", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
-            { no: 5, name: "direction", kind: "enum", opt: true, T: () => ["com.wiredprotocol.websocket.webrtc.signaling.Direction", Direction] }
+            { no: 5, name: "direction", kind: "enum", opt: true, T: () => ["com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension.Direction", RtpCapabilities_HeaderExtension_Direction] }
         ]);
     }
     create(value?: PartialMessage<RtpCapabilities_HeaderExtension>): RtpCapabilities_HeaderExtension {
@@ -772,7 +772,7 @@ class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_H
                 case /* string uri */ 1:
                     message.uri = reader.string();
                     break;
-                case /* com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind */ 2:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind */ 2:
                     message.kind = reader.int32();
                     break;
                 case /* int32 preferred_id */ 3:
@@ -781,7 +781,7 @@ class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_H
                 case /* optional bool preferred_encrypt */ 4:
                     message.preferredEncrypt = reader.bool();
                     break;
-                case /* optional com.wiredprotocol.websocket.webrtc.signaling.Direction direction */ 5:
+                case /* optional com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension.Direction direction */ 5:
                     message.direction = reader.int32();
                     break;
                 default:
@@ -799,7 +799,7 @@ class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_H
         /* string uri = 1; */
         if (message.uri !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.uri);
-        /* com.wiredprotocol.websocket.webrtc.signaling.CodecKind kind = 2; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.Kind kind = 2; */
         if (message.kind !== 0)
             writer.tag(2, WireType.Varint).int32(message.kind);
         /* int32 preferred_id = 3; */
@@ -808,7 +808,7 @@ class RtpCapabilities_HeaderExtension$Type extends MessageType<RtpCapabilities_H
         /* optional bool preferred_encrypt = 4; */
         if (message.preferredEncrypt !== undefined)
             writer.tag(4, WireType.Varint).bool(message.preferredEncrypt);
-        /* optional com.wiredprotocol.websocket.webrtc.signaling.Direction direction = 5; */
+        /* optional com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities.HeaderExtension.Direction direction = 5; */
         if (message.direction !== undefined)
             writer.tag(5, WireType.Varint).int32(message.direction);
         let u = options.writeUnknownFields;
