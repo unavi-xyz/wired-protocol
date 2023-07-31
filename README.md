@@ -1,7 +1,6 @@
 # The Wired Protocol
 
 The Wired Protocol is an open and extendable protocol for creating, hosting, and interacting with 3D virtual worlds.
-
 The protocol is currently in an early stage of development, and is subject to change. Any feedback or contributions are appreciated.
 
 ## 🤔 Motivation
