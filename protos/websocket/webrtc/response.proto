@@ -1,21 +1,21 @@
 syntax = "proto3";
 
-package com.wiredprotocol.webrtc.response;
+package com.wiredprotocol.websocket.webrtc.response;
 
-import "host/com.wiredprotocol.webrtc/signaling.proto";
+import "websocket/webrtc/signaling.proto";
 
 message CreateConsumer {
   int32 player_id = 1;
   string consumer_id = 2;
   string producer_id = 3;
-  com.wiredprotocol.webrtc.signaling.RtpParameters rtp_parameters = 4;
+  com.wiredprotocol.websocket.webrtc.signaling.RtpParameters rtp_parameters = 4;
 }
 
 message CreateDataConsumer {
   int32 player_id = 1;
   string data_consumer_id = 2;
   string data_producer_id = 3;
-  com.wiredprotocol.webrtc.signaling.SctpStreamParameters sctp_stream_parameters = 4;
+  com.wiredprotocol.websocket.webrtc.signaling.SctpStreamParameters sctp_stream_parameters = 4;
 }
 
 message ProducerId {
@@ -27,7 +27,7 @@ message DataProducerId {
 }
 
 message RouterRtpCapabilities {
-  com.wiredprotocol.webrtc.signaling.RtpCapabilities rtp_capabilities = 1;
+  com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities rtp_capabilities = 1;
 }
 
 message TransportCreated {
@@ -58,8 +58,8 @@ message TransportCreated {
 
     string id = 1;
     IceParameters ice_parameters = 2;
-    com.wiredprotocol.webrtc.signaling.DtlsParameters dtls_parameters = 3;
-    repeated com.wiredprotocol.webrtc.signaling.IceCandidate ice_candidates = 4;
+    com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtls_parameters = 3;
+    repeated com.wiredprotocol.websocket.webrtc.signaling.IceCandidate ice_candidates = 4;
     optional SctpParameters sctp_parameters = 5;
     optional IceTransportPolicy ice_transport_policy = 6;
     repeated IceServer ice_servers = 7;

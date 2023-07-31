@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package com.wiredprotocol.world.response;
+package com.wiredprotocol.websocket.world.response;
 
 message JoinSuccess {
   string world = 1;
