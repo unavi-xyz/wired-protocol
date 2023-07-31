@@ -6,7 +6,6 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "incremental": true,
     "inlineSources": false,
     "isolatedModules": true,
     "lib": [
@@ -28,9 +27,5 @@
   "display": "Default",
   "include": [
     "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
   ]
 }

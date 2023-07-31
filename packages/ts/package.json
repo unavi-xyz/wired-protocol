@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "pnpm generate && tsc",
-    "clean": "rm -rf dist/* && rm -rf src/generated/*",
+    "clean": "rm -rf src/generated/*",
     "generate": "pnpm clean && protoc --ts_out src/generated --proto_path ../../protos ../../protos/*.proto ../../protos/**/*.proto ../../protos/**/**/*.proto"
   },
   "devDependencies": {
