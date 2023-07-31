@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.wiredprotocol.world.response;
+
+message JoinSuccess {
+  string world = 1;
+  uint32 player_id = 2;
+}
+
+message ChatMessage {
+  uint32 player_id = 1;
+  string message = 2;
+}
+
+message PlayerAvatar {
+  uint32 player_id = 1;
+  string avatar = 2;
+}
+
+message PlayerHandle {
+  uint32 player_id = 1;
+  string handle = 2;
+}
+
+message PlayerNickname {
+  uint32 player_id = 1;
+  string nickname = 2;
+}
+
+message PlayerFalling {
+  uint32 player_id = 1;
+  bool falling = 2;
+}

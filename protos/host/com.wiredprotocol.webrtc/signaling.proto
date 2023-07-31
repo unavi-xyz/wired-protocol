@@ -1,0 +1,126 @@
+syntax = "proto3";
+
+package com.wiredprotocol.webrtc.signaling;
+
+enum DtlsRole {
+  AUTO = 0;
+  CLIENT = 1;
+  SERVER = 2;
+}
+
+message Fingerprint {
+  string algorithm = 1;
+  bytes value = 2;
+}
+
+message DtlsParameters {
+  DtlsRole role = 1;
+  repeated Fingerprint fingerprints = 2;
+}
+
+
+enum Protocol {
+  UDP = 0;
+  TCP = 1;
+}
+
+enum IceCandidateType {
+  HOST = 0;
+  SRFLX = 1;
+  PRFLX = 2;
+  RELAY = 3;
+}
+
+enum TcpType {
+  ACTIVE = 0;
+  PASSIVE = 1;
+  SO = 2;
+}
+
+message IceCandidate {
+  string foundation = 1;
+  int64 priority = 2;
+  string ip = 3;
+  int32 port = 4;
+  Protocol protocol = 5;
+  IceCandidateType type = 6;
+  TcpType tcp_type = 7;
+}
+
+enum CodecKind {
+  AUDIO = 0;
+  VIDEO = 1;
+}
+
+enum Direction {
+  SENDRECV = 0;
+  SENDONLY = 1;
+  RECVONLY = 2;
+  INACTIVE = 3;
+}
+
+message RtpCapabilities {
+  message RtcpFeedback {
+    string type = 1;
+    optional string parameter = 2;
+  }
+
+  message Codec {
+    CodecKind kind = 1;
+    string mime_type = 2;
+    int32 clock_rate = 3;
+    optional int32 channels = 4;
+    repeated RtcpFeedback rtcp_feedback = 5;
+  }
+
+  message HeaderExtension {
+    string uri = 1;
+    CodecKind kind = 2;
+    int32 preferred_id = 3;
+    optional bool preferred_encrypt = 4;
+    optional Direction direction = 5;
+  }
+
+  repeated Codec codecs = 1;
+  repeated HeaderExtension header_extensions = 2;
+}
+
+message RtpParameters {
+  message Codec {
+    string mime_type = 1;
+    int32 payload_type = 2;
+    int32 clock_rate = 3;
+    optional int32 channels = 4;
+  }
+
+  message HeaderExtension {
+    string uri = 1;
+    int32 id = 2;
+  }
+
+  repeated Codec codecs = 1;
+  repeated HeaderExtension header_extensions = 2;
+}
+
+message SctpParameters {
+  message PartialReliability {
+    optional bool allowed = 1;
+    optional int32 max_retransmits = 2;
+    optional int32 max_packet_life_time = 3;
+  }
+
+  int32 port = 1;
+  optional int32 max_message_size = 2;
+  optional int32 max_retransmits = 3;
+  optional bool negotiated = 4;
+  optional bool stream_reset = 5;
+  optional PartialReliability partial_reliability = 6;
+}
+
+message SctpStreamParameters {
+  int32 stream_id = 1;
+  optional bool ordered = 2;
+  optional int32 max_packet_life_time = 3;
+  optional int32 max_retransmits = 4;
+  optional string protocol = 6;
+}

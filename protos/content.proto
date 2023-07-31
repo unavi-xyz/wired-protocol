@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.wiredprotocol.content;
+
+message World {
+  string model = 1;
+  optional string host = 2;
+  optional string title = 3;
+  optional string description = 4;
+  optional string image = 5;
+  repeated string authors = 6;
+}
+
+message Profile {
+  message Link {
+    string url = 1;
+    optional string title = 2;
+  }
+
+  optional string name = 1;
+  optional string bio = 2;
+  optional string image = 3;
+  optional string background = 4;
+  repeated Link links = 5;
+}
