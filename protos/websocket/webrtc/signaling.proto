@@ -4,7 +4,7 @@ package com.wiredprotocol.websocket.webrtc.signaling;
 
 
 message DtlsParameters {
-  enum DtlsRole {
+  enum Role {
     AUTO = 0;
     CLIENT = 1;
     SERVER = 2;
@@ -15,7 +15,7 @@ message DtlsParameters {
     string value = 2;
   }
 
-  DtlsRole role = 1;
+  Role role = 1;
   repeated Fingerprint fingerprints = 2;
 }
 
@@ -49,17 +49,17 @@ message IceCandidate {
 
 
 message RtpCapabilities {
-  message RtcpFeedback {
-    string type = 1;
-    optional string parameter = 2;
-  }
-
   enum Kind {
     AUDIO = 0;
     VIDEO = 1;
   }
 
   message Codec {
+    message RtcpFeedback {
+      string type = 1;
+      optional string parameter = 2;
+    }
+
     Kind kind = 1;
     string mime_type = 2;
     int32 clock_rate = 3;
