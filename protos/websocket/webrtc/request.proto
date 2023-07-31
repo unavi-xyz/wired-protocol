@@ -13,7 +13,7 @@ enum TransportType {
   PRODUCER = 1;
 }
 
-message ConnectTrannsport {
+message ConnectTransport {
   TransportType type = 1;
   com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtlsParameters = 2;
 }

@@ -39,40 +39,15 @@ export interface SendChatMessage {
     message: string;
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.world.request.SetAvatar
+ * @generated from protobuf message com.wiredprotocol.websocket.world.request.SetPlayerData
  */
-export interface SetAvatar {
+export interface SetPlayerData {
     /**
-     * @generated from protobuf field: string avatar = 1;
+     * @generated from protobuf field: map<string, string> data = 1;
      */
-    avatar: string;
-}
-/**
- * @generated from protobuf message com.wiredprotocol.websocket.world.request.SetHandle
- */
-export interface SetHandle {
-    /**
-     * @generated from protobuf field: string handle = 1;
-     */
-    handle: string;
-}
-/**
- * @generated from protobuf message com.wiredprotocol.websocket.world.request.SetNickname
- */
-export interface SetNickname {
-    /**
-     * @generated from protobuf field: string nickname = 1;
-     */
-    nickname: string;
-}
-/**
- * @generated from protobuf message com.wiredprotocol.websocket.world.request.SetFalling
- */
-export interface SetFalling {
-    /**
-     * @generated from protobuf field: bool falling = 1;
-     */
-    falling: boolean;
+    data: {
+        [key: string]: string;
+    };
 }
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.world.request.SendEvent
@@ -225,26 +200,26 @@ class SendChatMessage$Type extends MessageType<SendChatMessage> {
  */
 export const SendChatMessage = new SendChatMessage$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class SetAvatar$Type extends MessageType<SetAvatar> {
+class SetPlayerData$Type extends MessageType<SetPlayerData> {
     constructor() {
-        super("com.wiredprotocol.websocket.world.request.SetAvatar", [
-            { no: 1, name: "avatar", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        super("com.wiredprotocol.websocket.world.request.SetPlayerData", [
+            { no: 1, name: "data", kind: "map", K: 9 /*ScalarType.STRING*/, V: { kind: "scalar", T: 9 /*ScalarType.STRING*/ } }
         ]);
     }
-    create(value?: PartialMessage<SetAvatar>): SetAvatar {
-        const message = { avatar: "" };
+    create(value?: PartialMessage<SetPlayerData>): SetPlayerData {
+        const message = { data: {} };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
-            reflectionMergePartial<SetAvatar>(this, message, value);
+            reflectionMergePartial<SetPlayerData>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetAvatar): SetAvatar {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetPlayerData): SetPlayerData {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string avatar */ 1:
-                    message.avatar = reader.string();
+                case /* map<string, string> data */ 1:
+                    this.binaryReadMap1(message.data, reader, options);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -257,57 +232,26 @@ class SetAvatar$Type extends MessageType<SetAvatar> {
         }
         return message;
     }
-    internalBinaryWrite(message: SetAvatar, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string avatar = 1; */
-        if (message.avatar !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.avatar);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.request.SetAvatar
- */
-export const SetAvatar = new SetAvatar$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class SetHandle$Type extends MessageType<SetHandle> {
-    constructor() {
-        super("com.wiredprotocol.websocket.world.request.SetHandle", [
-            { no: 1, name: "handle", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<SetHandle>): SetHandle {
-        const message = { handle: "" };
-        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
-        if (value !== undefined)
-            reflectionMergePartial<SetHandle>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetHandle): SetHandle {
-        let message = target ?? this.create(), end = reader.pos + length;
+    private binaryReadMap1(map: SetPlayerData["data"], reader: IBinaryReader, options: BinaryReadOptions): void {
+        let len = reader.uint32(), end = reader.pos + len, key: keyof SetPlayerData["data"] | undefined, val: SetPlayerData["data"][any] | undefined;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string handle */ 1:
-                    message.handle = reader.string();
+                case 1:
+                    key = reader.string();
                     break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+                case 2:
+                    val = reader.string();
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for field com.wiredprotocol.websocket.world.request.SetPlayerData.data");
             }
         }
-        return message;
+        map[key ?? ""] = val ?? "";
     }
-    internalBinaryWrite(message: SetHandle, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string handle = 1; */
-        if (message.handle !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.handle);
+    internalBinaryWrite(message: SetPlayerData, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* map<string, string> data = 1; */
+        for (let k of Object.keys(message.data))
+            writer.tag(1, WireType.LengthDelimited).fork().tag(1, WireType.LengthDelimited).string(k).tag(2, WireType.LengthDelimited).string(message.data[k]).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -315,103 +259,9 @@ class SetHandle$Type extends MessageType<SetHandle> {
     }
 }
 /**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.request.SetHandle
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.request.SetPlayerData
  */
-export const SetHandle = new SetHandle$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class SetNickname$Type extends MessageType<SetNickname> {
-    constructor() {
-        super("com.wiredprotocol.websocket.world.request.SetNickname", [
-            { no: 1, name: "nickname", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
-        ]);
-    }
-    create(value?: PartialMessage<SetNickname>): SetNickname {
-        const message = { nickname: "" };
-        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
-        if (value !== undefined)
-            reflectionMergePartial<SetNickname>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetNickname): SetNickname {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string nickname */ 1:
-                    message.nickname = reader.string();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: SetNickname, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string nickname = 1; */
-        if (message.nickname !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.nickname);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.request.SetNickname
- */
-export const SetNickname = new SetNickname$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class SetFalling$Type extends MessageType<SetFalling> {
-    constructor() {
-        super("com.wiredprotocol.websocket.world.request.SetFalling", [
-            { no: 1, name: "falling", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
-        ]);
-    }
-    create(value?: PartialMessage<SetFalling>): SetFalling {
-        const message = { falling: false };
-        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
-        if (value !== undefined)
-            reflectionMergePartial<SetFalling>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetFalling): SetFalling {
-        let message = target ?? this.create(), end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* bool falling */ 1:
-                    message.falling = reader.bool();
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === "throw")
-                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: SetFalling, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* bool falling = 1; */
-        if (message.falling !== false)
-            writer.tag(1, WireType.Varint).bool(message.falling);
-        let u = options.writeUnknownFields;
-        if (u !== false)
-            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.world.request.SetFalling
- */
-export const SetFalling = new SetFalling$Type();
+export const SetPlayerData = new SetPlayerData$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class SendEvent$Type extends MessageType<SendEvent> {
     constructor() {

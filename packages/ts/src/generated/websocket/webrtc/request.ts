@@ -25,9 +25,9 @@ export interface PauseAudio {
     paused: boolean;
 }
 /**
- * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTransport
  */
-export interface ConnectTrannsport {
+export interface ConnectTransport {
     /**
      * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.request.TransportType type = 1;
      */
@@ -139,21 +139,21 @@ class PauseAudio$Type extends MessageType<PauseAudio> {
  */
 export const PauseAudio = new PauseAudio$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class ConnectTrannsport$Type extends MessageType<ConnectTrannsport> {
+class ConnectTransport$Type extends MessageType<ConnectTransport> {
     constructor() {
-        super("com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport", [
+        super("com.wiredprotocol.websocket.webrtc.request.ConnectTransport", [
             { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.request.TransportType", TransportType] },
             { no: 2, name: "dtlsParameters", kind: "message", T: () => DtlsParameters }
         ]);
     }
-    create(value?: PartialMessage<ConnectTrannsport>): ConnectTrannsport {
+    create(value?: PartialMessage<ConnectTransport>): ConnectTransport {
         const message = { type: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
-            reflectionMergePartial<ConnectTrannsport>(this, message, value);
+            reflectionMergePartial<ConnectTransport>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ConnectTrannsport): ConnectTrannsport {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ConnectTransport): ConnectTransport {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -175,7 +175,7 @@ class ConnectTrannsport$Type extends MessageType<ConnectTrannsport> {
         }
         return message;
     }
-    internalBinaryWrite(message: ConnectTrannsport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: ConnectTransport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* com.wiredprotocol.websocket.webrtc.request.TransportType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
@@ -189,9 +189,9 @@ class ConnectTrannsport$Type extends MessageType<ConnectTrannsport> {
     }
 }
 /**
- * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTrannsport
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.request.ConnectTransport
  */
-export const ConnectTrannsport = new ConnectTrannsport$Type();
+export const ConnectTransport = new ConnectTransport$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class CreateTransport$Type extends MessageType<CreateTransport> {
     constructor() {
