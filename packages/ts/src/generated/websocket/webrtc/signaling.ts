@@ -83,9 +83,9 @@ export interface IceCandidate {
      */
     type: IceCandidate_Type;
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7;
+     * @generated from protobuf field: optional com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7;
      */
-    tcpType: IceCandidate_TcpType;
+    tcpType?: IceCandidate_TcpType;
 }
 /**
  * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol
@@ -484,11 +484,11 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
             { no: 4, name: "port", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 5, name: "protocol", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Protocol", IceCandidate_Protocol] },
             { no: 6, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type", IceCandidate_Type] },
-            { no: 7, name: "tcp_type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType", IceCandidate_TcpType] }
+            { no: 7, name: "tcp_type", kind: "enum", opt: true, T: () => ["com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType", IceCandidate_TcpType] }
         ]);
     }
     create(value?: PartialMessage<IceCandidate>): IceCandidate {
-        const message = { foundation: "", priority: 0, ip: "", port: 0, protocol: 0, type: 0, tcpType: 0 };
+        const message = { foundation: "", priority: 0, ip: "", port: 0, protocol: 0, type: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<IceCandidate>(this, message, value);
@@ -517,7 +517,7 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
                 case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type type */ 6:
                     message.type = reader.int32();
                     break;
-                case /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type */ 7:
+                case /* optional com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type */ 7:
                     message.tcpType = reader.int32();
                     break;
                 default:
@@ -550,8 +550,8 @@ class IceCandidate$Type extends MessageType<IceCandidate> {
         /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.Type type = 6; */
         if (message.type !== 0)
             writer.tag(6, WireType.Varint).int32(message.type);
-        /* com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7; */
-        if (message.tcpType !== 0)
+        /* optional com.wiredprotocol.websocket.webrtc.signaling.IceCandidate.TcpType tcp_type = 7; */
+        if (message.tcpType !== undefined)
             writer.tag(7, WireType.Varint).int32(message.tcpType);
         let u = options.writeUnknownFields;
         if (u !== false)

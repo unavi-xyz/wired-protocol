@@ -44,7 +44,7 @@ message IceCandidate {
   int32 port = 4;
   Protocol protocol = 5;
   Type type = 6;
-  TcpType tcp_type = 7;
+  optional TcpType tcp_type = 7;
 }
 
 
