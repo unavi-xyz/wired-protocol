@@ -4,7 +4,8 @@
   "description": "Typescript definitions for The Wired Protocol",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wired-protocol/spec/packages/ts.git"
+    "url": "https://github.com/wired-protocol/spec.git",
+    "directory": "packages/ts"
   },
   "license": "MIT",
   "type": "module",
