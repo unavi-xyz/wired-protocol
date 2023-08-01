@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package com.wiredprotocol.websocket.message;
-
-message Message {
-  string type = 1;
-  bytes data = 2;
-}
