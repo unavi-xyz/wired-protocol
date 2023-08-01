@@ -7,18 +7,18 @@ import "websocket/webrtc/response.proto";
 
 message Response {
   oneof response {
-    com.wiredprotocol.websocket.webrtc.response.CreateConsumer create_consumer = 1;
-    com.wiredprotocol.websocket.webrtc.response.CreateDataConsumer create_data_consumer = 2;
-    com.wiredprotocol.websocket.webrtc.response.ProducerId producer_id = 3;
-    com.wiredprotocol.websocket.webrtc.response.DataProducerId data_producer_id = 4;
-    com.wiredprotocol.websocket.webrtc.response.RouterRtpCapabilities router_rtp_capabilities = 5;
-    com.wiredprotocol.websocket.webrtc.response.TransportCreated transport_created = 6;
+    webrtc.response.CreateConsumer create_consumer = 1;
+    webrtc.response.CreateDataConsumer create_data_consumer = 2;
+    webrtc.response.ProducerId producer_id = 3;
+    webrtc.response.DataProducerId data_producer_id = 4;
+    webrtc.response.RouterRtpCapabilities router_rtp_capabilities = 5;
+    webrtc.response.TransportCreated transport_created = 6;
 
-    com.wiredprotocol.websocket.world.response.JoinSuccess join_success = 7;
-    com.wiredprotocol.websocket.world.response.ChatMessage chat_message = 8;
-    com.wiredprotocol.websocket.world.response.PlayerJoined player_joined = 9;
-    com.wiredprotocol.websocket.world.response.PlayerLeft player_left = 10;
-    com.wiredprotocol.websocket.world.response.PlayerData player_data = 11;
-    com.wiredprotocol.websocket.world.response.Event event = 12;
+    world.response.JoinSuccess join_success = 7;
+    world.response.ChatMessage chat_message = 8;
+    world.response.PlayerJoined player_joined = 9;
+    world.response.PlayerLeft player_left = 10;
+    world.response.PlayerData player_data = 11;
+    world.response.Event event = 12;
   }
 }
