@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.wiredprotocol.websocket.request;
+
+import "websocket/world/request.proto";
+import "websocket/webrtc/request.proto";
+
+message Request {
+  oneof message {
+    webrtc.request.PauseAudio pause_audio = 1;
+    webrtc.request.ConnectTransport connect_transport = 2;
+    webrtc.request.CreateTransport create_transport = 3;
+    webrtc.request.GetRouterRtpCapabilities get_router_rtp_capabilities = 4;
+    webrtc.request.SetRtpCapabilities set_rtp_capabilities = 5;
+    webrtc.request.Produce produce = 6;
+    webrtc.request.ProduceData produce_data = 7;
+
+    world.request.Join join = 8;
+    world.request.Leave leave = 9;
+    world.request.SendChatMessage send_chat_message = 10;
+    world.request.SetPlayerData set_player_data = 11;
+    world.request.SendEvent send_event = 12;
+  }
+}

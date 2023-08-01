@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package com.wiredprotocol.websocket.webrtc.request;
+
+import "websocket/webrtc/signaling.proto";
+
+message PauseAudio {
+  bool paused = 1;
+}
+
+enum TransportType {
+  CONSUMER = 0;
+  PRODUCER = 1;
+}
+
+message ConnectTransport {
+  TransportType type = 1;
+  com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtlsParameters = 2;
+}
+
+message CreateTransport {
+  TransportType type = 1;
+}
+
+message GetRouterRtpCapabilities {
+}
+
+message SetRtpCapabilities {
+  com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities rtpCapabilities = 1;
+}
+
+message Produce {
+  com.wiredprotocol.websocket.webrtc.signaling.RtpParameters rtpParameters = 1;
+}
+
+message ProduceData {
+  com.wiredprotocol.websocket.webrtc.signaling.SctpStreamParameters sctpStreamParameters = 1;
+}
