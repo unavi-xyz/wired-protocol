@@ -1,6 +1,6 @@
 {
   "name": "@wired-protocol/types",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Typescript definitions for The Wired Protocol",
   "repository": {
     "type": "git",
