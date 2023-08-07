@@ -2,6 +2,10 @@ syntax = "proto3";
 
 package com.wiredprotocol.websocket.webrtc.signaling;
 
+enum TransportType {
+  CONSUMER = 0;
+  PRODUCER = 1;
+}
 
 message DtlsParameters {
   enum Role {

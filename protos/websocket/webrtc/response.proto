@@ -8,14 +8,14 @@ message CreateConsumer {
   int32 player_id = 1;
   string consumer_id = 2;
   string producer_id = 3;
-  com.wiredprotocol.websocket.webrtc.signaling.RtpParameters rtp_parameters = 4;
+  signaling.RtpParameters rtp_parameters = 4;
 }
 
 message CreateDataConsumer {
   int32 player_id = 1;
   string data_consumer_id = 2;
   string data_producer_id = 3;
-  com.wiredprotocol.websocket.webrtc.signaling.SctpStreamParameters sctp_stream_parameters = 4;
+  signaling.SctpStreamParameters sctp_stream_parameters = 4;
 }
 
 message ProducerId {
@@ -27,7 +27,7 @@ message DataProducerId {
 }
 
 message RouterRtpCapabilities {
-  com.wiredprotocol.websocket.webrtc.signaling.RtpCapabilities rtp_capabilities = 1;
+  signaling.RtpCapabilities rtp_capabilities = 1;
 }
 
 message TransportCreated {
@@ -58,18 +58,13 @@ message TransportCreated {
 
     string id = 1;
     IceParameters ice_parameters = 2;
-    com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtls_parameters = 3;
-    repeated com.wiredprotocol.websocket.webrtc.signaling.IceCandidate ice_candidates = 4;
+    signaling.DtlsParameters dtls_parameters = 3;
+    repeated signaling.IceCandidate ice_candidates = 4;
     optional SctpParameters sctp_parameters = 5;
     optional IceTransportPolicy ice_transport_policy = 6;
     repeated IceServer ice_servers = 7;
   }
 
-  enum TransportType {
-    CONSUMER = 0;
-    PRODUCER = 1;
-  }
-
-  TransportType type = 1;
+  signaling.TransportType type = 1;
   TransportOptions options = 2;
 }

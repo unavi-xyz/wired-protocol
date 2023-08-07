@@ -15,6 +15,7 @@ import { SctpStreamParameters } from "./signaling";
 import { RtpParameters } from "./signaling";
 import { RtpCapabilities } from "./signaling";
 import { DtlsParameters } from "./signaling";
+import { TransportType } from "./signaling";
 /**
  * @generated from protobuf message com.wiredprotocol.websocket.webrtc.request.PauseAudio
  */
@@ -29,7 +30,7 @@ export interface PauseAudio {
  */
 export interface ConnectTransport {
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.request.TransportType type = 1;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1;
      */
     type: TransportType;
     /**
@@ -42,7 +43,7 @@ export interface ConnectTransport {
  */
 export interface CreateTransport {
     /**
-     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.request.TransportType type = 1;
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1;
      */
     type: TransportType;
 }
@@ -77,19 +78,6 @@ export interface ProduceData {
      * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.SctpStreamParameters sctpStreamParameters = 1;
      */
     sctpStreamParameters?: SctpStreamParameters;
-}
-/**
- * @generated from protobuf enum com.wiredprotocol.websocket.webrtc.request.TransportType
- */
-export enum TransportType {
-    /**
-     * @generated from protobuf enum value: CONSUMER = 0;
-     */
-    CONSUMER = 0,
-    /**
-     * @generated from protobuf enum value: PRODUCER = 1;
-     */
-    PRODUCER = 1
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class PauseAudio$Type extends MessageType<PauseAudio> {
@@ -142,7 +130,7 @@ export const PauseAudio = new PauseAudio$Type();
 class ConnectTransport$Type extends MessageType<ConnectTransport> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.request.ConnectTransport", [
-            { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.request.TransportType", TransportType] },
+            { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.TransportType", TransportType] },
             { no: 2, name: "dtlsParameters", kind: "message", T: () => DtlsParameters }
         ]);
     }
@@ -158,7 +146,7 @@ class ConnectTransport$Type extends MessageType<ConnectTransport> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* com.wiredprotocol.websocket.webrtc.request.TransportType type */ 1:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type */ 1:
                     message.type = reader.int32();
                     break;
                 case /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtlsParameters */ 2:
@@ -176,7 +164,7 @@ class ConnectTransport$Type extends MessageType<ConnectTransport> {
         return message;
     }
     internalBinaryWrite(message: ConnectTransport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* com.wiredprotocol.websocket.webrtc.request.TransportType type = 1; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
         /* com.wiredprotocol.websocket.webrtc.signaling.DtlsParameters dtlsParameters = 2; */
@@ -196,7 +184,7 @@ export const ConnectTransport = new ConnectTransport$Type();
 class CreateTransport$Type extends MessageType<CreateTransport> {
     constructor() {
         super("com.wiredprotocol.websocket.webrtc.request.CreateTransport", [
-            { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.request.TransportType", TransportType] }
+            { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.TransportType", TransportType] }
         ]);
     }
     create(value?: PartialMessage<CreateTransport>): CreateTransport {
@@ -211,7 +199,7 @@ class CreateTransport$Type extends MessageType<CreateTransport> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* com.wiredprotocol.websocket.webrtc.request.TransportType type */ 1:
+                case /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type */ 1:
                     message.type = reader.int32();
                     break;
                 default:
@@ -226,7 +214,7 @@ class CreateTransport$Type extends MessageType<CreateTransport> {
         return message;
     }
     internalBinaryWrite(message: CreateTransport, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* com.wiredprotocol.websocket.webrtc.request.TransportType type = 1; */
+        /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
         let u = options.writeUnknownFields;
