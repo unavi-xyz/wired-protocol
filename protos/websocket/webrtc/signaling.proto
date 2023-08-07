@@ -51,20 +51,20 @@ message IceCandidate {
   optional TcpType tcp_type = 7;
 }
 
+message RtcpFeedback {
+  string type = 1;
+  optional string parameter = 2;
+}
+
 
 message RtpCapabilities {
-  enum Kind {
+  enum MediaKind {
     AUDIO = 0;
     VIDEO = 1;
   }
 
   message Codec {
-    message RtcpFeedback {
-      string type = 1;
-      optional string parameter = 2;
-    }
-
-    Kind kind = 1;
+    MediaKind kind = 1;
     string mime_type = 2;
     int32 clock_rate = 3;
     optional int32 channels = 4;
@@ -80,7 +80,7 @@ message RtpCapabilities {
     }
 
     string uri = 1;
-    Kind kind = 2;
+    MediaKind kind = 2;
     int32 preferred_id = 3;
     optional bool preferred_encrypt = 4;
     optional Direction direction = 5;
@@ -96,6 +96,7 @@ message RtpParameters {
     int32 payload_type = 2;
     int32 clock_rate = 3;
     optional int32 channels = 4;
+    repeated RtcpFeedback rtcp_feedback = 5;
   }
 
   message HeaderExtension {
