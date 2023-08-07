@@ -200,6 +200,19 @@ export enum TransportCreated_TransportOptions_IceTransportPolicy {
      */
     RELAY = 1
 }
+/**
+ * @generated from protobuf message com.wiredprotocol.websocket.webrtc.response.TransportConnected
+ */
+export interface TransportConnected {
+    /**
+     * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1;
+     */
+    type: TransportType;
+    /**
+     * @generated from protobuf field: bool success = 2;
+     */
+    success: boolean;
+}
 // @generated message type with reflection information, may provide speed optimized methods
 class CreateConsumer$Type extends MessageType<CreateConsumer> {
     constructor() {
@@ -810,3 +823,57 @@ class TransportCreated_TransportOptions_SctpParameters$Type extends MessageType<
  * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.response.TransportCreated.TransportOptions.SctpParameters
  */
 export const TransportCreated_TransportOptions_SctpParameters = new TransportCreated_TransportOptions_SctpParameters$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class TransportConnected$Type extends MessageType<TransportConnected> {
+    constructor() {
+        super("com.wiredprotocol.websocket.webrtc.response.TransportConnected", [
+            { no: 1, name: "type", kind: "enum", T: () => ["com.wiredprotocol.websocket.webrtc.signaling.TransportType", TransportType] },
+            { no: 2, name: "success", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value?: PartialMessage<TransportConnected>): TransportConnected {
+        const message = { type: 0, success: false };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<TransportConnected>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: TransportConnected): TransportConnected {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type */ 1:
+                    message.type = reader.int32();
+                    break;
+                case /* bool success */ 2:
+                    message.success = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: TransportConnected, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* com.wiredprotocol.websocket.webrtc.signaling.TransportType type = 1; */
+        if (message.type !== 0)
+            writer.tag(1, WireType.Varint).int32(message.type);
+        /* bool success = 2; */
+        if (message.success !== false)
+            writer.tag(2, WireType.Varint).bool(message.success);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message com.wiredprotocol.websocket.webrtc.response.TransportConnected
+ */
+export const TransportConnected = new TransportConnected$Type();

@@ -17,6 +17,7 @@ import { PlayerLeft } from "./world/response";
 import { PlayerJoined } from "./world/response";
 import { ChatMessage } from "./world/response";
 import { JoinSuccess } from "./world/response";
+import { TransportConnected } from "./webrtc/response";
 import { TransportCreated } from "./webrtc/response";
 import { RouterRtpCapabilities } from "./webrtc/response";
 import { DataProducerId } from "./webrtc/response";
@@ -67,6 +68,12 @@ export interface Response {
          */
         transportCreated: TransportCreated;
     } | {
+        oneofKind: "transportConnected";
+        /**
+         * @generated from protobuf field: com.wiredprotocol.websocket.webrtc.response.TransportConnected transport_connected = 13;
+         */
+        transportConnected: TransportConnected;
+    } | {
         oneofKind: "joinSuccess";
         /**
          * @generated from protobuf field: com.wiredprotocol.websocket.world.response.JoinSuccess join_success = 7;
@@ -116,6 +123,7 @@ class Response$Type extends MessageType<Response> {
             { no: 4, name: "data_producer_id", kind: "message", oneof: "response", T: () => DataProducerId },
             { no: 5, name: "router_rtp_capabilities", kind: "message", oneof: "response", T: () => RouterRtpCapabilities },
             { no: 6, name: "transport_created", kind: "message", oneof: "response", T: () => TransportCreated },
+            { no: 13, name: "transport_connected", kind: "message", oneof: "response", T: () => TransportConnected },
             { no: 7, name: "join_success", kind: "message", oneof: "response", T: () => JoinSuccess },
             { no: 8, name: "chat_message", kind: "message", oneof: "response", T: () => ChatMessage },
             { no: 9, name: "player_joined", kind: "message", oneof: "response", T: () => PlayerJoined },
@@ -170,6 +178,12 @@ class Response$Type extends MessageType<Response> {
                     message.response = {
                         oneofKind: "transportCreated",
                         transportCreated: TransportCreated.internalBinaryRead(reader, reader.uint32(), options, (message.response as any).transportCreated)
+                    };
+                    break;
+                case /* com.wiredprotocol.websocket.webrtc.response.TransportConnected transport_connected */ 13:
+                    message.response = {
+                        oneofKind: "transportConnected",
+                        transportConnected: TransportConnected.internalBinaryRead(reader, reader.uint32(), options, (message.response as any).transportConnected)
                     };
                     break;
                 case /* com.wiredprotocol.websocket.world.response.JoinSuccess join_success */ 7:
@@ -238,6 +252,9 @@ class Response$Type extends MessageType<Response> {
         /* com.wiredprotocol.websocket.webrtc.response.TransportCreated transport_created = 6; */
         if (message.response.oneofKind === "transportCreated")
             TransportCreated.internalBinaryWrite(message.response.transportCreated, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* com.wiredprotocol.websocket.webrtc.response.TransportConnected transport_connected = 13; */
+        if (message.response.oneofKind === "transportConnected")
+            TransportConnected.internalBinaryWrite(message.response.transportConnected, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
         /* com.wiredprotocol.websocket.world.response.JoinSuccess join_success = 7; */
         if (message.response.oneofKind === "joinSuccess")
             JoinSuccess.internalBinaryWrite(message.response.joinSuccess, writer.tag(7, WireType.LengthDelimited).fork(), options).join();

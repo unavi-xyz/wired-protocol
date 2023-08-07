@@ -68,3 +68,8 @@ message TransportCreated {
   signaling.TransportType type = 1;
   TransportOptions options = 2;
 }
+
+message TransportConnected {
+  signaling.TransportType type = 1;
+  bool success = 2;
+}

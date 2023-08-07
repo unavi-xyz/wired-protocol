@@ -13,6 +13,7 @@ message Response {
     webrtc.response.DataProducerId data_producer_id = 4;
     webrtc.response.RouterRtpCapabilities router_rtp_capabilities = 5;
     webrtc.response.TransportCreated transport_created = 6;
+    webrtc.response.TransportConnected transport_connected = 13;
 
     world.response.JoinSuccess join_success = 7;
     world.response.ChatMessage chat_message = 8;
