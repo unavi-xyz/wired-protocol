@@ -1,5 +1,7 @@
 # The Wired
 
+## 🤔 Motivation
+
 The VR landscape today is comprised of closed off platforms (VRChat, Neos, ChilloutVR, Horizon Worlds),
 built within the traditional "walled garden" framework of app stores and isolated experiences.
 Each app has it's own friends list, avatars, file formats, and (sometimes questionable) leadership.
