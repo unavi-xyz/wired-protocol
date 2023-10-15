@@ -1,5 +1,7 @@
 # The Wired
 
+The Wired is a collection of protocols and standards for creating interoperable 3D apps.
+
 ## 🤔 Motivation
 
 The VR landscape today is comprised of closed off platforms (VRChat, Neos, ChilloutVR, Horizon Worlds),
@@ -14,4 +16,15 @@ Additionally, no single company should have absolute power over our identity and
 leave up to good faith (and even with good intentions these systems fail, innocent people get banned).
 
 The Wired is an attempt to change this status quo by providing an alternative framework for building, publishing,
-and experiencing content in a standardized and interoperable format - or more simply, to bring the success of the Web to 3D.
+and experiencing content in a standardized and interoperable format - or put more simply, to bring the success of the Web to 3D.
+
+## 🏗️ Design Goals
+
+- Openness - The protocol should remain entirely open, much like the Web.
+You do not need permission to create or host content.
+
+- Extensibility - The protocol should be easily extendable,
+allowing developers to build upon the core functionality with new features.
+
+- Backwards compatibility - Ensuring content built within The Wired continues to work into the future
+is a vital part of developing a rich ecosystem.
