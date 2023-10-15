@@ -28,3 +28,7 @@ allowing developers to build upon the core functionality with new features.
 
 - Backwards compatibility - Ensuring content built within The Wired continues to work into the future
 is a vital part of developing a rich ecosystem.
+
+## 📖 Wiki
+
+Check out the project [wiki](https://github.com/unavi-xyz/the-wired/wiki) to learn more!
