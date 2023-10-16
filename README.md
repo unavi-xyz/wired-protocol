@@ -20,13 +20,13 @@ and experiencing content in a standardized and interoperable format - or put mor
 
 ## 🏗️ Design Goals
 
-- Openness - The protocol should remain entirely open, much like the Web.
+- **Openness** - The protocol should remain entirely open, much like the Web.
 You do not need permission to create or host content.
 
-- Extensibility - The protocol should be easily extendable,
+- **Extensibility** - The protocol should be easily extendable,
 allowing developers to build upon the core functionality with new features.
 
-- Backwards compatibility - Ensuring content built within The Wired continues to work into the future
+- **Backwards compatibility** - Ensuring content built within The Wired continues to work into the future
 is a vital part of developing a rich ecosystem.
 
 ## 📖 Wiki
