@@ -1,6 +1,6 @@
 # The Wired
 
-The Wired is a collection of protocols and standards for creating interoperable 3D apps.
+The Wired is a protocol for creating interoperable 3D apps.
 
 ## 🤔 Motivation
 
