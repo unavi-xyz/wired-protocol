@@ -33,4 +33,4 @@ is a vital part of developing a rich ecosystem.
 
 ## 📖 Wiki
 
-Check out the project [wiki](https://github.com/unavi-xyz/the-wired/wiki) to learn more!
+Check out the project [wiki](https://github.com/unavi-xyz/wired-protocol/wiki) to learn more!
