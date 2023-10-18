@@ -1,7 +1,7 @@
 # The Wired
 
 The Wired is an open protocol for the metaverse.
-It is a collection of standards focused on self-soverign identity, interoperability, and freedom for end users.
+It is a collection of standards focused on self-sovereign identity, interoperability, and freedom for end users.
 
 ## 🤔 Motivation
 
