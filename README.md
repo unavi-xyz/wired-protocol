@@ -23,7 +23,3 @@ and experiencing 3D content in a standardized and interoperable format - or put 
 The open source nature of The Wired is not just a protective measure against bad actors - it
 provides a whole suite of benefits not possible in other platforms.
 Anyone can develop new features, try new ideas, and push the ecosystem forward.
-
-## 📖 Wiki
-
-Check out the project [wiki](https://github.com/unavi-xyz/wired-protocol/wiki) to learn more!
