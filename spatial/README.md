@@ -1,6 +1,6 @@
 # Spatial Protocol
 
-The Wired's spatial protocol is primarily concerned with running interactive user-created content in a dynamic 3D environment.
+The Wired's spatial protocol is concerned with running interactive user-created content in a dynamic 3D environment.
 
 ## Scenes (glXF)
 
