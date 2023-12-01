@@ -13,7 +13,7 @@ glTF is a well supported format for 3D models, and its extensible nature makes i
 The Wired uses [WebAssembly](https://webassembly.org/) (WASM) as a cross-platform compilation target and sandboxed execution environment for user scripting.
 Scripts use the [component model](https://github.com/WebAssembly/component-model) to interact with a set of
 [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md) interfaces defined by The Wired.
-Host environments can then implement these interfaces, allowing scripts to interact with the larger world in a controlled manner.
+Host environments can then implement these interfaces, allowing scripts to interact with the scene in a controlled manner.
 
 ## Input
 
