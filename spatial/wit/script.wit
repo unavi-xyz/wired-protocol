@@ -1,0 +1,14 @@
+world script {
+  import logger;
+  import time;
+  import process;
+
+  // Called once when the script is loaded.
+  export init: func();
+
+  // Called every tick.
+  export update: func(delta-seconds: float32);
+
+  // Called once when the script is about to be unloaded.
+  export cleanup: func();
+}

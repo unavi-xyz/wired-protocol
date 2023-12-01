@@ -1,0 +1,11 @@
+interface logger {
+  enum log-level {
+    debug,
+    info,
+    warn,
+    error
+  }
+
+  // Logs a message with the given severity level.
+  log: func(level: log-level, msg: string);
+}
