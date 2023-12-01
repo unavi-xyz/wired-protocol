@@ -1,6 +1,6 @@
 # Social Protocol
 
-The Wired's social protocol is concerned with providing a self-sovereign user identity solution.
+The Wired's social protocol provides a generalized self-sovereign user identity solution.
 
 ## Handles (DIDs)
 
