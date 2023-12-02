@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package world.webrtc.common;
+package webrtc.common;
 
 message Position {
   float x = 1;

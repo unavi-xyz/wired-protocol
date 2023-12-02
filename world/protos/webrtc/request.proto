@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package world.webrtc.request;
+package webrtc.request;
 
-import "world/webrtc/common.proto";
+import "webrtc/common.proto";
 
 message Request {
   oneof message {

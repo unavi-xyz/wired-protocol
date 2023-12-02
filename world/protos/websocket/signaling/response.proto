@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package world.websocket.signaling.response;
+package websocket.signaling.response;
 
-import "world/websocket/signaling/common.proto";
+import "websocket/signaling/common.proto";
 
 message CreateConsumer {
   int32 player_id = 1;
