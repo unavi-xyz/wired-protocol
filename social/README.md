@@ -1,17 +1,18 @@
 # Social Protocol
 
-The Wired's social protocol provides a generalized self-sovereign user identity solution.
+The Wired's social protocol is built on top of the [Decentralized Web Node](https://identity.foundation/decentralized-web-node/spec/) (DWN) specification.
+DWNs make use of [decentralized identifiers](https://en.wikipedia.org/wiki/Decentralized_identifier) (DIDs) to provide a self-hostable base layer for user identity and data storage.
 
-## Handles (DIDs)
+## Decentralized identifiers (DIDs)
 
-The Wired uses [decentralized identifiers](https://en.wikipedia.org/wiki/Decentralized_identifier) (DIDs) as a globally unique namespace for users.
+DIDs provide a globally unique namespace for both users and content within The Wired.
 
 DIDs are a generic format for addressing content that can easily be extended to support any protocol.
-For example, [`did:web`](https://w3c-ccg.github.io/did-method-web/) can be used to point to content using a traditional web URL,
-while [`did:ipid`](https://did-ipid.github.io/ipid-did-method/) can be used to point to content over [IPFS](https://docs.ipfs.tech/).
+For example, [`did:web`](https://w3c-ccg.github.io/did-method-web/) can be used to address content using a traditional web URL,
+while [`did:ipid`](https://did-ipid.github.io/ipid-did-method/) can be used to address content over [IPFS](https://docs.ipfs.tech/).
 
-A user handle is a DID that points to data containing useful information such as their name, profile picture,
-cryptographic public keys used to verify their identity, and anything else they want to store.
+A user's DID resolves to a document containing useful information such as their name, profile picture,
+cryptographic keys that can be used to verify their identity, servers to use to contact them, and anything else they want to store.
 
 ## Moderation
 
