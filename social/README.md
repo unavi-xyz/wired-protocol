@@ -12,7 +12,7 @@ For example, [`did:web`](https://w3c-ccg.github.io/did-method-web/) can be used 
 while [`did:ipid`](https://did-ipid.github.io/ipid-did-method/) can be used to address content over [IPFS](https://docs.ipfs.tech/).
 
 A user's DID resolves to a document containing useful information such as their name, profile picture,
-cryptographic keys that can be used to verify their identity, servers to use to contact them, and anything else they want to store.
+cryptographic keys that can be used to verify their identity, servers to contact them at, and anything else they want to store.
 
 ## Moderation
 
