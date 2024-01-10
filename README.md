@@ -1,7 +1,7 @@
 # The Wired
 
 The Wired is an open protocol for the metaverse.
-It is a collection of standards focused on self-sovereign identity, interactive 3D environments, and freedom for end users.
+It is a collection of standards focused on interactive 3D environments, self-sovereign identity, and interoperability.
 
 ## 🤔 Motivation
 
@@ -9,13 +9,11 @@ The VR landscape today is comprised of closed off platforms built within the tra
 Each game has it's own friends list, avatars, file formats, and (sometimes questionable) leadership.
 Mods get banned, users get banned, and everyone who lives within these spaces gets no say in the matter.
 
-But this approach goes against the fundamentally social nature of VR - the human aspect that makes it so special!
-
 With VR our digital identity is more important than ever.
-We embody our virtual avatars, we walk the roads of virtual worlds, we form real human connections with other people.
+We embody our avatars, we walk the roads of virtual worlds, we form real human connections with other people.
 This happens all across the internet - but with VR it becomes much more real.
 No single company should have absolute power over our experience - it's too important to
-leave up to good faith (and even with good intentions these systems fail, innocent people get banned).
+leave up to good faith (and even with good intentions these systems fail).
 
 The Wired is an attempt to change the status quo by providing an alternative framework for building, publishing,
 and experiencing 3D content in a standardized and interoperable format - or put more simply, **to bring the success of the Web to 3D**.
