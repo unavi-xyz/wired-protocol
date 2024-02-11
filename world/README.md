@@ -5,7 +5,7 @@ The Wired's world protocol adds multiplayer networking to [spatial](../spatial) 
 ## Worlds
 
 A world is a published [glXF](../spatial#scenes-glxf) model, with additional metadata such as a name and preview image.
-The world is not joinable on its own, you must enter an *instance* of it.
+The world is not joinable on its own, you must enter an _instance_ of it.
 
 ### Instances
 
