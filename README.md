@@ -19,5 +19,5 @@ The Wired is an attempt to change the status quo by providing an alternative fra
 and experiencing 3D content in a standardized and interoperable format - or put more simply, **to bring the success of the Web to 3D**.
 
 The open source nature of The Wired is not just a protective measure against bad actors - it
-provides a whole suite of benefits not possible with other platforms.
+provides a whole suite of benefits not possible with current platforms.
 Anyone can develop new features, try new ideas, and push the ecosystem forward.
