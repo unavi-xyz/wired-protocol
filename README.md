@@ -5,9 +5,9 @@ It is a collection of standards focused on interactive 3D environments, self-sov
 
 ## Protocol
 
-- [Social](social)
-- [Spatial](spatial)
-- [World](world)
+- [Social](./social)
+- [Spatial](./spatial)
+- [World](./world)
 
 ## 🤔 Motivation
 
