@@ -10,7 +10,7 @@ The world is not joinable on its own, you must enter an _instance_ of it.
 ### Instances
 
 An instance is a multiplayer room, running on a server, that uses some world as it's base model.
-There may be many instances for a given world, or the world author may restrict it and only allow a single instance.
+There may be many instances for a given world, or the world author may restrict it and only allow a single instance they own.
 
 ### World Servers
 
