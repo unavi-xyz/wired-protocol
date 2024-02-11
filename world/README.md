@@ -2,26 +2,31 @@
 
 The Wired's world protocol adds multiplayer networking to [spatial](../spatial) environments.
 
-## Protobuf spec
+## World
 
-The Wired provides a [protobuf](https://protobuf.dev/) specification for networked messages.
-Protobufs are an efficient language-neutral format for describing serializable data.
+A world is a published [glXF](../spatial#scenes-glxf) model, with additional metadata such as a name and preview image.
+The world is not joinable on its own, you must enter an *instance* of it.
 
-## Worlds
+### Instance
 
-A world is simply a published [glXF](../spatial#scenes-glxf) scene, with additional metadata such as a name, author, and preview image.
-
-## Instances
-
-An instance is a multiplayer room that runs on a server, using some world as it's base model.
+An instance is a multiplayer room, running on a server, that uses some world as it's base model.
+There may be many instances for a given world, or the world author may restrict it and only allow a single instance.
 
 ### Server
 
-Multiplayer networking within an instance is controlled by a self-hostable server.
-The instance server acts as a relay for all messages between clients within an instance.
+Multiplayer networking within an instance is handled by a world server.
+This server acts as a relay for all messages between clients within an instance.
 
-### State
+### Publishing
 
-Each instance of a world has independent state.
-This state stores information such as the location of dynamic objects or variables used by a script running in the scene.
-State can either be persistent (lasting across sessions) or ephemeral (wiped when the last player leaves).
+Worlds are published to a user's [DWN](../social/#decentralized-web-node).
+From there they become accessible via DID.
+
+## Networking
+
+Networking within an instance is done over [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport).
+
+### Protobufs
+
+The Wired defines a [protobuf](https://protobuf.dev/) specification for networked messages.
+Protobufs are an efficient language-neutral format for describing serializable data.
