@@ -1,0 +1,19 @@
+{
+  "protocol": "https://wired-protocol.org/v0/protocols/dwn-limits",
+  "types": {
+    "limits": {
+      "schema": "https://wired-protocol.org/v0/schemas/dwn-limits",
+      "dataFormat": ["application/json"]
+    }
+  },
+  "structure": {
+    "limits": {
+      "$actions": [
+        {
+          "who": "recipient",
+          "can": "read"
+        }
+      ]
+    }
+  }
+}

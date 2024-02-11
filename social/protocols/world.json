@@ -1,0 +1,41 @@
+{
+  "protocol": "https://wired-protocol.org/v0/protocols/world",
+  "types": {
+    "metadata": {
+      "schema": "https://wired-protocol.org/v0/schemas/world-metadata",
+      "dataFormat": ["application/json"]
+    },
+    "model": {
+      "dataFormat": ["model/glxf+json"]
+    },
+    "server": {
+      "dataFormat": ["text/plain"]
+    }
+  },
+  "structure": {
+    "metadata": {
+      "$actions": [
+        {
+          "who": "anyone",
+          "can": "read"
+        }
+      ]
+    },
+    "model": {
+      "$actions": [
+        {
+          "who": "anyone",
+          "can": "read"
+        }
+      ]
+    },
+    "server": {
+      "$actions": [
+        {
+          "who": "anyone",
+          "can": "read"
+        }
+      ]
+    }
+  }
+}

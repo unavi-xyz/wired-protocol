@@ -1,0 +1,19 @@
+{
+  "protocol": "https://wired-protocol.org/v0/protocols/profile",
+  "types": {
+    "metadata": {
+      "schema": "https://wired-protocol.org/v0/schemas/profile-metadata",
+      "dataFormat": ["application/json"]
+    }
+  },
+  "structure": {
+    "metadata": {
+      "$actions": [
+        {
+          "who": "anyone",
+          "can": "read"
+        }
+      ]
+    }
+  }
+}

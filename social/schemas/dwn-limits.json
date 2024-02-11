@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://wired-protocol.org/v0/schemas/dwn-limits",
+  "type": "object",
+  "properties": {
+    "storageCapacity": {
+      "description": "Maximum storage capacity in bytes",
+      "minimum": 0,
+      "type": "number"
+    },
+    "storageUsed": {
+      "description": "Current storage used in bytes",
+      "minimum": 0,
+      "type": "number"
+    },
+    "extras": {
+      "type": "object"
+    }
+  }
+}
