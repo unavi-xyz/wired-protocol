@@ -3,6 +3,12 @@
 The Wired is an open protocol for the metaverse.
 It is a collection of standards focused on interactive 3D environments, self-sovereign identity, and interoperability.
 
+## Protocol
+
+- [Social](social)
+- [Spatial](spatial)
+- [World](world)
+
 ## 🤔 Motivation
 
 The VR landscape today is comprised of closed off platforms built within the traditional "walled garden" framework of app stores and isolated experiences.
@@ -21,3 +27,4 @@ and experiencing 3D content in a standardized and interoperable format - or put 
 The open source nature of The Wired is not just a protective measure against bad actors - it
 provides a whole suite of benefits not possible with current platforms.
 Anyone can develop new features, try new ideas, and push the ecosystem forward.
+
