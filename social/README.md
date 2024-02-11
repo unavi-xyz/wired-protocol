@@ -9,8 +9,8 @@ that store a user's data and provide an interface for others to interact with it
 These interactions could be a simple read to view a user's worlds, or more complex writes to add
 comments or send encrypted friend requests.
 
-Additionally, DWNs act in a mesh network to sync with other DWNs you are a part of.
-You can make use of a public cloud-hosted DWN, while at the same time running your own local DWN to keep a backup of your data.
+Additionally, DWNs are built on a CRDT that will sync data with other DWNs.
+You can make use of a remote cloud-hosted DWN, while at the same time running your own local DWN to keep a backup of your data.
 
 ### Decentralized Identifiers (DIDs)
 
