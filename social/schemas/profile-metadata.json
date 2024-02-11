@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "https://wired-protocol.org/v0/schemas/profile-metadata",
+  "$id": "https://wired-protocol.org/v0/schemas/profile-metadata.json",
   "type": "object",
   "properties": {
     "name": {

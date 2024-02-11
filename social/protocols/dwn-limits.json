@@ -1,8 +1,8 @@
 {
-  "protocol": "https://wired-protocol.org/v0/protocols/dwn-limits",
+  "protocol": "https://wired-protocol.org/v0/protocols/dwn-limits.json",
   "types": {
     "limits": {
-      "schema": "https://wired-protocol.org/v0/schemas/dwn-limits",
+      "schema": "https://wired-protocol.org/v0/schemas/dwn-limits.json",
       "dataFormat": ["application/json"]
     }
   },

@@ -1,8 +1,8 @@
 {
-  "protocol": "https://wired-protocol.org/v0/protocols/profile",
+  "protocol": "https://wired-protocol.org/v0/protocols/profile.json",
   "types": {
     "metadata": {
-      "schema": "https://wired-protocol.org/v0/schemas/profile-metadata",
+      "schema": "https://wired-protocol.org/v0/schemas/profile-metadata.json",
       "dataFormat": ["application/json"]
     }
   },

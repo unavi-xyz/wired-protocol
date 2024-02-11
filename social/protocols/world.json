@@ -1,8 +1,8 @@
 {
-  "protocol": "https://wired-protocol.org/v0/protocols/world",
+  "protocol": "https://wired-protocol.org/v0/protocols/world.json",
   "types": {
     "metadata": {
-      "schema": "https://wired-protocol.org/v0/schemas/world-metadata",
+      "schema": "https://wired-protocol.org/v0/schemas/world-metadata.json",
       "dataFormat": ["application/json"]
     },
     "model": {
