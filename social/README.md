@@ -27,8 +27,11 @@ cryptographic keys that can be used to verify their identity, DWNs they are a pa
 ## Identity Servers
 
 Identity servers are optional servers for remotely hosting DIDs.
-You can log in to the server with a standard login method - such as a username / password or OAuth connection - then receive
-session keys used to verify your ownership of the hosted DID to other parties.
+For example, the server may use a method like `did:web`, allowing you to use a domain you control as the basis for your identity.
+
+You can log in to the server with a typical login method - such as a username and password or OAuth connection - then receive
+session keys which can be used to verify your ownership of the hosted DID to other parties.
+This allows you to use DIDs while maintaining the convienance of traditional app logins.
 
 Running your own identity server is a great first step towards self-sovereignity within The Wired.
 
