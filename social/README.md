@@ -45,6 +45,3 @@ That's just the internet.
 
 However specific services (websites, worlds, APIs) can and WILL moderate as necessary -
 but like the Web, users will always have the option of moving to a different service they are not banned from (or running their own).
-
-The difference with The Wired is that through this migration they can keep their identity and social connections.
-A single company does not have the power to wipe someone from existence.
