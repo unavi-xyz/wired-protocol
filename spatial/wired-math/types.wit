@@ -1,0 +1,19 @@
+interface types {
+  record vec2 {
+    x: float32,
+    y: float32,
+  }
+
+  record vec3 {
+    x: float32,
+    y: float32,
+    z: float32,
+  }
+
+  record vec4 {
+    x: float32,
+    y: float32,
+    z: float32,
+    w: float32,
+  }
+}

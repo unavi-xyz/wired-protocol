@@ -1,0 +1,19 @@
+{
+  "protocol": "https://wired-protocol.org/v0/protocols/world-limits.json",
+  "types": {
+    "limits": {
+      "schema": "https://wired-protocol.org/v0/schemas/world-limits.json",
+      "dataFormat": ["application/json"]
+    }
+  },
+  "structure": {
+    "limits": {
+      "$actions": [
+        {
+          "who": "recipient",
+          "can": "read"
+        }
+      ]
+    }
+  }
+}

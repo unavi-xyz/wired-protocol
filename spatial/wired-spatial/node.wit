@@ -1,0 +1,9 @@
+/// A node is a 3D object in the scene.
+interface node {
+  use types.{transform};
+
+  resource node {
+    get-transform: func() -> transform;
+    set-transform: func(transform: transform);
+  }
+}

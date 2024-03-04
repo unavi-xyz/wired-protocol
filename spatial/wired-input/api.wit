@@ -1,0 +1,6 @@
+interface api {
+  use handler.{spatial-handler};
+
+  register-handler: func(handler: spatial-handler) -> u32;
+  delete-handler: func(id: u32);
+}

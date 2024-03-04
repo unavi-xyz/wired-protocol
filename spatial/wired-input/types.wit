@@ -1,0 +1,66 @@
+interface types {
+  use wired:math/types.{vec3, vec4};
+
+  enum hand-side { 
+    left,
+    right,
+  }
+
+  record joint {
+    translation: vec3,
+    rotation: vec4,
+    radius: float32,
+  }
+
+  record finger {
+    tip: joint,
+    distal: joint,
+    proximal: joint,
+    metacarpal: joint,
+  }
+
+  /// Hand tracking data.
+  record hand {
+    side: hand-side,
+
+    thumb: finger,
+    index: finger,
+    middle: finger,
+    ring: finger,
+    little: finger,
+
+    palm: joint,
+    wrist: joint,
+    elbow: option<joint>,
+  }
+
+  /// A line with an origin and a direction.
+  record ray {
+    origin: vec3,
+    orientation: vec4,
+  }
+
+  /// A single point of interaction, such as the tip of a stylus.
+  record tip {
+    origin: vec3,
+    orientation: vec4,
+    radius: float32,
+  }
+
+  variant input-type {
+    hand(hand),
+    ray(ray),
+    tip(tip),
+  }
+
+  record input-event {
+    /// Unique id for the event.
+    id: u64,
+    /// Spatial input data.
+    input: input-type,
+    /// Distance from the input method to the handler.
+    distance: float32,
+    /// How many handlers received the event before this one.
+    order: u32,
+  }
+}

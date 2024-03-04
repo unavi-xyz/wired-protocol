@@ -1,0 +1,12 @@
+package wired:input;
+
+world imports {
+  import handler;
+  import method;
+  import types;
+  import api;
+}
+
+world host {
+  export api;
+} 
