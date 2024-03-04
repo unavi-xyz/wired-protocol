@@ -4,6 +4,6 @@ world imports {
   import types;
 }
 
-world logger {
+world host {
   export types;
 }

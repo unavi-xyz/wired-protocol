@@ -1,0 +1,29 @@
+package wired:gltf;
+
+world imports {
+  import types;
+}
+
+world host {
+  export types;
+}
+
+interface types {
+  /// A glTF mesh.
+  record mesh {
+    /// A unique identifier for this mesh.
+    id: u32,
+
+    name: string,
+    extras: option<string>,
+  }
+
+  /// Get all meshes in the world.
+  meshes: func() -> list<mesh>;
+  /// Spawn a new mesh.
+  spawn-mesh: func() -> mesh;
+  /// Add a mesh to the world.
+  add-mesh: func(m: mesh);
+  /// Remove a mesh from the world.
+  remove-mesh: func(m: mesh);
+}
