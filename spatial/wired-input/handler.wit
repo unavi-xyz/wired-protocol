@@ -1,0 +1,16 @@
+interface handler {
+  use types.{input-event};
+  use wired:spatial/node.{node};
+
+  /// Input handler.
+  /// Represents an object in 3D space that can react to input.
+  /// Handlers can optionally capture the input method, stopping propagation to other handlers.
+  resource spatial-handler {
+    /// The node that this handler is attached to.
+    node: func() -> node;
+
+    /// Called when an input event is received.
+    /// Return true to capture the event.
+    on-input: func(event: input-event) -> bool;
+  }
+}

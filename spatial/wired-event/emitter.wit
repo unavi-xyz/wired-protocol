@@ -1,0 +1,4 @@
+/// Event emitter.
+interface emitter {
+  emit: func(msg: string, data: any);
+}

@@ -20,10 +20,10 @@ interface types {
 
   /// Get all meshes in the world.
   meshes: func() -> list<mesh>;
+
   /// Spawn a new mesh.
   spawn-mesh: func() -> mesh;
-  /// Add a mesh to the world.
-  add-mesh: func(m: mesh);
+
   /// Remove a mesh from the world.
-  remove-mesh: func(m: mesh);
+  remove-mesh: func(id: u32);
 }

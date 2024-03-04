@@ -1,12 +1,16 @@
 package wired:script;
 
 world script {
+  export lifecycle;
+}
+
+interface lifecycle {
   // Called once when the script is loaded.
-  export init: func();
+  init: func();
 
   // Called every tick.
-  export update: func(delta-seconds: float32);
+  update: func(delta-seconds: float32);
 
   // Called once when the script is about to be unloaded.
-  export cleanup: func();
+  cleanup: func();
 }

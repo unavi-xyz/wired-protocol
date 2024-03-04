@@ -1,9 +1,9 @@
 package wired:log;
 
 world imports {
-  import types;
+  import api;
 }
 
 world host {
-  export types;
+  export api;
 }

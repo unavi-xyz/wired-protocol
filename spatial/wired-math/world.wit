@@ -1,0 +1,5 @@
+package wired:math;
+
+world imports {
+  import types;
+}

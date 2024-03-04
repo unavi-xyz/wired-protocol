@@ -1,0 +1,6 @@
+package wired:event;
+
+world imports {
+  interface emitter;
+  interface listener;
+}
