@@ -1,7 +1,0 @@
-package wired:script;
-
-world host {
-  export logger;
-  export process;
-  export time;
-}

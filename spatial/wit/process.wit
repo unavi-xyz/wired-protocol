@@ -1,4 +1,0 @@
-interface process {
-  // Stops execution of the script runtime.
-  exit: func();
-}

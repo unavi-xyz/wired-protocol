@@ -1,8 +1,6 @@
-world script {
-  import logger;
-  import time;
-  import process;
+package wired:script;
 
+world script {
   // Called once when the script is loaded.
   export init: func();
 
