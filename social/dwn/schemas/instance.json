@@ -1,11 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "https://wired-protocol.org/v0/schemas/world-limits.json",
+  "$id": "https://wired-protocol.org/v0/schemas/instance.json",
   "type": "object",
   "properties": {
+    "url": {
+      "type": "string"
+    },
+    "numPlayers": {
+      "type": "number"
+    },
     "maxPlayers": {
-      "description": "Maximum number of players allowed in the world",
-      "minimum": 0,
       "type": "number"
     },
     "extras": {
