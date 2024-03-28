@@ -17,7 +17,7 @@ cryptographic keys that can be used to verify their identity, servers to contact
 ## DID Host
 
 A DID host is a server that remotely hosts a DID and provides convenient access to it.
-For example, the server may use a method like `did:web` and your DID document at a web domain.
+For example, the server may use a method like `did:web` and host your DID document at a web domain.
 
 You can log in to the server with a typical login method - such as a username and password or OAuth connection - then receive
 cryptographic keys which can be used to verify your ownership of the hosted DID to other parties.
