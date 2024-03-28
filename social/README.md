@@ -1,6 +1,6 @@
 # Social Protocol
 
-The Wired's social protocol provides a self-hostable base for user identity and data storage.
+The Wired's social protocol provides a self-hostable base layer for user identity and data storage.
 
 ## Decentralized Identifiers (DIDs)
 
