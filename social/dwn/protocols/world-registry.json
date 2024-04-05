@@ -3,11 +3,11 @@
   "types": {
     "world": {
       "schema": "https://wired-protocol.org/v0/schemas/world.json",
-      "dataFormats": ["application/json"]
+      "dataFormat": ["application/json"]
     },
     "instance": {
       "schema": "https://wired-protocol.org/v0/schemas/instance.json",
-      "dataFormats": ["application/json"]
+      "dataFormat": ["application/json"]
     }
   },
   "structure": {
