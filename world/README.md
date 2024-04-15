@@ -25,5 +25,7 @@ Additionally this becomes a place for world discovery, as users can query the DW
 
 ## Networking
 
-Networking within an instance uses [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport),
+TODO.
+
+Networking within an instance will use [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport),
 following a defined [protobuf](https://protobuf.dev/) specification.

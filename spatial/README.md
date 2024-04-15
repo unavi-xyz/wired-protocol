@@ -18,4 +18,5 @@ Host environments can then implement these interfaces, allowing scripts to inter
 ## Input
 
 TODO.
+
 The Wired will handle user input through a system inspired by Stardust's [SUIS](https://docs.rs/stardust-xr-fusion/latest/stardust_xr_fusion/input/index.html).
