@@ -15,14 +15,15 @@ There may be many instances for a given world, or the world author may restrict 
 ### World Servers
 
 Multiplayer networking within an instance is handled by a world server.
-This server acts as a relay for all messages between clients within an instance.
+This server acts as a relay for all messages between players within an instance.
 
-### Publishing
+### World Registries
 
-Worlds are published to a user's [DWN](../social/#decentralized-web-nodes-dwns).
-From there they become accessible via DID.
+Worlds are published to a world registry, via a [DWN](../social/#decentralized-web-nodes-dwns) protocol.
+From there the registry will create instances of the world according to its own logic.
+Additionally this becomes a place for world discovery, as users can query the DWN for worlds using a filter.
 
 ## Networking
 
-Networking within an instance is done over [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport),
+Networking within an instance uses [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport),
 following a defined [protobuf](https://protobuf.dev/) specification.
