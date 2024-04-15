@@ -1,29 +1,63 @@
 package wired:gltf;
 
-world imports {
-  import types;
+world lib {
+  export node;
+  export mesh;
 }
 
-world host {
-  export types;
-}
+interface node {
+  use mesh.{mesh};
+  use wired:math/types.{vec3, vec4};
 
-interface types {
-  /// A glTF mesh.
-  record mesh {
-    /// A unique identifier for this mesh.
-    id: u32,
-
-    name: string,
-    extras: option<string>,
+  record transform {
+    translation: vec3,
+    rotation: vec4,
+    scale: vec3,
   }
 
-  /// Get all meshes in the world.
+  resource node {
+    id: func() -> u32;
+
+    transform: func() -> transform;
+    set-transform: func(transform: transform);
+
+    set-mesh: func(mesh: option<mesh>);
+  }
+
+  nodes: func() -> list<node>;
+  create-node: func() -> node;
+  remove-node: func(id: u32);
+}
+
+interface mesh {
+  resource primitive {
+    id: func() -> u32;
+
+    indices: func() -> list<u32>;
+    set-indices: func(value: list<u32>);
+
+    positions: func() -> list<f32>;
+    set-positions: func(value: list<f32>);
+
+    normals: func() -> list<f32>;
+    set-normals: func(value: list<f32>);
+
+    uvs: func() -> list<f32>;
+    set-uvs: func(value: list<f32>);
+  }
+
+  resource mesh {
+    id: func() -> u32;
+
+    name: func() -> string;
+    set-name: func(name: string);
+
+    primitives: func() -> list<primitive>;
+    create-primitive: func() -> primitive;
+    remove-primitive: func(id: u32);
+  }
+
   meshes: func() -> list<mesh>;
-
-  /// Spawn a new mesh.
-  spawn-mesh: func() -> mesh;
-
-  /// Remove a mesh from the world.
+  create-mesh: func() -> mesh;
   remove-mesh: func(id: u32);
 }

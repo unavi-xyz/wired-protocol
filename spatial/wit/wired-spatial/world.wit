@@ -1,6 +1,0 @@
-package wired:spatial;
-
-world imports {
-  import node;
-  import types;
-}

@@ -1,9 +1,0 @@
-interface types {
-  use wired:math/types.{vec3, vec4};
-
-  record transform {
-    translation: vec3,
-    rotation: vec4,
-    scale: vec3,
-  }
-}

@@ -9,7 +9,7 @@ interface lifecycle {
   init: func();
 
   // Called every tick.
-  update: func(delta-seconds: float32);
+  update: func(delta-seconds: f32);
 
   // Called once when the script is about to be unloaded.
   cleanup: func();

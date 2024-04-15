@@ -9,7 +9,7 @@ interface types {
   record joint {
     translation: vec3,
     rotation: vec4,
-    radius: float32,
+    radius: f32,
   }
 
   record finger {
@@ -44,7 +44,7 @@ interface types {
   record tip {
     origin: vec3,
     orientation: vec4,
-    radius: float32,
+    radius: f32,
   }
 
   variant input-type {
@@ -59,7 +59,7 @@ interface types {
     /// Spatial input data.
     input: input-type,
     /// Distance from the input method to the handler.
-    distance: float32,
+    distance: f32,
     /// How many handlers received the event before this one.
     order: u32,
   }
