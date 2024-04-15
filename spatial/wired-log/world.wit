@@ -1,9 +1,0 @@
-package wired:log;
-
-world imports {
-  import api;
-}
-
-world host {
-  export api;
-}
