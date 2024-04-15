@@ -1,7 +1,8 @@
 # The Wired
 
-The Wired is an open protocol for the metaverse.
-It is a collection of standards focused on interactive 3D environments, self-sovereign identity, and interoperability.
+The Wired is more than just another platform; it's a pathway to the open metaverse.
+The Wired introduces a collection of open standards, emphasizing interactive 3D environments,
+self-sovereign identity, and seamless interoperability.
 
 ## Protocol
 
@@ -9,21 +10,16 @@ It is a collection of standards focused on interactive 3D environments, self-sov
 - [Spatial](./spatial)
 - [World](./world)
 
-## 🤔 Motivation
+## Motivation
 
-The VR landscape today is comprised of closed off platforms built within the traditional "walled garden" framework of app stores and isolated experiences.
-Each game has it's own friends list, avatars, file formats, and (sometimes questionable) leadership.
-Mods get banned, users get banned, and everyone who lives within these spaces gets no say in the matter.
+Today's VR ecosystem is fragmented by proprietary platforms that confine users and developers to isolated, controlled environments.
+Each platform enforces its own set of rules and restrictions, often under leadership
+that makes arbitrary decisions with no recourse for the people who live within these virtual worlds.
 
-With VR our digital identity is more important than ever.
-We embody our avatars, we walk the roads of virtual worlds, we form real human connections with other people.
-This happens all across the internet - but with VR it becomes much more real.
-Nobody should have absolute power over our experience - it's too important to
-leave up to good faith (and even with good intentions these systems fail).
+With VR our digital rights matter more than ever.
+The Wired acknowledges this importance by ensuring that power isn't concentrated in the hands of a few.
+Instead, it fosters a decentralized environment where everyone can contribute and shape the future of 3D content.
 
-The Wired is an attempt to change the status quo by providing an alternative framework for building, publishing,
-and experiencing 3D content in a standardized and interoperable format - or put more simply, **to bring the success of the Web to 3D**.
-
-The open source nature of The Wired is not just a protective measure against bad actors - it
-provides a whole suite of benefits not possible with current platforms.
-Anyone can develop new features, try new ideas, and push the ecosystem forward.
+By embracing open source principles, The Wired doesn't just safeguard against abuse;
+it unleashes a wave of creativity and collaboration.
+Anyone can innovate, experiment, and enhance the ecosystem, driving progress for all.
