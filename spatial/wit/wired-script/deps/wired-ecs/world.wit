@@ -5,11 +5,23 @@ world host {
 }
 
 interface types {
-  resource component {}
-  resource entity {}
+  resource component-instance {}
+
+  resource component {
+    new: func() -> component-instance;
+  }
+
+  resource entity {
+    insert: func(component: component-instance);
+  }
+
+  resource query {
+    read: func() -> list<tuple<entity, component-instance>>;
+  }
 
   resource ecs-world {
     register-component: func() -> component;
-    spawn: func() -> entity;
+    register-query: func(components: list<borrow<component>>) -> query;
+    spawn: func(components: list<component-instance>) -> entity;
   }
 }
