@@ -1,16 +1,17 @@
 package wired:script;
 
 world script {
-  export lifecycle;
+  export types;
 }
 
-interface lifecycle {
-  // Called once when the script is loaded.
-  init: func();
+interface types {
+  use wired:ecs/types.{ecs-world};
 
-  // Called every tick.
-  update: func(delta-seconds: f32);
+  resource script {}
 
-  // Called once when the script is about to be unloaded.
-  cleanup: func();
+  /// Called once to initialize the script.
+  init: func(ecs-world: borrow<ecs-world>) -> script;
+
+  /// Called every tick.
+  update: func(ecs-world: borrow<ecs-world>, script: borrow<script>);
 }

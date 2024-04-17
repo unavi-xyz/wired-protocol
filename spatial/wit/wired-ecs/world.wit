@@ -1,0 +1,15 @@
+package wired:ecs;
+
+world host {
+  import types;
+}
+
+interface types {
+  resource component {}
+  resource entity {}
+
+  resource ecs-world {
+    register-component: func() -> component;
+    spawn: func() -> entity;
+  }
+}
