@@ -7,11 +7,11 @@ world script {
 interface types {
   use wired:ecs/types.{ecs-world};
 
-  resource script {}
+  resource data {}
 
   /// Called once to initialize the script.
-  init: func(ecs-world: borrow<ecs-world>) -> script;
+  init: func(ecs-world: borrow<ecs-world>) -> data;
 
   /// Called every tick.
-  update: func(ecs-world: borrow<ecs-world>, script: borrow<script>);
+  update: func(ecs-world: borrow<ecs-world>, data: borrow<data>);
 }
