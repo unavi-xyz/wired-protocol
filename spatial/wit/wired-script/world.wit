@@ -1,10 +1,10 @@
 package wired:script;
 
 world script {
-  export types;
+  export lifecycle;
 }
 
-interface types {
+interface lifecycle {
   use wired:ecs/types.{ecs-world};
 
   resource data {}
