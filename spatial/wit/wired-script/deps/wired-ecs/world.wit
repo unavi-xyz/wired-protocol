@@ -16,7 +16,7 @@ interface types {
   }
 
   resource query {
-    read: func() -> list<tuple<entity, component-instance>>;
+    read: func() -> list<tuple<entity, list<component-instance>>>;
   }
 
   resource ecs-world {
