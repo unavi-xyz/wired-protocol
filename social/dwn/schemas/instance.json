@@ -15,5 +15,6 @@
     "extras": {
       "type": "object"
     }
-  }
+  },
+  "required": ["url"]
 }

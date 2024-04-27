@@ -1,8 +1,8 @@
 {
-  "protocol": "https://wired-protocol.org/v0/protocols/world-registry.json",
+  "protocol": "https://wired-protocol.org/v0/protocols/world-host.json",
   "types": {
-    "world": {
-      "schema": "https://wired-protocol.org/v0/schemas/world.json",
+    "hosted-world": {
+      "schema": "https://wired-protocol.org/v0/schemas/hosted-world.json",
       "dataFormat": ["application/json"]
     },
     "instance": {
@@ -11,7 +11,7 @@
     }
   },
   "structure": {
-    "world": {
+    "hosted-world": {
       "$actions": [
         {
           "who": "anyone",
@@ -26,7 +26,7 @@
         "$actions": [
           {
             "who": "recipient",
-            "of": "world",
+            "of": "hosted-world",
             "can": "write"
           }
         ]

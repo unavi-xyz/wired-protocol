@@ -9,13 +9,21 @@
     "description": {
       "type": "string"
     },
-    "image": {
-      "type": "string"
-    },
     "tags": {
       "type": "array",
       "items": {
         "type": "string"
+      }
+    },
+    "host": {
+      "type": "object",
+      "properties": {
+        "did": {
+          "type": "string"
+        },
+        "record": {
+          "type": "string"
+        }
       }
     },
     "extras": {
