@@ -3,18 +3,18 @@
   "$id": "https://wired-protocol.org/v0/schemas/instance.json",
   "type": "object",
   "properties": {
-    "url": {
-      "type": "string"
-    },
-    "numPlayers": {
-      "type": "number"
-    },
-    "maxPlayers": {
-      "type": "number"
-    },
-    "extras": {
-      "type": "object"
+    "world": {
+      "type": "object",
+      "properties": {
+        "did": {
+          "type": "string"
+        },
+        "record": {
+          "type": "string"
+        }
+      },
+      "required": ["did", "record"]
     }
   },
-  "required": ["url"]
+  "required": ["world"]
 }

@@ -1,17 +1,17 @@
 {
   "protocol": "https://wired-protocol.org/v0/protocols/world-registry.json",
   "types": {
-    "world": {
-      "schema": "https://wired-protocol.org/v0/schemas/record-link.json",
-      "dataFormat": ["application/json"]
-    },
     "instance": {
       "schema": "https://wired-protocol.org/v0/schemas/instance.json",
+      "dataFormat": ["application/json"]
+    },
+    "instance-info": {
+      "schema": "https://wired-protocol.org/v0/schemas/instance-info.json",
       "dataFormat": ["application/json"]
     }
   },
   "structure": {
-    "world": {
+    "instance": {
       "$actions": [
         {
           "who": "anyone",
@@ -22,11 +22,11 @@
           "can": "write"
         }
       ],
-      "instance": {
+      "instance-info": {
         "$actions": [
           {
             "who": "recipient",
-            "of": "world",
+            "of": "instance",
             "can": "write"
           }
         ]

@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wired-protocol.org/v0/schemas/instance-info.json",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "numPlayers": {
+      "type": "number"
+    },
+    "maxPlayers": {
+      "type": "number"
+    },
+    "extras": {
+      "type": "object"
+    }
+  },
+  "required": ["url"]
+}
