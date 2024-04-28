@@ -26,7 +26,7 @@
         "$actions": [
           {
             "who": "recipient",
-            "of": "registryed-world",
+            "of": "world",
             "can": "write"
           }
         ]
