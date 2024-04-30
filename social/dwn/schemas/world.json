@@ -16,15 +16,8 @@
       }
     },
     "host": {
-      "type": "object",
-      "properties": {
-        "did": {
-          "type": "string"
-        },
-        "record": {
-          "type": "string"
-        }
-      }
+      "type": "string",
+      "description": "DID of the world host."
     },
     "extras": {
       "type": "object"
