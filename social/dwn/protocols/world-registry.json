@@ -1,5 +1,6 @@
 {
   "protocol": "https://wired-protocol.org/v0/protocols/world-registry.json",
+  "published": true,
   "types": {
     "instance": {
       "schema": "https://wired-protocol.org/v0/schemas/instance.json",
@@ -8,26 +9,41 @@
     "instance-info": {
       "schema": "https://wired-protocol.org/v0/schemas/instance-info.json",
       "dataFormat": ["application/json"]
+    },
+    "host-url": {
+      "dataFormat": ["application/json"]
     }
   },
   "structure": {
+    "host-url": {
+      "$actions": [
+        {
+          "who": "anyone",
+          "can": ["read"]
+        },
+        {
+          "who": "recipient",
+          "can": ["write"]
+        }
+      ]
+    },
     "instance": {
       "$actions": [
         {
           "who": "anyone",
-          "can": "read"
-        },
-        {
-          "who": "anyone",
-          "can": "write"
+          "can": ["read", "write"]
         }
       ],
       "instance-info": {
         "$actions": [
           {
+            "who": "anyone",
+            "can": ["read"]
+          },
+          {
             "who": "recipient",
             "of": "instance",
-            "can": "write"
+            "can": ["write"]
           }
         ]
       }
