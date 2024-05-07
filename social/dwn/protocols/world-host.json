@@ -11,7 +11,7 @@
       "dataFormat": ["application/json"]
     },
     "connect-url": {
-      "dataFormat": ["application/json"]
+      "dataFormat": ["text/plain"]
     }
   },
   "structure": {
