@@ -1,5 +1,5 @@
 {
-  "protocol": "https://wired-protocol.org/v0/protocols/world-registry.json",
+  "protocol": "https://wired-protocol.org/v0/protocols/world-host.json",
   "published": true,
   "types": {
     "instance": {
@@ -10,12 +10,12 @@
       "schema": "https://wired-protocol.org/v0/schemas/instance-info.json",
       "dataFormat": ["application/json"]
     },
-    "host-url": {
+    "connect-url": {
       "dataFormat": ["application/json"]
     }
   },
   "structure": {
-    "host-url": {
+    "connect-url": {
       "$actions": [
         {
           "who": "anyone",
