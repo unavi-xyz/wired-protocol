@@ -18,5 +18,4 @@ This DWN acts as a location for world discovery.
 
 ## Networking
 
-Networking within an instance uses [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport),
-following a [protobuf](https://protobuf.dev/) specification.
+Networking within an instance follows a [Cap'n Proto](https://capnproto.org/) schema over [WebTransport](https://developer.mozilla.org/en-US/docs/Web/API/WebTransport).
