@@ -9,11 +9,11 @@
         "did": {
           "type": "string"
         },
-        "record": {
+        "record_id": {
           "type": "string"
         }
       },
-      "required": ["did", "record"]
+      "required": ["did", "record_id"]
     }
   },
   "required": ["world"]
