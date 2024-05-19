@@ -15,7 +15,7 @@ interface WorldServer {
   }
 
   struct JoinResponse {
-    playerId @0: UInt16;
+    ok @0: Bool;
   }
 
   listPlayers @1 () -> (response: List(Player));
