@@ -5,13 +5,11 @@ world script {
 }
 
 interface lifecycle {
-  use wired:ecs/types.{ecs-world};
-
   resource data {}
 
   /// Called once to initialize the script.
-  init: func(ecs-world: borrow<ecs-world>) -> data;
+  init: func() -> data;
 
   /// Called every tick.
-  update: func(ecs-world: borrow<ecs-world>, data: borrow<data>);
+  update: func(data: borrow<data>);
 }
