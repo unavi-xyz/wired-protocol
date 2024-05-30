@@ -21,6 +21,7 @@ interface node {
     transform: func() -> transform;
     set-transform: func(transform: transform);
 
+    mesh: func() -> option<mesh>;
     set-mesh: func(mesh: option<mesh>);
   }
 
@@ -29,18 +30,38 @@ interface node {
   remove-node: func(id: u32);
 }
 
+interface material {
+  use wired:math/types.{vec4};
+
+  resource material {
+    id: func() -> u32;
+
+    color: func() -> vec4;
+    set-color: func(value: vec4);
+  }
+
+  materials: func() -> list<material>;
+  create-material: func() -> material;
+  remove-material: func(id: u32);
+}
+
 interface mesh {
+  use material.{material};
+
   resource primitive {
     id: func() -> u32;
 
     indices: func() -> list<u32>;
     set-indices: func(value: list<u32>);
 
-    positions: func() -> list<f32>;
-    set-positions: func(value: list<f32>);
+    material: func() -> material;
+    set-material: func(value: material);
 
     normals: func() -> list<f32>;
     set-normals: func(value: list<f32>);
+
+    positions: func() -> list<f32>;
+    set-positions: func(value: list<f32>);
 
     uvs: func() -> list<f32>;
     set-uvs: func(value: list<f32>);
