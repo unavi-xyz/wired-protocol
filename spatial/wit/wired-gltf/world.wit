@@ -15,24 +15,32 @@ interface node {
     scale: vec3,
   }
 
+  /// A reference to a node.
   resource node {
     id: func() -> u32;
 
+    children: func() -> list<node>;
+    add-child: func(value: borrow<node>);
+    remove-child: func(value: borrow<node>);
+
+    parent: func() -> option<node>;
+
     transform: func() -> transform;
-    set-transform: func(transform: transform);
+    set-transform: func(value: transform);
 
     mesh: func() -> option<mesh>;
-    set-mesh: func(mesh: option<mesh>);
+    set-mesh: func(value: option<borrow<mesh>>);
   }
 
-  nodes: func() -> list<node>;
+  list-nodes: func() -> list<node>;
   create-node: func() -> node;
-  remove-node: func(id: u32);
+  remove-node: func(value: node);
 }
 
 interface material {
   use wired:math/types.{vec4};
 
+  /// A reference to a material.
   resource material {
     id: func() -> u32;
 
@@ -40,14 +48,15 @@ interface material {
     set-color: func(value: vec4);
   }
 
-  materials: func() -> list<material>;
+  list-materials: func() -> list<material>;
   create-material: func() -> material;
-  remove-material: func(id: u32);
+  remove-material: func(value: material);
 }
 
 interface mesh {
   use material.{material};
 
+  /// A reference to a primitive.
   resource primitive {
     id: func() -> u32;
 
@@ -55,7 +64,7 @@ interface mesh {
     set-indices: func(value: list<u32>);
 
     material: func() -> material;
-    set-material: func(value: material);
+    set-material: func(value: borrow<material>);
 
     normals: func() -> list<f32>;
     set-normals: func(value: list<f32>);
@@ -67,18 +76,19 @@ interface mesh {
     set-uvs: func(value: list<f32>);
   }
 
+  /// A reference to a mesh.
   resource mesh {
     id: func() -> u32;
 
     name: func() -> string;
-    set-name: func(name: string);
+    set-name: func(value: string);
 
     primitives: func() -> list<primitive>;
     create-primitive: func() -> primitive;
-    remove-primitive: func(id: u32);
+    remove-primitive: func(value: primitive);
   }
 
-  meshes: func() -> list<mesh>;
+  list-meshes: func() -> list<mesh>;
   create-mesh: func() -> mesh;
-  remove-mesh: func(id: u32);
+  remove-mesh: func(value: mesh);
 }
