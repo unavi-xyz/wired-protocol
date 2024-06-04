@@ -19,6 +19,9 @@ interface node {
   resource node {
     id: func() -> u32;
 
+    name: func() -> string;
+    set-name: func(value: string);
+
     children: func() -> list<node>;
     add-child: func(value: borrow<node>);
     remove-child: func(value: borrow<node>);
@@ -60,19 +63,12 @@ interface mesh {
   resource primitive {
     id: func() -> u32;
 
-    indices: func() -> list<u32>;
-    set-indices: func(value: list<u32>);
-
     material: func() -> material;
     set-material: func(value: borrow<material>);
 
-    normals: func() -> list<f32>;
+    set-indices: func(value: list<u32>);
     set-normals: func(value: list<f32>);
-
-    positions: func() -> list<f32>;
     set-positions: func(value: list<f32>);
-
-    uvs: func() -> list<f32>;
     set-uvs: func(value: list<f32>);
   }
 
