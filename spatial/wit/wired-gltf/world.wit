@@ -79,7 +79,7 @@ interface mesh {
     name: func() -> string;
     set-name: func(value: string);
 
-    primitives: func() -> list<primitive>;
+    list-primitives: func() -> list<primitive>;
     create-primitive: func() -> primitive;
     remove-primitive: func(value: primitive);
   }
