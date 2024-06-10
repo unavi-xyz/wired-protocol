@@ -32,7 +32,8 @@ interface node {
     set-transform: func(value: transform);
 
     mesh: func() -> option<mesh>;
-    set-mesh: func(value: option<borrow<mesh>>);
+    set-mesh: func(value: borrow<mesh>);
+    remove-mesh: func();
   }
 
   list-nodes: func() -> list<node>;
