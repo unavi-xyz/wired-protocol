@@ -5,11 +5,12 @@ world script {
 }
 
 interface lifecycle {
+  // Arbitrary script data persisted between updates.
   resource data {}
 
-  /// Called once to initialize the script.
+  // Called once to initialize the script.
   init: func() -> data;
 
-  /// Called every tick.
-  update: func(data: borrow<data>);
+  // Called every tick.
+  update: func(delta: f32, data: borrow<data>);
 }
