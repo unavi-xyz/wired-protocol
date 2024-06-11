@@ -7,11 +7,11 @@ world lib {
 
 interface node {
   use mesh.{mesh};
-  use wired:math/types.{vec3, vec4};
+  use wired:math/types.{vec3, quat};
 
   record transform {
     translation: vec3,
-    rotation: vec4,
+    rotation: quat,
     scale: vec3,
   }
 
@@ -42,14 +42,19 @@ interface node {
 }
 
 interface material {
-  use wired:math/types.{vec4};
+  record color {
+    r: f32,
+    g: f32,
+    b: f32,
+    a: f32,
+  }
 
   /// A reference to a material.
   resource material {
     id: func() -> u32;
 
-    color: func() -> vec4;
-    set-color: func(value: vec4);
+    color: func() -> color;
+    set-color: func(value: color);
   }
 
   list-materials: func() -> list<material>;

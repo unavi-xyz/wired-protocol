@@ -16,7 +16,7 @@ interface types {
     z: f32,
   }
 
-  record vec4 {
+  record quat {
     x: f32,
     y: f32,
     z: f32,

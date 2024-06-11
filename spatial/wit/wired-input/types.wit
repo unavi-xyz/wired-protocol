@@ -1,5 +1,5 @@
 interface types {
-  use wired:math/types.{vec3, vec4};
+  use wired:math/types.{vec3, quat};
 
   enum hand-side { 
     left,
@@ -8,7 +8,7 @@ interface types {
 
   record joint {
     translation: vec3,
-    rotation: vec4,
+    rotation: quat,
     radius: f32,
   }
 
@@ -37,13 +37,13 @@ interface types {
   /// A line with an origin and a direction.
   record ray {
     origin: vec3,
-    orientation: vec4,
+    orientation: quat,
   }
 
   /// A single point of interaction, such as the tip of a stylus.
   record tip {
     origin: vec3,
-    orientation: vec4,
+    orientation: quat,
     radius: f32,
   }
 
