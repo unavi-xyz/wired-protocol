@@ -1,16 +1,15 @@
 package wired:script;
 
 world script {
-  export lifecycle;
+  export types;
 }
 
-interface lifecycle {
-  // Arbitrary script data persisted between updates.
-  resource data {}
+interface types {
+  // Script resource that will be instantiated by the host.
+  resource script {
+    constructor();
 
-  // Called once to initialize the script.
-  init: func() -> data;
-
-  // Called every tick.
-  update: func(delta: f32, data: borrow<data>);
+    // Called every tick.
+    update: func(delta: f32);
+  }
 }
