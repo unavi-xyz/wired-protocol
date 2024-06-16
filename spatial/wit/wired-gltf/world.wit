@@ -40,8 +40,8 @@ interface mesh {
   resource primitive {
     id: func() -> u32;
 
-    material: func() -> material;
-    set-material: func(value: borrow<material>);
+    material: func() -> option<material>;
+    set-material: func(value: option<borrow<material>>);
 
     set-indices: func(value: list<u32>);
     set-normals: func(value: list<f32>);
