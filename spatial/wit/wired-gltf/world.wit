@@ -1,44 +1,15 @@
 package wired:gltf;
 
 world lib {
-  export node;
+  export material;
   export mesh;
+  export node;
 }
 
-interface node {
-  use mesh.{mesh};
-  use wired:math/types.{vec3, quat};
-
-  record transform {
-    translation: vec3,
-    rotation: quat,
-    scale: vec3,
-  }
-
-  /// A reference to a node.
-  resource node {
-    id: func() -> u32;
-
-    name: func() -> string;
-    set-name: func(value: string);
-
-    children: func() -> list<node>;
-    add-child: func(value: borrow<node>);
-    remove-child: func(value: borrow<node>);
-
-    parent: func() -> option<node>;
-
-    transform: func() -> transform;
-    set-transform: func(value: transform);
-
-    mesh: func() -> option<mesh>;
-    set-mesh: func(value: borrow<mesh>);
-    remove-mesh: func();
-  }
-
-  list-nodes: func() -> list<node>;
-  create-node: func() -> node;
-  remove-node: func(value: node);
+world host {
+  import material;
+  import mesh;
+  import node;
 }
 
 interface material {
@@ -93,4 +64,39 @@ interface mesh {
   list-meshes: func() -> list<mesh>;
   create-mesh: func() -> mesh;
   remove-mesh: func(value: mesh);
+}
+
+interface node {
+  use mesh.{mesh};
+  use wired:math/types.{vec3, quat};
+
+  record transform {
+    translation: vec3,
+    rotation: quat,
+    scale: vec3,
+  }
+
+  /// A reference to a node.
+  resource node {
+    id: func() -> u32;
+
+    name: func() -> string;
+    set-name: func(value: string);
+
+    children: func() -> list<node>;
+    add-child: func(value: borrow<node>);
+    remove-child: func(value: borrow<node>);
+
+    parent: func() -> option<node>;
+
+    transform: func() -> transform;
+    set-transform: func(value: transform);
+
+    mesh: func() -> option<mesh>;
+    set-mesh: func(value: option<borrow<mesh>>);
+  }
+
+  list-nodes: func() -> list<node>;
+  create-node: func() -> node;
+  remove-node: func(value: node);
 }
