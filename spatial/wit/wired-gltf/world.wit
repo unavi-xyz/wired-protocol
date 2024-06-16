@@ -24,6 +24,9 @@ interface material {
   resource material {
     id: func() -> u32;
 
+    name: func() -> string;
+    set-name: func(value: string);
+
     color: func() -> color;
     set-color: func(value: color);
   }
