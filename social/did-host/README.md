@@ -1,3 +1,0 @@
-# DID Host
-
-TODO.

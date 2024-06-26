@@ -1,6 +1,6 @@
 # Social Protocol
 
-The Wired's social protocol provides a self-hostable base layer for user identity and data storage.
+The Wired's social protocol provides an application-agnostic self-hostable base layer for user identity and data storage.
 
 ## Decentralized Identifiers (DIDs)
 
@@ -14,7 +14,7 @@ while [`did:ipid`](https://did-ipid.github.io/ipid-did-method/) can be used to a
 A user's DID resolves to a document containing information such as their name,
 cryptographic keys that can be used to verify their identity, servers to contact them at, and anything else they want to store.
 
-## DID Host
+### DID Host
 
 A DID host is a server that remotely hosts a DID and provides convenient access to it.
 For example, the server may use a method like `did:web` and host your DID document at a web domain.
@@ -34,7 +34,7 @@ comments or send encrypted messages.
 
 DWNs are built using [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)s and will sync their data
 with other DWNs.
-This allows you to make use of a public cloud-hosted DWN, while at the same time running your own
+This allows you, for example, to make use of a public cloud-hosted DWN, while at the same time running your own
 local DWN to keep a backup of your data.
 
 ## Moderation
