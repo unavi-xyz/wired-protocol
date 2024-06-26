@@ -1,58 +1,22 @@
 package wired:math;
 
-world host {
-  import types;
-}
-
 interface types {
-  resource vec3 {
-    constructor(x: f32, y: f32, z: f32);
-    default: static func() -> vec3;
-    splat: static func(value: f32) -> vec3;
-
-    xyz: func() -> tuple<f32, f32, f32>;
-    x: func() -> f32;
-    y: func() -> f32;
-    z: func() -> f32;
-
-    set: func(x: f32, y: f32, z: f32);
-    set-x: func(x: f32);
-    set-y: func(y: f32);
-    set-z: func(z: f32);
-
-    eq: func(other: borrow<vec3>) -> bool;
+  record transform {
+    rotation: quat,
+    scale: vec3,
+    translation: vec3,
   }
 
-  resource quat {
-    constructor(x: f32, y: f32, z: f32, w: f32);
-    default: static func() -> quat;
-    // Creates a quaternion from the `angle` (in radians) around the Y axis.
-    from-rotation-y: static func(angle: f32) -> quat;
-
-    xyzw: func() -> tuple<f32, f32, f32, f32>;
-    x: func() -> f32;
-    y: func() -> f32;
-    z: func() -> f32;
-    w: func() -> f32;
-
-    set: func(x: f32, y: f32, z: f32, w: f32);
-    set-x: func(x: f32);
-    set-y: func(y: f32);
-    set-z: func(z: f32);
-    set-w: func(w: f32);
-
-    eq: func(other: borrow<quat>) -> bool;
-    mul: func(other: borrow<quat>);
+  record vec3 {
+    x: f32,
+    y: f32,
+    z: f32,
   }
 
-  resource transform {
-    constructor(translation: vec3, rotation: quat, scale: vec3);
-    default: static func() -> transform;
-
-    rotation: func() -> quat;
-    scale: func() -> vec3;
-    translation: func() -> vec3;
-
-    eq: func(other: borrow<transform>) -> bool;
+  record quat {
+    x: f32,
+    y: f32,
+    z: f32,
+    w: f32,
   }
 }

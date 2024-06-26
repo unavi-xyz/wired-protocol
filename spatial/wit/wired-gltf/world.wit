@@ -81,6 +81,7 @@ interface node {
     parent: func() -> option<node>;
 
     transform: func() -> transform;
+    set-transform: func(value: transform);
 
     mesh: func() -> option<mesh>;
     set-mesh: func(value: option<borrow<mesh>>);
