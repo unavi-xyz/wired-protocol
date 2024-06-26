@@ -1,11 +1,5 @@
 package wired:gltf;
 
-world lib {
-  export material;
-  export mesh;
-  export node;
-}
-
 world host {
   import material;
   import mesh;
@@ -71,13 +65,7 @@ interface mesh {
 
 interface node {
   use mesh.{mesh};
-  use wired:math/types.{vec3, quat};
-
-  record transform {
-    translation: vec3,
-    rotation: quat,
-    scale: vec3,
-  }
+  use wired:math/types.{transform};
 
   /// A reference to a node.
   resource node {
@@ -93,7 +81,6 @@ interface node {
     parent: func() -> option<node>;
 
     transform: func() -> transform;
-    set-transform: func(value: transform);
 
     mesh: func() -> option<mesh>;
     set-mesh: func(value: option<borrow<mesh>>);

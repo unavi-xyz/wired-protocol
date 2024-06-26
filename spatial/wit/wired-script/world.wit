@@ -5,10 +5,8 @@ world script {
 }
 
 interface types {
-  // Script resource that will be instantiated by the host.
   resource script {
     constructor();
-
     // Called every tick.
     update: func(delta: f32);
   }
