@@ -23,7 +23,7 @@ The Wired will handle user input through a system inspired by Stardust's [SUIS](
 
 ## Worlds
 
-Worlds are created at a user's [DWN](../social/#decentralized-web-nodes-dwns), following to the [world schema](../social/schemas/world.json).
+Worlds are created at a user's [DWN](../social/#decentralized-web-nodes-dwns), following to the [world schema](../social/dwn/schemas/world.json).
 This countains metadata about the world such as a name and description, as well as the world scene.
 
 ### Instances
