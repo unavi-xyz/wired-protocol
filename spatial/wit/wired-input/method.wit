@@ -1,3 +1,0 @@
-/// Input method.
-/// Represents a single point of interaction (3D pointer, hand, finger tip).
-interface method {}

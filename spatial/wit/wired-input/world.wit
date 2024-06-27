@@ -1,12 +1,25 @@
 package wired:input;
 
-world imports {
+world host {
   import handler;
-  import method;
-  import types;
-  import api;
 }
 
-world host {
-  export api;
-} 
+interface handler {
+  use types.{input-event};
+  use wired:gltf/node.{node};
+
+  // Input handler.
+  // Represents an object in 3D space that can react to input.
+  // Handlers can optionally capture the input method, stopping propagation to other handlers.
+  resource spatial-handler {
+    constructor(node: borrow<node>);
+
+    // Handle the next recieved input event.
+    // Events only last for one tick.
+    handle-input: func() -> option<input-event>;
+  }
+}
+
+// Input method.
+// Represents a single point of interaction (3D pointer, hand, finger tip).
+interface method {}
