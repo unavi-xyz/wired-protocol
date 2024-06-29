@@ -66,6 +66,7 @@ interface mesh {
 interface node {
   use mesh.{mesh};
   use wired:math/types.{transform};
+  use wired:physics/types.{collider, rigid-body};
 
   /// A reference to a node.
   resource node {
@@ -85,6 +86,12 @@ interface node {
 
     mesh: func() -> option<mesh>;
     set-mesh: func(value: option<borrow<mesh>>);
+
+    collider: func() -> option<collider>;
+    set-collider: func(value: option<borrow<collider>>);
+
+    rigid-body: func() -> option<rigid-body>;
+    set-rigid-body: func(value: option<borrow<rigid-body>>);
   }
 
   list-nodes: func() -> list<node>;
