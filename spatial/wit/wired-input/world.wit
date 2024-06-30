@@ -6,7 +6,7 @@ world host {
 
 interface handler {
   use types.{input-event};
-  use wired:gltf/node.{node};
+  use wired:scene/node.{node};
 
   // Input handler.
   // Represents an object in 3D space that can react to input.

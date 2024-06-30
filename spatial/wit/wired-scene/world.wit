@@ -1,4 +1,4 @@
-package wired:gltf;
+package wired:scene;
 
 world host {
   import material;
