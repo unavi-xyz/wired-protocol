@@ -15,14 +15,8 @@ interface types {
   }
 
   variant shape {
-    cuboid(cuboid),
+    cuboid(vec3),
     sphere(sphere),
-  }
-
-  record cuboid {
-    x-len: f32,
-    y-len: f32,
-    z-len: f32,
   }
 
   record sphere {
