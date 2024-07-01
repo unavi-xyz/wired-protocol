@@ -1,0 +1,22 @@
+package wired:math;
+
+interface types {
+  record transform {
+    rotation: quat,
+    scale: vec3,
+    translation: vec3,
+  }
+
+  record vec3 {
+    x: f32,
+    y: f32,
+    z: f32,
+  }
+
+  record quat {
+    x: f32,
+    y: f32,
+    z: f32,
+    w: f32,
+  }
+}
