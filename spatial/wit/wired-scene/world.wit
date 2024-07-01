@@ -65,6 +65,7 @@ interface mesh {
 
 interface node {
   use mesh.{mesh};
+  use wired:input/handler.{input-handler};
   use wired:math/types.{transform};
   use wired:physics/types.{collider, rigid-body};
 
@@ -92,6 +93,9 @@ interface node {
 
     rigid-body: func() -> option<rigid-body>;
     set-rigid-body: func(value: option<borrow<rigid-body>>);
+
+    input-handler: func() -> option<input-handler>;
+    set-input-handler: func(value: option<borrow<input-handler>>);
   }
 
   list-nodes: func() -> list<node>;
