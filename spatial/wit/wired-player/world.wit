@@ -1,0 +1,38 @@
+package wired:player;
+
+world host {
+  import api;
+}
+
+interface api {
+  use wired:scene/node.{node};
+
+  record skeleton {
+    head: node,
+    spine: node,
+    hips: node,
+
+    left-upper-arm: node,
+    left-lower-arm: node,
+    left-hand: node,
+
+    right-upper-arm: node,
+    right-lower-arm: node,
+    right-hand: node,
+
+    left-upper-leg: node,
+    left-lower-leg: node,
+    left-foot: node,
+
+    right-upper-leg: node,
+    right-lower-leg: node,
+    right-foot: node,
+  }
+
+  resource player {
+    skeleton: func() -> skeleton;
+  }
+
+  list-players: func() -> list<player>;
+  local-player: func() -> player;
+}

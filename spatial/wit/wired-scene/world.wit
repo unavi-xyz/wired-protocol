@@ -14,7 +14,6 @@ interface material {
     a: f32,
   }
 
-  /// A reference to a material.
   resource material {
     id: func() -> u32;
 
@@ -33,7 +32,6 @@ interface material {
 interface mesh {
   use material.{material};
 
-  /// A reference to a primitive.
   resource primitive {
     id: func() -> u32;
 
@@ -46,7 +44,6 @@ interface mesh {
     set-uvs: func(value: list<f32>);
   }
 
-  /// A reference to a mesh.
   resource mesh {
     id: func() -> u32;
 
@@ -69,7 +66,6 @@ interface node {
   use wired:math/types.{transform};
   use wired:physics/types.{collider, rigid-body};
 
-  /// A reference to a node.
   resource node {
     id: func() -> u32;
 

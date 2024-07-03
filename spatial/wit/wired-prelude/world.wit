@@ -6,6 +6,7 @@ world imports {
   import wired:log/api;
   import wired:math/types;
   import wired:physics/types;
+  import wired:player/api;
   import wired:scene/material;
   import wired:scene/mesh;
   import wired:scene/node;
