@@ -7,9 +7,7 @@ world imports {
   import wired:math/types;
   import wired:physics/types;
   import wired:player/api;
-  import wired:scene/material;
-  import wired:scene/mesh;
-  import wired:scene/node;
+  include wired:scene/prelude;
 }
 
 world script {

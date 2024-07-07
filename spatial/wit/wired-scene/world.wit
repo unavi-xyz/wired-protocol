@@ -1,100 +1,10 @@
 package wired:scene;
 
-world host {
+world prelude {
+  import gltf;
+  import glxf;
   import material;
   import mesh;
   import node;
-}
-
-interface material {
-  record color {
-    r: f32,
-    g: f32,
-    b: f32,
-    a: f32,
-  }
-
-  resource material {
-    id: func() -> u32;
-
-    name: func() -> string;
-    set-name: func(value: string);
-
-    color: func() -> color;
-    set-color: func(value: color);
-  }
-
-  list-materials: func() -> list<material>;
-  create-material: func() -> material;
-  remove-material: func(value: material);
-}
-
-interface mesh {
-  use material.{material};
-
-  resource primitive {
-    id: func() -> u32;
-
-    material: func() -> option<material>;
-    set-material: func(value: option<borrow<material>>);
-
-    set-indices: func(value: list<u32>);
-    set-normals: func(value: list<f32>);
-    set-positions: func(value: list<f32>);
-    set-uvs: func(value: list<f32>);
-  }
-
-  resource mesh {
-    id: func() -> u32;
-
-    name: func() -> string;
-    set-name: func(value: string);
-
-    list-primitives: func() -> list<primitive>;
-    create-primitive: func() -> primitive;
-    remove-primitive: func(value: primitive);
-  }
-
-  list-meshes: func() -> list<mesh>;
-  create-mesh: func() -> mesh;
-  remove-mesh: func(value: mesh);
-}
-
-interface node {
-  use mesh.{mesh};
-  use wired:input/handler.{input-handler};
-  use wired:math/types.{transform};
-  use wired:physics/types.{collider, rigid-body};
-
-  resource node {
-    id: func() -> u32;
-
-    name: func() -> string;
-    set-name: func(value: string);
-
-    children: func() -> list<node>;
-    add-child: func(value: borrow<node>);
-    remove-child: func(value: borrow<node>);
-
-    parent: func() -> option<node>;
-
-    transform: func() -> transform;
-    set-transform: func(value: transform);
-
-    mesh: func() -> option<mesh>;
-    set-mesh: func(value: option<borrow<mesh>>);
-
-    collider: func() -> option<collider>;
-    set-collider: func(value: option<borrow<collider>>);
-
-    rigid-body: func() -> option<rigid-body>;
-    set-rigid-body: func(value: option<borrow<rigid-body>>);
-
-    input-handler: func() -> option<input-handler>;
-    set-input-handler: func(value: option<borrow<input-handler>>);
-  }
-
-  list-nodes: func() -> list<node>;
-  create-node: func() -> node;
-  remove-node: func(value: node);
+  import scene;
 }
