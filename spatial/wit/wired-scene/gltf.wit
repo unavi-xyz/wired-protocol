@@ -82,7 +82,7 @@ interface mesh {
 
     list-primitives: func() -> list<primitive>;
     create-primitive: func() -> primitive;
-    remove-primitive: func(value: borrow<primitive>);
+    remove-primitive: func(value: primitive);
   }
 }
 
