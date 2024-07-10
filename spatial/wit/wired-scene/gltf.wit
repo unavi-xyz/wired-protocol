@@ -129,6 +129,8 @@ interface scene {
   resource scene {
     constructor();
 
+    id: func() -> u32;
+
     nodes: func() -> list<node>;
     add-node: func(value: borrow<node>);
     remove-node: func(value: borrow<node>);
