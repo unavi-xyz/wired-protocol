@@ -3,8 +3,4 @@ package wired:scene;
 world prelude {
   import gltf;
   import glxf;
-  import material;
-  import mesh;
-  import node;
-  import scene;
 }

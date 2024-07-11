@@ -1,6 +1,7 @@
 interface glxf {
   use gltf.{gltf};
   use node.{node};
+  use wired:math/types.{transform};
 
   // Returns the root glXF that the script is attached to.
   get-root: func() -> glxf;
@@ -11,17 +12,35 @@ interface glxf {
     constructor();
 
     list-assets: func() -> list<asset>;
-    add-asset: func(value: asset);
-    remove-asset: func(value: asset);
+
+    add-asset: func(value: asset-borrow);
+    remove-asset: func(value: asset-borrow);
 
     list-nodes: func() -> list<glxf-node>;
     add-node: func(value: borrow<glxf-node>);
     remove-node: func(value: borrow<glxf-node>);
+
+    list-scenes: func() -> list<glxf-scene>;
+    add-scene: func(value: borrow<glxf-scene>);
+    remove-scene: func(value: borrow<glxf-scene>);
+
+    // The currently loaded scene.
+    active-scene: func() -> option<glxf-scene>;
+    set-active-scene: func(value: option<borrow<glxf-scene>>);
+
+    // The default active scene, used when an asset is first loaded.
+    // If not explicitly set, the first scene will be used.
+    default-scene: func() -> option<glxf-scene>;
+    set-default-scene: func(value: borrow<glxf-scene>);
   }
 
   variant asset {
     gltf(asset-gltf),
     glxf(asset-glxf),
+  }
+  variant asset-borrow {
+    gltf(borrow<asset-gltf>),
+    glxf(borrow<asset-glxf>),
   }
 
   resource asset-gltf {
@@ -29,6 +48,8 @@ interface glxf {
 
     document: func() -> gltf;
 
+    /// Asset nodes to use.
+    /// If empty, will use the default scene.
     list-nodes: func() -> list<node>;
     add-node: func(value: borrow<node>);
     remove-node: func(value: borrow<node>);
@@ -39,6 +60,8 @@ interface glxf {
 
     document: func() -> glxf;
 
+    /// Asset nodes to use.
+    /// If empty, will use the default scene.
     list-nodes: func() -> list<glxf-node>;
     add-node: func(value: borrow<glxf-node>);
     remove-node: func(value: borrow<glxf-node>);
@@ -52,14 +75,34 @@ interface glxf {
     name: func() -> string;
     set-name: func(value: string);
 
+    transform: func() -> transform;
+    set-transform: func(value: transform);
+
     parent: func() -> option<glxf-node>;
 
-    children: func() -> children;
-    set-children: func(value: children);
+    children: func() -> option<children>;
+    set-children: func(value: option<children-borrow>);
   }
 
   variant children {
     asset(asset),
     nodes(list<glxf-node>),
+  }
+  variant children-borrow {
+    asset(asset-borrow),
+    nodes(list<borrow<glxf-node>>),
+  }
+
+  resource glxf-scene {
+    constructor();
+
+    id: func() -> u32;
+
+    name: func() -> string;
+    set-name: func(value: string);
+
+    nodes: func() -> list<glxf-node>;
+    add-node: func(node: borrow<glxf-node>);
+    remove-node: func(node: borrow<glxf-node>);
   }
 }

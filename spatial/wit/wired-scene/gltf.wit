@@ -9,15 +9,6 @@ interface gltf {
   resource gltf {
     constructor();
 
-    // The currently loaded scene.
-    active-scene: func() -> option<scene>;
-    set-active-scene: func(value: option<borrow<scene>>);
-
-    // The default active scene, used when an asset is first loaded.
-    // If not explicitly set, the first scene will be used.
-    default-scene: func() -> option<scene>;
-    set-default-scene: func(value: borrow<scene>);
-
     list-materials: func() -> list<material>;
     add-material: func(value: borrow<material>);
     remove-material: func(value: borrow<material>);
@@ -33,6 +24,15 @@ interface gltf {
     list-scenes: func() -> list<scene>;
     add-scene: func(value: borrow<scene>);
     remove-scene: func(value: borrow<scene>);
+
+    // The currently loaded scene.
+    active-scene: func() -> option<scene>;
+    set-active-scene: func(value: option<borrow<scene>>);
+
+    // The default active scene, used when an asset is first loaded.
+    // If not explicitly set, the first scene will be used.
+    default-scene: func() -> option<scene>;
+    set-default-scene: func(value: borrow<scene>);
   }
 }
 
@@ -130,6 +130,9 @@ interface scene {
     constructor();
 
     id: func() -> u32;
+
+    name: func() -> string;
+    set-name: func(value: string);
 
     nodes: func() -> list<node>;
     add-node: func(value: borrow<node>);
