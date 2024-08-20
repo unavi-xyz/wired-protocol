@@ -14,8 +14,14 @@ interface types {
     set-density: func(value: f32);
   }
 
+  record shape-cylinder {
+    height: f32,
+    radius: f32,
+  }
+
   variant shape {
     cuboid(vec3),
+    cylinder(shape-cylinder),
     sphere(f32),
   }
 
