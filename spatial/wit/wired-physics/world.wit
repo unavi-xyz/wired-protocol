@@ -16,11 +16,7 @@ interface types {
 
   variant shape {
     cuboid(vec3),
-    sphere(sphere),
-  }
-
-  record sphere {
-    radius: f32
+    sphere(f32),
   }
 
   resource rigid-body {
