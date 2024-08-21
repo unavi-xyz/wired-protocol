@@ -1,10 +1,9 @@
 package wired:math;
 
 interface types {
-  record transform {
-    rotation: quat,
-    scale: vec3,
-    translation: vec3,
+  record vec2 {
+    x: f32,
+    y: f32,
   }
 
   record vec3 {
@@ -18,5 +17,11 @@ interface types {
     y: f32,
     z: f32,
     w: f32,
+  }
+
+  record transform {
+    rotation: quat,
+    scale: vec3,
+    translation: vec3,
   }
 }

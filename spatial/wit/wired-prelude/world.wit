@@ -1,6 +1,6 @@
 package wired:prelude;
 
-// Prelude to be `include`d in your world for ease of use.
+// Prelude to be included in your world for ease of use.
 world imports {
   import wired:input/handler;
   import wired:log/api;
