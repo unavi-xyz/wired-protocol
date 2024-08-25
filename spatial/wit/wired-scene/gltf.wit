@@ -96,6 +96,8 @@ interface node {
     constructor();
 
     id: func() -> u32;
+    // Returns another reference to the same resource.
+    ref: func() -> node;
 
     name: func() -> string;
     set-name: func(value: string);
