@@ -24,4 +24,7 @@ interface types {
     scale: vec3,
     translation: vec3,
   }
+
+  // Codegen doesn't always include vec2, add this function to force its inclusion.
+  fake-fn: func() -> vec2;
 }
