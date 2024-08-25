@@ -48,6 +48,8 @@ interface material {
     constructor();
 
     id: func() -> u32;
+    // Returns another reference to the same resource.
+    ref: func() -> material;
 
     name: func() -> string;
     set-name: func(value: string);
@@ -76,6 +78,8 @@ interface mesh {
     constructor();
 
     id: func() -> u32;
+    // Returns another reference to the same resource.
+    ref: func() -> mesh;
 
     name: func() -> string;
     set-name: func(value: string);
