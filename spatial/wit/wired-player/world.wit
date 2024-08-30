@@ -8,14 +8,19 @@ interface api {
   use wired:scene/node.{node};
 
   record skeleton {
-    head: node,
-    spine: node,
     hips: node,
+    spine: node,
+    chest: node,
+    upper-chest: node,
+    neck: node,
+    head: node,
 
+    left-shoulder: node,
     left-upper-arm: node,
     left-lower-arm: node,
     left-hand: node,
 
+    right-shoulder: node,
     right-upper-arm: node,
     right-lower-arm: node,
     right-hand: node,
@@ -30,6 +35,7 @@ interface api {
   }
 
   resource player {
+    root: func() -> node;
     skeleton: func() -> skeleton;
   }
 
