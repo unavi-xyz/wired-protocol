@@ -9,7 +9,7 @@ interface api {
     debug,
     info,
     warn,
-    error
+    error,
   }
 
   log: func(level: log-level, message: string);

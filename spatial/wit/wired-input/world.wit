@@ -11,8 +11,8 @@ interface handler {
   resource input-handler {
     constructor();
 
-    // Handle the next recieved input event.
-    // Events only last for one tick.
+    /// Handle the next recieved input event.
+    /// Events only last for one tick.
     handle-input: func() -> option<input-event>;
   }
 }

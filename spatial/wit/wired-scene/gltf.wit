@@ -4,8 +4,8 @@ interface gltf {
   use node.{node};
   use scene.{scene};
 
-  // A glTF document.
-  // Can be saved or loaded independently of the rest of the world.
+  /// A glTF document.
+  /// Can be saved or loaded independently of the rest of the world.
   resource gltf {
     constructor();
 
@@ -25,12 +25,12 @@ interface gltf {
     add-scene: func(value: borrow<scene>);
     remove-scene: func(value: borrow<scene>);
 
-    // The currently loaded scene.
+    /// The currently loaded scene.
     active-scene: func() -> option<scene>;
     set-active-scene: func(value: option<borrow<scene>>);
 
-    // The default active scene, used when an asset is first loaded.
-    // If not explicitly set, the first scene will be used.
+    /// The default active scene, used when an asset is first loaded.
+    /// If not explicitly set, the first scene will be used.
     default-scene: func() -> option<scene>;
     set-default-scene: func(value: borrow<scene>);
   }
@@ -48,7 +48,7 @@ interface material {
     constructor();
 
     id: func() -> u32;
-    // Returns another reference to the same resource.
+    /// Returns another reference to the same resource.
     ref: func() -> material;
 
     name: func() -> string;
@@ -78,7 +78,7 @@ interface mesh {
     constructor();
 
     id: func() -> u32;
-    // Returns another reference to the same resource.
+    /// Returns another reference to the same resource.
     ref: func() -> mesh;
 
     name: func() -> string;
@@ -100,7 +100,7 @@ interface node {
     constructor();
 
     id: func() -> u32;
-    // Returns another reference to the same resource.
+    /// Returns another reference to the same resource.
     ref: func() -> node;
 
     name: func() -> string;
@@ -111,6 +111,8 @@ interface node {
     remove-child: func(value: borrow<node>);
 
     parent: func() -> option<node>;
+
+    global-transform: func() -> transform;
 
     transform: func() -> transform;
     set-transform: func(value: transform);

@@ -3,11 +3,11 @@ interface glxf {
   use node.{node};
   use wired:math/types.{transform};
 
-  // Returns the root glXF that the script is attached to.
+  /// Returns the root glXF that the script is attached to.
   get-root: func() -> glxf;
 
-  // A glXF document.
-  // Used to compose multiple independent glTF assets together.
+  /// A glXF document.
+  /// Used to compose multiple independent glTF assets together.
   resource glxf {
     constructor();
 
@@ -24,12 +24,12 @@ interface glxf {
     add-scene: func(value: borrow<glxf-scene>);
     remove-scene: func(value: borrow<glxf-scene>);
 
-    // The currently loaded scene.
+    /// The currently loaded scene.
     active-scene: func() -> option<glxf-scene>;
     set-active-scene: func(value: option<borrow<glxf-scene>>);
 
-    // The default active scene, used when an asset is first loaded.
-    // If not explicitly set, the first scene will be used.
+    /// The default active scene, used when an asset is first loaded.
+    /// If not explicitly set, the first scene will be used.
     default-scene: func() -> option<glxf-scene>;
     set-default-scene: func(value: borrow<glxf-scene>);
   }
@@ -48,8 +48,8 @@ interface glxf {
 
     document: func() -> gltf;
 
-    /// Asset nodes to use.
-    /// If empty, will use the default scene.
+    //// Asset nodes to use.
+    //// If empty, will use the default scene.
     list-nodes: func() -> list<node>;
     add-node: func(value: borrow<node>);
     remove-node: func(value: borrow<node>);
@@ -60,8 +60,8 @@ interface glxf {
 
     document: func() -> glxf;
 
-    /// Asset nodes to use.
-    /// If empty, will use the default scene.
+    //// Asset nodes to use.
+    //// If empty, will use the default scene.
     list-nodes: func() -> list<glxf-node>;
     add-node: func(value: borrow<glxf-node>);
     remove-node: func(value: borrow<glxf-node>);

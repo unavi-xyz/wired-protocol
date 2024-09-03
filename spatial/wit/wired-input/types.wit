@@ -19,7 +19,7 @@ interface types {
     metacarpal: joint,
   }
 
-  // Hand tracking data.
+  /// Hand tracking data.
   record hand {
     side: hand-side,
 
@@ -34,13 +34,13 @@ interface types {
     elbow: option<joint>,
   }
 
-  // A line with an origin and a direction.
+  /// A line with an origin and a direction.
   record ray {
     origin: vec3,
     orientation: quat,
   }
 
-  // A single point of interaction, such as the tip of a stylus.
+  /// A single point of interaction, such as the tip of a stylus.
   record tip {
     origin: vec3,
     orientation: quat,
@@ -54,13 +54,13 @@ interface types {
   }
 
   record input-event {
-    // Unique id for the event.
+    /// Unique id for the event.
     id: u64,
-    // Spatial input data.
+    /// Spatial input data.
     input: input-type,
-    // Distance from the input method to the handler.
+    /// Distance from the input method to the handler.
     distance: f32,
-    // How many handlers received the event before this one.
+    /// How many handlers received the event before this one.
     order: u32,
   }
 }
