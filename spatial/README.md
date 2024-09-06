@@ -15,12 +15,6 @@ Scripts use the [component model](https://github.com/WebAssembly/component-model
 [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md) interfaces defined by The Wired.
 Host environments can then implement these interfaces, allowing scripts to interact with the scene in a controlled manner.
 
-### Input
-
-TODO.
-
-The Wired will handle user input through a system inspired by Stardust's [SUIS](https://docs.rs/stardust-xr-fusion/latest/stardust_xr_fusion/input/index.html).
-
 ## Worlds
 
 Worlds are created at a user's [DWN](../social/#decentralized-web-nodes-dwns), following to the [world schema](../social/dwn/schemas/world.json).

@@ -36,31 +36,26 @@ interface types {
 
   /// A line with an origin and a direction.
   record ray {
-    origin: vec3,
     orientation: quat,
+    origin: vec3,
   }
 
-  /// A single point of interaction, such as the tip of a stylus.
-  record tip {
-    origin: vec3,
-    orientation: quat,
-    radius: f32,
-  }
-
-  variant input-type {
+  variant input-data {
     hand(hand),
     ray(ray),
-    tip(tip),
+  }
+
+  variant input-action {
+    collision,
+    hover,
   }
 
   record input-event {
     /// Unique id for the event.
     id: u64,
+    /// The action that created the event.
+    action: input-action,
     /// Spatial input data.
-    input: input-type,
-    /// Distance from the input method to the handler.
-    distance: f32,
-    /// How many handlers received the event before this one.
-    order: u32,
+    data: input-data,
   }
 }
