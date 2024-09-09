@@ -48,8 +48,8 @@ interface glxf {
 
     document: func() -> gltf;
 
-    //// Asset nodes to use.
-    //// If empty, will use the default scene.
+    /// Asset nodes to use.
+    /// If empty, will use the default scene.
     list-nodes: func() -> list<node>;
     add-node: func(value: borrow<node>);
     remove-node: func(value: borrow<node>);
@@ -60,8 +60,8 @@ interface glxf {
 
     document: func() -> glxf;
 
-    //// Asset nodes to use.
-    //// If empty, will use the default scene.
+    /// Asset nodes to use.
+    /// If empty, will use the default scene.
     list-nodes: func() -> list<glxf-node>;
     add-node: func(value: borrow<glxf-node>);
     remove-node: func(value: borrow<glxf-node>);
