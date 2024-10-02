@@ -15,10 +15,6 @@
         "type": "string"
       }
     },
-    "host": {
-      "type": "string",
-      "description": "DID of the world host."
-    },
     "extras": {
       "type": "object"
     }

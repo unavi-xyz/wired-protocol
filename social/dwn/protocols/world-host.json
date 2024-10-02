@@ -2,16 +2,16 @@
   "protocol": "https://wired-protocol.org/v0/protocols/world-host.json",
   "published": true,
   "types": {
-    "instance": {
-      "schema": "https://wired-protocol.org/v0/schemas/instance.json",
-      "dataFormat": ["application/json"]
-    },
-    "instance-info": {
-      "schema": "https://wired-protocol.org/v0/schemas/instance-info.json",
-      "dataFormat": ["application/json"]
-    },
     "connect-url": {
       "dataFormat": ["text/plain"]
+    },
+    "host-info": {
+      "schema": "https://wired-protocol.org/v0/schemas/host-info.json",
+      "dataFormat": ["application/json"]
+    },
+    "world": {
+      "schema": "https://wired-protocol.org/v0/schemas/world.json",
+      "dataFormat": ["application/json"]
     }
   },
   "structure": {
@@ -27,14 +27,14 @@
         }
       ]
     },
-    "instance": {
+    "world": {
       "$actions": [
         {
           "who": "anyone",
           "can": ["read", "write"]
         }
       ],
-      "instance-info": {
+      "host-info": {
         "$actions": [
           {
             "who": "anyone",
@@ -42,7 +42,7 @@
           },
           {
             "who": "recipient",
-            "of": "instance",
+            "of": "world",
             "can": ["write"]
           }
         ]
