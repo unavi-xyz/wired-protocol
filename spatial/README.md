@@ -31,7 +31,7 @@ Each world must be hosted by a central server. This server acts as a relay for
 communication between players within the world.
 
 Worlds are created at a host's [DWN](../social/#decentralized-web-nodes-dwns),
-following the [world schema](../social/dwn/schemas/world.json). This countains
+following the [world schema](../social/dwn/schemas/world.json). This contains
 metadata about the world such as a name and description, as well as the glXF
 scene and any used assets.
 
