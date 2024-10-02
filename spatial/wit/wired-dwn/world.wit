@@ -1,12 +1,17 @@
 package wired:dwn;
 
 world host {
-  import api;
   import dwn;
 }
 
-interface api {
-  use dwn.{dwn};
+interface dwn {
+  use records-query.{records-query-builder};
+  use records-write.{records-write-builder};
+
+  resource dwn {
+    records-query: func() -> records-query-builder;
+    records-write: func() -> records-write-builder;
+  }
 
   /// Get the local user's DWN.
   local-dwn: func() -> dwn;
@@ -15,7 +20,7 @@ interface api {
   world-host-dwn: func() -> dwn;
 }
 
-interface dwn {
+interface types {
   record encrypted-data {
     alg: string,
     ciphertext: string,
@@ -37,32 +42,5 @@ interface dwn {
   record status {
     code: u16,
     detail: option<string>,
-  }
-
-  record query-reply {
-    entries: list<message>,
-    status: status,
-  }
-
-  resource query {
-    poll: func() -> option<query-reply>;
-    finished: func() -> bool;
-  }
-
-  resource query-builder {
-    protocol: func() -> option<string>;
-    set-protocol: func(value: option<string>);
-
-    record-id: func() -> option<string>;
-    set-record-id: func(value: option<string>);
-
-    schema: func() -> option<string>;
-    set-schema: func(value: option<string>);
-
-    run: func() -> query;
-  }
-
-  resource dwn {
-    query: func() -> query-builder;
   }
 }
