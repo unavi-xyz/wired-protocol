@@ -1,7 +1,18 @@
 package wired:dwn;
 
 world host {
+  import api;
   import dwn;
+}
+
+interface api {
+  use dwn.{dwn};
+
+  /// Get the local user's DWN.
+  user-dwn: func() -> dwn;
+
+  /// Get the local user's default world host DWN.
+  world-host-dwn: func() -> dwn;
 }
 
 interface dwn {
@@ -12,12 +23,6 @@ interface dwn {
     records-query: func() -> records-query-builder;
     records-write: func() -> records-write-builder;
   }
-
-  /// Get the local user's DWN.
-  local-dwn: func() -> dwn;
-
-  /// Get the local user's default world host DWN.
-  world-host-dwn: func() -> dwn;
 }
 
 interface types {
